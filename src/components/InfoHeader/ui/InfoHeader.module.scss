@@ -1,0 +1,27 @@
+.infoHeaderWrapper {
+
+    font-size: 14px;
+    border-bottom: 1px solid #00000014;
+    padding: 7px 0;
+}
+
+.infoHeaderContent {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.city {
+    color: rgb(237, 59, 0);
+}
+
+.phone {
+    font-weight: 600;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    font-weight:600;
+}
