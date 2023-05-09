@@ -1,15 +1,17 @@
-.infoHeaderWrapper {
-
+.infoHeader {
     font-size: 14px;
     border-bottom: 1px solid #00000014;
     padding: 7px 0;
 }
 
-.infoHeaderContent {
-    display: flex;
-    justify-content: space-between;
+.container {
     width: 90%;
+    height: 100%;
     margin: 0 auto;
+}
+.infoHeaderContent {
+    justify-content: space-between;
+    display: flex;
 }
 
 .city {

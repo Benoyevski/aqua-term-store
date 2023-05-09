@@ -1,12 +1,14 @@
-import styles from "./InfoHeader.module.scss";
+import cls from "./InfoHeader.module.scss";
 
 export const InfoHeader = () => {
     return (
-        <div className={styles.infoHeaderWrapper}>
-            <div className={styles.infoHeaderContent}>
-            <p className={styles.city}>Урус-Мартан</p>
-            <p className={styles.phone}>+7 (800) 755-35-35</p>
-            <button className={styles.btn}>Войти</button>
+        <div className={cls.infoHeader}>
+            <div className={cls.container}>
+                <div className={cls.infoHeaderContent}>
+                    <p className={cls.city}>Урус-Мартан</p>
+                    <p className={cls.phone}>+7 (967) 000-77-27</p>
+                    <button className={cls.btn}>Войти</button>
+                </div>
             </div>
         </div>
     );
