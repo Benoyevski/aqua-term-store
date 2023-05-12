@@ -1,8 +1,9 @@
+import { SliderBlock } from "../../../components/Slider";
 
 const MainPage = () => {
     return (
         <div>
-            MAIN PAGE
+            <SliderBlock/>
         </div>
     );
 };

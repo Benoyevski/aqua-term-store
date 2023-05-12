@@ -6,6 +6,7 @@
 
 .container {
     width: 90%;
+    max-width: 1600px;
     height: 100%;
     margin: 0 auto;
 }
@@ -17,36 +18,7 @@
     height: 100%;
 }
 
-//menu
 
-.menu {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    height: 100%;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 0 80px;
-    justify-content: space-between;
-}
-
-.menuItemWrapper {
-    height: 100%;
-    padding: 0 10px;
-}
-
-.menuItem {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 3px solid transparent;
-}
-
-.menuItem:hover {
-    color: #d8130d;
-    border-bottom: 3px solid #d8130d;
-    cursor: pointer;
-}
 //search
 
 .search {
