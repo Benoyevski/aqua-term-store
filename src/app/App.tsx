@@ -7,9 +7,10 @@ function App() {
     return (
         <div className='app'>
             <InfoHeader />
-            <Navbar/>
+            <Navbar />
             <Link to={"/"}>Главная</Link>
             <Link to={"/about"}>О сайте</Link>
+            <Link to={"/catalog"}>Каталог</Link>
             <AppRouter />
         </div>
     );

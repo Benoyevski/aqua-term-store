@@ -9,7 +9,7 @@ interface IMenuList {
 let menuList: IMenuList[] = [
     {
         title: "Каталог",
-        childrens: ["Котлы", "Радиаторы", "Водонагреватели", "Кондиционеры"],
+        childrens: ["Котлы", "Радиаторы", "Обогреватели", "Кондиционеры", "Насосы"],
     },
     {
         title: "Производители",
@@ -26,7 +26,6 @@ let menuList: IMenuList[] = [
     },
 ];
 
-
 interface MenuProps {
     className?: string;
 }
@@ -36,7 +35,7 @@ export const Menu = ({ className }: MenuProps) => {
         <ul className={cls.menu}>
             {menuList.map((item) => {
                 return (
-                    <li className={cls.menuItemWrapper}>
+                    <li key={item.title} className={cls.menuItemWrapper}>
                         <p className={cls.menuItem} key={item.title}>
                             {item.title}
                         </p>
