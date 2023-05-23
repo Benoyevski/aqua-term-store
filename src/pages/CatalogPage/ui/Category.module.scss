@@ -1,0 +1,44 @@
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.categoryList {
+display: flex;
+flex-flow: row wrap;
+width: 100%;
+}
+
+
+.categoryCard {
+    display: flex;
+    border: 1px solid rgb(240, 240, 240);
+    width: 50%;
+
+    &:hover {
+        box-shadow: 0px 0px 20px 5px rgba(199, 199, 199, 0.458);
+        transition: all 0.2s;
+
+    }
+}
+
+.categoryCard div {
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    min-height: 200px;
+}
+
+.categoryCard img {
+    object-fit: contain;
+    padding: 0 35px 10px 0;
+    
+}
+
+.categoryCard p {
+    font-size: 20px;
+    font-weight: 600;
+}

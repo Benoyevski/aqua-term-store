@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
 import { fetchCategories } from "../../../features/CategorySlice";
+import cls from "./Category.module.scss";
 
 const CatalogPage = () => {
     const dispatch = useAppDispatch();
@@ -11,13 +12,16 @@ const CatalogPage = () => {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className={cls.container}>
             <h1>КАТАЛОГ</h1>
-            <ul>
+            <ul className={cls.categoryList}>
                 {categoryList.map((item) => {
                     return (
-                        <li key={item.title}>
-                            <p>{item.title}</p>
+                        <li className={cls.categoryCard} key={item.title}>
+                            <div>
+                                <img src={`http://localhost:5000/${item.image}`} alt={item.title} />
+                                <p>{item.title}</p>
+                            </div>
                         </li>
                     );
                 })}
