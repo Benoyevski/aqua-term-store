@@ -1,0 +1,23 @@
+.textInput {
+    min-width: 500px;
+    margin-right: 20px;
+    padding: 5px;
+
+}
+.submitBtn {
+    padding: 5px;
+    background: rgb(255, 187, 0);
+    color: #fff;
+    border: 1px solid transparent;
+    margin: 4px 0;
+    cursor: pointer;
+
+    &:hover {
+    background: rgba(24, 177, 0, 0.924);
+
+    }
+
+    &:disabled {
+        background: rgb(229, 0, 0);
+    }
+}

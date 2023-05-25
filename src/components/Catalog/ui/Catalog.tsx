@@ -2,7 +2,7 @@ import cls from "./Catalog.module.scss";
 import { classNames } from "../../../shared/classNames/classNames";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
-import { fetchCategories } from "../../../features/CategorySlice";
+import { fetchCategories } from "../../../features/categorySlice";
 import { CategoryList } from "../../CategoryList";
 
 interface CatalogProps {
@@ -22,7 +22,7 @@ export const Catalog = ({ className }: CatalogProps) => {
             <h1>Каталог</h1>
             <ul className={classNames(cls.Catalog, {}, [className])}>
                 {categoryList.map((item) => {
-                    return <CategoryList item={item} />;
+                    return <CategoryList key={item._id} item={item} />;
                 })}
             </ul>
         </div>

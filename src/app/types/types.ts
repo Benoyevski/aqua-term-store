@@ -22,5 +22,3 @@ export interface IProduct {
     country?: string;
     fabricator: string;
 }
-
-export type ItemsForMap = ICategory[] | IType[] | IProduct[];
