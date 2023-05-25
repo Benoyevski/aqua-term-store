@@ -1,16 +1,15 @@
-import cls from "./CatalogCard.module.scss";
-
-import { classNames } from "../../../shared/classNames/classNames";
 import { ICategory } from "../../../app/types/types";
+import { classNames } from "../../../shared/classNames/classNames";
+import cls from "./CategoryList.module.scss";
 
-interface CatalogCardProps {
+interface CategoryListProps {
     className?: string;
     item: ICategory;
 }
 
-export const CatalogCard = ({ className, item }: CatalogCardProps) => {
+export const CategoryList = ({ className, item }: CategoryListProps) => {
     return (
-        <li className={classNames(cls.CatalogCard, {}, [className])} key={item.title}>
+        <li className={classNames(cls.CategoryList, {}, [className])} key={item.title}>
             <div>
                 <img src={`http://localhost:5000/${item.image}`} alt={item.title} />
                 <div className={cls.productsTitle}>

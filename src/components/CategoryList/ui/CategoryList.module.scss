@@ -1,4 +1,4 @@
-.CatalogCard {
+.CategoryList {
     display: flex;
     border: 1px solid rgb(240, 240, 240);
     width: 50%;
@@ -11,25 +11,25 @@
     }
 }
 
-.CatalogCard div {
+.CategoryList div {
     display: flex;
     align-items: start;
     min-height: 200px;
 }
 
-.CatalogCard img {
+.CategoryList img {
     object-fit: contain;
     padding: 0 35px 10px 0;
     
 }
 
-.CatalogCard h3 {
+.CategoryList h3 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
 
-.CatalogCard p {
+.CategoryList p {
     font-size: 18px;
     font-weight: 400;
 }
