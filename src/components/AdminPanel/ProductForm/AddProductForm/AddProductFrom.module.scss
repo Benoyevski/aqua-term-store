@@ -1,5 +1,15 @@
+.AddProductForm {
+    background: rgb(241, 241, 241);
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 20px -10px gray;
+    margin: 20px 0;
+}
+
 .textInput {
     min-width: 500px;
+    width: 500px;
     margin-right: 20px;
     padding: 5px;
 
@@ -20,4 +30,9 @@
     &:disabled {
         background: rgb(229, 0, 0);
     }
+}
+
+.inputBlock {
+    display: flex;
+    flex-direction: column;
 }

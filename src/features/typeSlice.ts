@@ -5,14 +5,36 @@ import { IType } from "../app/types/types";
 interface TypeState {
     items: IType[];
     isLoading: boolean;
-    error?: string;
+    error: string | null;
 }
 
 const initialState: TypeState = {
     items: [],
     isLoading: false,
-    error: "",
+    error: null,
 };
+
+export const addType = createAsyncThunk(
+    "type/addToDB",
+    async (formData: FormData, { rejectWithValue }) => {
+        try {
+            const response = await fetch(`http://localhost:5000/types`, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error("Ошибка при добавлении типа");
+            }
+
+            const type: IType = await response.json();
+            return type;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+);
+
 
 export const fetchTypes = createAsyncThunk("fetch/type", async (_, thunkAPI) => {
     try {
@@ -26,6 +48,7 @@ export const fetchTypes = createAsyncThunk("fetch/type", async (_, thunkAPI) => 
     }
 });
 
+
 export const typeSlice = createSlice({
     name: "type",
     initialState,
@@ -34,12 +57,21 @@ export const typeSlice = createSlice({
         builder
             .addCase(fetchTypes.pending, (state) => {
                 state.isLoading = true;
-                state.error = "";
+                state.error = null;
             })
             .addCase(fetchTypes.fulfilled, (state, action: PayloadAction<IType[]>) => {
                 state.isLoading = false;
-                state.error = "";
+                state.error = null;
                 state.items = action.payload;
+            })
+            .addCase(addType.pending, (state) => {
+                state.isLoading = true;
+                state.error = null;
+            })
+            .addCase(addType.fulfilled, (state, action: PayloadAction<IType>) => {
+                state.isLoading = false;
+                state.error = null;
+                state.items.push(action.payload);
             });
     },
 });

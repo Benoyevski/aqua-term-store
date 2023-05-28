@@ -14,6 +14,27 @@ const initialState: ProductState = {
     error: "",
 };
 
+export const addProduct = createAsyncThunk(
+    "product/add",
+    async (formData: FormData, { rejectWithValue }) => {
+        try {
+            const response = await fetch(`http://localhost:5000/products`, {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!response.ok) {
+                throw new Error("Ошибка при добавлении продукта");
+            }
+
+            const product: IProduct = await response.json();
+            return product;
+        } catch (error) {
+            return rejectWithValue(error);
+        }
+    },
+);
+
 export const fetchProducts = createAsyncThunk("fetch/product", async (_, thunkAPI) => {
     try {
         const res = await fetch("http://localhost:5000/products");

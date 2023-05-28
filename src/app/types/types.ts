@@ -20,5 +20,5 @@ export interface IProduct {
     price?: number;
     description?: string;
     country?: string;
-    fabricator: string;
+    fabricator?: string;
 }
