@@ -17,6 +17,7 @@ export const Catalog = ({ className }: CatalogProps) => {
         dispatch(fetchCategories());
     }, [dispatch]);
 
+
     return (
         <div className={cls.container}>
             <h1>Каталог</h1>

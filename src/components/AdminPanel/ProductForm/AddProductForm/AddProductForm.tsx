@@ -13,6 +13,7 @@ interface AddProductFormProps {
 export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => {
     const dispatch = useAppDispatch();
     const [title, setTitle] = useState("");
+    const [price, setPrice] = useState("");
     const [image, setImage] = useState<File | null>(null);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedType, setSelectedType] = useState("");
@@ -20,8 +21,8 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
     const categories = useAppSelector((state) => state.category.items);
     const types = useAppSelector((state) => state.typeSlice.items);
 
-    const addBtnDisable = title && image && selectedCategory && selectedType ? false : true;
-    
+    const addBtnDisable = title && image && selectedCategory && selectedType && price ? false : true;
+
     useEffect(() => {
         dispatch(fetchCategories());
         dispatch(fetchTypes());
@@ -29,6 +30,10 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
 
     const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setTitle(event.target.value);
+    };
+
+    const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPrice(event.target.value);
     };
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +46,9 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
         event.preventDefault();
         const formData = new FormData();
         formData.append("name", title);
+        formData.append("price", price);
         formData.append("category", selectedCategory);
+        formData.append("type", selectedType);
         if (image) {
             formData.append("image", image);
         }
@@ -49,15 +56,16 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
         dispatch(addProduct(formData));
         setTitle("");
         setImage(null);
+        setPrice('')
+        setSelectedCategory('')
+        setSelectedType('')
     };
 
     const handleSelectCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedCategory(e.target.value);
-        console.log(e.target.value);
     };
     const handleSelectType = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setSelectedType(e.target.value);
-        console.log(e.target.value);
     };
 
     return (
@@ -105,10 +113,20 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
                         value={title}
                         onChange={handleTitleChange}
                     />
+                    <label htmlFor='title'>Цена:</label>
+                    <input
+                        className={cls.textInput}
+                        type='text'
+                        id='price'
+                        value={price}
+                        onChange={handlePriceChange}
+                    />
                 </div>
                 <div>
-                    <label htmlFor='image'>Изображение:</label>
-                    <input type='file' name='image' id='image' onChange={handleImageChange} />
+                    <input onChange={handleImageChange} type='file' id='image' />
+                    <label htmlFor='image' className={cls.btn}>
+                        Выбрать картинку
+                    </label>
                 </div>
                 <button className={cls.submitBtn} disabled={addBtnDisable} type='submit'>
                     Добавить товар

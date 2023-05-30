@@ -48,7 +48,6 @@ export const fetchTypes = createAsyncThunk("fetch/type", async (_, thunkAPI) => 
     }
 });
 
-
 export const typeSlice = createSlice({
     name: "type",
     initialState,
@@ -72,7 +71,8 @@ export const typeSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.items.push(action.payload);
-            });
+            })
+
     },
 });
 

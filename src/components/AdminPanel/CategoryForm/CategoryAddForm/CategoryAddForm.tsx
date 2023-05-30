@@ -50,8 +50,10 @@ export const CategoryAddForm: React.FC = ({ className }: CategoryAddForm) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor='image'>Изображение:</label>
-                    <input type='file' name='image' id='image' onChange={handleImageChange} />
+                    <input onChange={handleImageChange} type='file' id='file' />
+                    <label htmlFor='file' className={cls.btn}>
+                        Выбрать картинку
+                    </label>
                 </div>
                 <button className={cls.submitBtn} disabled={!title || !image} type='submit'>
                     Добавить категорию

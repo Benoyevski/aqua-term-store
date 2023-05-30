@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
 import { fetchTypes } from "../../../features/typeSlice";
 import { classNames } from "../../../shared/classNames/classNames";
 import cls from "./CategoryList.module.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 interface CategoryListProps {
     className?: string;
@@ -25,10 +26,16 @@ export const CategoryList = ({ className, item }: CategoryListProps) => {
                 <img src={`http://localhost:5000/${item.image}`} alt={item.title} />
             </div>
             <div className={cls.productsTitle}>
-                <h3>{item.title}</h3>
+                <h3>
+                    <Link to={"/products/" + item._id}>{item.title}</Link>
+                </h3>
                 <ul className={cls.typesList}>
                     {categoryTypes.map((el) => {
-                        return <li className={cls.typeTitle} key={el._id}>{el.title}</li>;
+                        return (
+                            <li className={cls.typeTitle} key={el._id}>
+                                {el.title}
+                            </li>
+                        );
                     })}
                 </ul>
             </div>
