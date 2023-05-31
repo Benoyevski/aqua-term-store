@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { AppRouter } from "./providers/router";
 import { InfoHeader } from "../components/InfoHeader";
 import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 function App() {
     return (
@@ -13,8 +14,8 @@ function App() {
             <Link to={"/catalog"}>Каталог</Link>
             <Link to={"/admin"}>Админка</Link>
             <Link to={"/products"}>Товары</Link>
-
             <AppRouter />
+            <Footer />
         </div>
     );
 }

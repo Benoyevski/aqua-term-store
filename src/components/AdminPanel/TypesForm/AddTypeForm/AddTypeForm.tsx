@@ -78,8 +78,8 @@ export const AddTypeForm: React.FC = ({ className }: AddTypeFormProps) => {
                     />
                 </div>
                 <div>
-                    <input onChange={handleImageChange} type='file' id='file' />
-                    <label htmlFor='file' className={cls.btn}>
+                    <input onChange={handleImageChange} type='file' id='image' />
+                    <label htmlFor='image' className={cls.btn}>
                         Выбрать картинку
                     </label>
                 </div>
