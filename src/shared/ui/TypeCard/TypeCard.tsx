@@ -1,0 +1,19 @@
+import { IType } from "../../../app/types/types";
+import { classNames } from "../../classNames/classNames";
+import cls from "./TypeCard.module.scss";
+
+interface TypeCardProps {
+    className?: string;
+    type: IType;
+}
+
+export const TypeCard = ({ className, type }: TypeCardProps) => {
+    return (
+        <div className={classNames(cls.TypeCard, {}, [className])}>
+            <div>
+                <img src={`http://localhost:5000/${type.image}`} alt={type.title} />
+            </div>
+            <p>{type.title}</p>
+        </div>
+    );
+};

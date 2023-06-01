@@ -1,0 +1,56 @@
+.CategoryList {
+    display: flex;
+    border: 1px solid rgb(240, 240, 240);
+    width: 50%;
+    padding: 20px;
+    align-items: start;
+    min-height: 200px;
+
+    &:hover {
+        box-shadow: 0px 0px 20px 5px rgba(199, 199, 199, 0.458);
+        filter: brightness(1.1);
+        transition: all 0.2s;
+    }
+}
+
+.imgWrapper {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgWrapper img {
+    max-width: 200px;
+    object-fit: contain;
+    padding: 0 35px 10px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+    
+}
+.productsTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.productsTitle h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    
+    &:hover {
+        cursor: pointer;
+        color: rgb(228, 1, 1);
+    }
+}
+
+.typeTitle {
+    font-size: 14px;
+
+    &:hover {
+        cursor: pointer;
+        color: rgb(221, 0, 0);
+    }
+}

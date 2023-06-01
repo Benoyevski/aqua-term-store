@@ -22,3 +22,5 @@ export interface IProduct {
     country?: string;
     fabricator?: string;
 }
+
+export type ItemsToCard = IType | IProduct;
