@@ -6,10 +6,12 @@ import cls from "./CategoryCard.module.scss";
 interface CategoryCardProps {
     className?: string;
     category: ICategory;
-    types: IType[];
+    typeList: IType[];
 }
 
-export const CategoryCard = ({ className, category, types }: CategoryCardProps) => {
+export const CategoryCard = ({ className, category, typeList }: CategoryCardProps) => {
+    const types = typeList.filter((type) => type.category === category._id);
+
     return (
         <li className={classNames(cls.CategoryList, {}, [className])} key={category.title}>
             <div className={cls.imgWrapper}>
