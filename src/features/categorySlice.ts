@@ -14,6 +14,33 @@ const initialState: CategoryState = {
     error: null,
 };
 
+export const incrementCategoryPopularity = createAsyncThunk(
+    "category/incrementCategoryPopularity",
+    async (categoryId: string, { dispatch, rejectWithValue }) => {
+        try {
+            const response = await fetch(
+                `http://localhost:5000/categories/incPopularity/${categoryId}`,
+                {
+                    method: "PATCH",
+                },
+            );
+
+            if (!response.ok) {
+                throw new Error("Ошибка при увеличении популярности категории");
+            }
+
+            const updatedCategory: ICategory = await response.json();
+
+            // Отправляем новое значение в Redux для обновления состояния
+            dispatch(updateCategoryPopularity(updatedCategory));
+
+            return updatedCategory;
+        } catch (error) {
+            return rejectWithValue((error as Error).message);
+        }
+    },
+);
+
 export const addCategory = createAsyncThunk(
     "category/addCategory",
     async (formData: FormData, { rejectWithValue }) => {
@@ -48,7 +75,15 @@ export const fetchCategories = createAsyncThunk("category/fetchCategories", asyn
 export const categorySlice = createSlice({
     name: "category",
     initialState,
-    reducers: {},
+    reducers: {
+        updateCategoryPopularity: (state, action: PayloadAction<ICategory>) => {
+            const updatedCategory = action.payload;
+            const categoryIndex = state.items.findIndex((c) => c._id === updatedCategory._id);
+            if (categoryIndex !== -1) {
+                state.items[categoryIndex].popularity = updatedCategory.popularity;
+            }
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchCategories.pending, (state) => {
@@ -68,8 +103,24 @@ export const categorySlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.items.push(action.payload);
-            });
+            })
+            .addCase(
+                incrementCategoryPopularity.fulfilled,
+                (state, action: PayloadAction<ICategory>) => {
+                    state.isLoading = false;
+                    state.error = null;
+                    const updatedCategory = action.payload;
+                    const categoryIndex = state.items.findIndex(
+                        (c) => c._id === updatedCategory._id,
+                    );
+                    if (categoryIndex !== -1) {
+                        state.items[categoryIndex].popularity = updatedCategory.popularity;
+                    }
+                },
+            );
     },
 });
+
+export const { updateCategoryPopularity } = categorySlice.actions;
 
 export default categorySlice.reducer;

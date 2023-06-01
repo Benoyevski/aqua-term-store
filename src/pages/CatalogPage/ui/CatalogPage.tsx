@@ -28,7 +28,7 @@ const CatalogPage = () => {
             ) : (
                 <ul className={cls.Catalog}>
                     {categoryList.map((item) => {
-                        return <CategoryCard category={item} typeList={typesList} />;
+                        return <CategoryCard key={item._id} category={item} typeList={typesList} />;
                     })}
                 </ul>
             )}

@@ -2,6 +2,7 @@ export interface ICategory {
     _id: string;
     title: string;
     image: string;
+    popularity: number;
 }
 
 export interface IType {
@@ -21,6 +22,7 @@ export interface IProduct {
     description?: string;
     country?: string;
     fabricator?: string;
+    popularity: number;
 }
 
 export type ItemsToCard = IType | IProduct;
