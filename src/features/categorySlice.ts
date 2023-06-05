@@ -65,7 +65,6 @@ export const addCategory = createAsyncThunk(
 export const fetchCategories = createAsyncThunk("category/fetchCategories", async (_, thunkAPI) => {
     try {
         const res = await fetch("http://localhost:5000/categories", {
-            method: "GET",
             headers: {
                 "Cache-Control": "public, max-age=36000",
                 Expires: "Tue, 01 Jan 2024 00:00:00 GMT",
