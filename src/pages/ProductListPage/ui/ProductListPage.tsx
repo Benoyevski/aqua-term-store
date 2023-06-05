@@ -1,17 +1,17 @@
 import { useEffect } from "react";
 import { classNames } from "../../../shared/classNames/classNames";
-import cls from "./ProductList.module.scss";
+import cls from "./ProductListPage.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
 import { fetchProducts } from "../../../features/productSlice";
 import { fetchTypes } from "../../../features/typeSlice";
 import { useParams } from "react-router-dom";
 import { CardList } from "../../../shared/ui/CardList/CardList";
 
-interface ProductListProps {
+interface ProductListPageProps {
     className?: string;
 }
 
-export const ProductList = ({ className }: ProductListProps) => {
+export const ProductListPage = ({ className }: ProductListPageProps) => {
     const dispatch = useAppDispatch();
     const { id } = useParams();
     const allProducts = useAppSelector((state) => state.product.items);
@@ -26,7 +26,7 @@ export const ProductList = ({ className }: ProductListProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProductList, {}, [className])}>
+        <div className={classNames(cls.ProductListPage, {}, [className])}>
             <div className={cls.productListWrapper}>
                 <div className={cls.container}>
                     <CardList items={types} />
@@ -41,4 +41,4 @@ export const ProductList = ({ className }: ProductListProps) => {
     );
 };
 
-export default ProductList;
+export default ProductListPage;

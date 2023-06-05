@@ -9,9 +9,15 @@ interface CategoryCardProps {
     className?: string;
     category: ICategory;
     typeList: IType[];
+    popularBlock?: boolean;
 }
 
-export const CategoryCard = ({ className, category, typeList }: CategoryCardProps) => {
+export const CategoryCard = ({
+    className,
+    category,
+    typeList,
+    popularBlock,
+}: CategoryCardProps) => {
     const types = typeList.filter((type) => type.category === category._id);
     const dispatch = useAppDispatch();
 
@@ -20,14 +26,22 @@ export const CategoryCard = ({ className, category, typeList }: CategoryCardProp
     };
 
     return (
-        <li className={classNames(cls.CategoryList, {}, [className])} key={category.title}>
+        <li
+            className={classNames(cls.CategoryList, { [cls.popularCard]: popularBlock }, [
+                className,
+            ])}
+            key={category.title}
+        >
             <div className={cls.imgWrapper}>
-                <img src={`http://localhost:5000/${category.image}`} alt={category.title} />
+                <img
+                    src={`http://localhost:5000/${category.image}`}
+                    alt={category.title}
+                    key={category._id}
+                />
             </div>
             <div className={cls.productsTitle}>
-                <h3 onClick={handleIncrementPopularity}>
-                    {category.title}
-                    {category.popularity}
+                <h3 className={cls.title} onClick={handleIncrementPopularity}>
+                    <Link to={`/products/${category._id}`}> {category.title}</Link>
                 </h3>
                 <ul className={cls.typesList}>
                     {types.map((el) => {

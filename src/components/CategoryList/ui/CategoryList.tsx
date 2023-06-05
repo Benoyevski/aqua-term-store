@@ -1,0 +1,57 @@
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { classNames } from "../../../shared/classNames/classNames";
+import { CategoryCard } from "../../../shared/ui/CategoryCard/CategoryCard";
+import cls from "./CategoryList.module.scss";
+import { fetchCategories } from "../../../features/categorySlice";
+import { fetchTypes } from "../../../features/typeSlice";
+import { Loader } from "../../../shared/ui/Loader/Loader";
+
+interface CategoryListProps {
+    className?: string;
+    popularity?: boolean;
+}
+
+export const CategoryList = ({ className, popularity }: CategoryListProps) => {
+    const dispatch = useAppDispatch();
+    const categories = useAppSelector((state) => state.category.items);
+    const types = useAppSelector((state) => state.typeSlice.items);
+    const isLoading = useAppSelector((state) => state.category.isLoading);
+    // const isLoading = false
+
+    useEffect(() => {
+        // Проверяем, есть ли данные о категориях и типах в хранилище Redux
+        if (categories.length === 0) {
+            dispatch(fetchCategories());
+        }
+
+        if (types.length === 0) {
+            dispatch(fetchTypes());
+        }
+    }, [dispatch, categories, types]);
+
+    const sortedCategories = popularity
+        ? [...categories].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
+        : categories;
+
+    return (
+        <ul className={classNames(cls.CategoryList, {}, [className])}>
+            {isLoading ? (
+                <div className={cls.loader}>
+                    <Loader />
+                </div>
+            ) : (
+                sortedCategories.map((category) => {
+                    return (
+                        <CategoryCard
+                            popularBlock={popularity}
+                            category={category}
+                            typeList={types}
+                            key={category._id}
+                        />
+                    );
+                })
+            )}
+        </ul>
+    );
+};

@@ -1,1 +1,1 @@
-export { ProductListAsync as ProductList } from "./ui/ProductList.async";
+export { ProductListPageAsync as ProductListPage } from "./ui/ProductListPage.async";
