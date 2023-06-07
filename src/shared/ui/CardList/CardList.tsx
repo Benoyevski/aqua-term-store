@@ -15,9 +15,9 @@ export const CardList: FC<CardListProps> = ({ className, items }) => {
         <div className={classNames(cls.CardList, {}, [className])}>
             {items.map((item) => {
                 if ("price" in item) {
-                    return <ProductCard prod={item} />;
+                    return <ProductCard key={item._id} prod={item} />;
                 } else if ("title" in item) {
-                    return <TypeCard type={item} />;
+                    return <TypeCard key={item._id} type={item} />;
                 } else {
                     return (
                         <div>

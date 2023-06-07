@@ -1,0 +1,53 @@
+.ProductPage {
+    
+}
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.productPageContent {
+    width: 100%;
+    min-height: 500px;
+
+}
+
+.ProductPage h1 {
+    margin-bottom: 30px;
+}
+
+.prodImage {
+    border: 1px solid #efefef;
+    padding: 30px 0;
+    display: flex;
+    
+}
+
+.prodImage img {
+    width: 40%;
+}
+
+.prodMainInfo {
+    width: 60%;
+    padding: 0 20px;
+}
+
+.fabricator {
+    border-bottom: 1px solid #efefef;
+    padding: 15px 0;
+}
+
+.prodPrice {
+    font-size: 24px;
+    padding: 15px 0;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 50px;
+    margin-bottom: 20px;
+}
+
+.info {
+
+}
