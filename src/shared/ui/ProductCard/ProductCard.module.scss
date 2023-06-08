@@ -17,13 +17,16 @@
     }
 }
 
-.ProductCard div {
+
+
+
+.imageWrapper {
     width: 160px;
     height: 160px;    
     margin-bottom: 10px;
 }
 
-.ProductCard img {
+.imageWrapper img {
     width: 160px;
     height: 160px;   
 }
@@ -34,4 +37,23 @@
 
 .ProductCard h4 {
     cursor: pointer;
+}
+
+.ProductCardPopular {
+    width: 25%;
+    height: 250px;
+
+    .imageWrapper {
+        width: 120px;
+        height: 120px;  
+    }
+
+    img {
+        width: 120px;
+        height: 120px;   
+    }
+
+    h4 {
+        font-size: 13px;
+    }
 }

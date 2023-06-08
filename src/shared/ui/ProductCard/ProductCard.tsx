@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 interface ProductCardProps {
     className?: string;
     prod: IProduct;
+    popularity?: boolean;
 }
-export const ProductCard = ({ className, prod }: ProductCardProps) => {
+export const ProductCard = ({ className, prod, popularity }: ProductCardProps) => {
     const dispatch = useAppDispatch();
 
     const handleIncrementPopularity = () => {
@@ -17,8 +18,12 @@ export const ProductCard = ({ className, prod }: ProductCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProductCard, {}, [className])}>
-            <div>
+        <div
+            className={classNames(cls.ProductCard, { [cls.ProductCardPopular]: popularity }, [
+                className,
+            ])}
+        >
+            <div className={cls.imageWrapper}>
                 <img src={`http://localhost:5000/${prod.image}`} alt={prod.name} />
             </div>
             <h4 onClick={handleIncrementPopularity} className={cls.prodTitle}>

@@ -35,7 +35,7 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
                 </div>
             ) : (
                 sortedProducts.map((product) => {
-                    return <ProductCard key={product._id} prod={product} />;
+                    return <ProductCard key={product._id} prod={product} popularity />;
                 })
             )}
         </ul>
