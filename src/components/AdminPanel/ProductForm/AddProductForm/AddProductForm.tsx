@@ -14,6 +14,9 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
     const dispatch = useAppDispatch();
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
+    const [description, setDescription] = useState("");
+    const [country, setCountry] = useState("");
+    const [fabricator, setFabricator] = useState("");
     const [image, setImage] = useState<File | null>(null);
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedType, setSelectedType] = useState("");
@@ -21,20 +24,13 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
     const categories = useAppSelector((state) => state.category.items);
     const types = useAppSelector((state) => state.typeSlice.items);
 
-    const addBtnDisable = title && image && selectedCategory && selectedType && price ? false : true;
+    const addBtnDisable =
+        title && image && selectedCategory && selectedType && price ? false : true;
 
     useEffect(() => {
         dispatch(fetchCategories());
         dispatch(fetchTypes());
     }, [dispatch]);
-
-    const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setTitle(event.target.value);
-    };
-
-    const handlePriceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPrice(event.target.value);
-    };
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (event.target.files && event.target.files.length > 0) {
@@ -42,11 +38,16 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
         }
     };
 
+    console.log(image);
+
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         const formData = new FormData();
         formData.append("name", title);
         formData.append("price", price);
+        formData.append("country", country);
+        formData.append("description", description);
+        formData.append("fabricator", fabricator);
         formData.append("category", selectedCategory);
         formData.append("type", selectedType);
         if (image) {
@@ -56,9 +57,12 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
         dispatch(addProduct(formData));
         setTitle("");
         setImage(null);
-        setPrice('')
-        setSelectedCategory('')
-        setSelectedType('')
+        setPrice("");
+        setDescription("");
+        setCountry("");
+        setFabricator("");
+        // setSelectedCategory("");
+        // setSelectedType("");
     };
 
     const handleSelectCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -111,7 +115,7 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
                         type='text'
                         id='title'
                         value={title}
-                        onChange={handleTitleChange}
+                        onChange={(e) => setTitle(e.target.value)}
                     />
                     <label htmlFor='title'>Цена:</label>
                     <input
@@ -119,12 +123,36 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
                         type='text'
                         id='price'
                         value={price}
-                        onChange={handlePriceChange}
+                        onChange={(e) => setPrice(e.target.value)}
+                    />
+                    <label htmlFor='description'>Описание:</label>
+                    <input
+                        className={cls.textInput}
+                        type='text'
+                        id='description'
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                    <label htmlFor='country'>Страна:</label>
+                    <input
+                        className={cls.textInput}
+                        type='text'
+                        id='country'
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                    />
+                    <label htmlFor='fabricator'>Производитель:</label>
+                    <input
+                        className={cls.textInput}
+                        type='text'
+                        id='fabricator'
+                        value={fabricator}
+                        onChange={(e) => setFabricator(e.target.value)}
                     />
                 </div>
                 <div>
-                    <input onChange={handleImageChange} type='file' id='image' />
-                    <label htmlFor='image' className={cls.btn}>
+                    <input onChange={handleImageChange} type='file' id='prodImg' />
+                    <label htmlFor='prodImg' className={cls.btn}>
                         Выбрать картинку
                     </label>
                 </div>

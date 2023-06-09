@@ -10,6 +10,7 @@ interface ProductCardProps {
     prod: IProduct;
     popularity?: boolean;
 }
+
 export const ProductCard = ({ className, prod, popularity }: ProductCardProps) => {
     const dispatch = useAppDispatch();
 
