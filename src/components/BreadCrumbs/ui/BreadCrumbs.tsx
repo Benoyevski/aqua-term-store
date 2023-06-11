@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import cls from "./BreadCrumbs.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
 import { useEffect } from "react";
 import { fetchCategories } from "../../../features/categorySlice";
+import cls from "./Breadcrumbs.module.scss";
 
 export const Breadcrumbs = () => {
     const dispatch = useAppDispatch();
@@ -18,21 +18,17 @@ export const Breadcrumbs = () => {
     const pathnames = location.pathname.split("/").filter((x) => x);
 
     return (
-        <div className={cls.BreadCrumbs}>
+        <div className={cls.Breadcrumbs}>
             <nav className={cls.container}>
-                <ul className={cls.breadCrumbsList}>
+                <ul className={cls.breadcrumbsList}>
                     {pathnames.map((value, index) => {
                         const last = index === pathnames.length - 1;
                         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-
-                        // Проверяем, является ли текущее значение _id категории
                         const category = categories.find((category) => category._id === value);
-                        // Проверяем, является ли текущее значение _id продукта
                         const product = products.find((product) => product._id === value);
 
                         return (
-                            <div key={index}>
-                                <li>
+                                <li key={index}>
                                     {last ? (
                                         category ? (
                                             category.title
@@ -54,7 +50,6 @@ export const Breadcrumbs = () => {
                                         </>
                                     )}
                                 </li>
-                            </div>
                         );
                     })}
                 </ul>
