@@ -17,7 +17,6 @@ export const CategoryList = ({ className, popularity }: CategoryListProps) => {
     const categories = useAppSelector((state) => state.category.items);
     const types = useAppSelector((state) => state.typeSlice.items);
     const isLoading = useAppSelector((state) => state.category.isLoading);
-    // const isLoading = false
 
     useEffect(() => {
         // Проверяем, есть ли данные о категориях и типах в хранилище Redux
