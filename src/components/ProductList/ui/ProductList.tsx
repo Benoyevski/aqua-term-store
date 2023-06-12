@@ -17,7 +17,6 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
     const isLoading = useAppSelector((state) => state.product.isLoading);
 
     useEffect(() => {
-        // Проверяем, есть ли данные о категориях и типах в хранилище Redux
         if (products.length === 0) {
             dispatch(fetchProducts());
         }

@@ -27,7 +27,7 @@ export const Breadcrumbs = () => {
     const pathnames = location.pathname.split("/").filter((x) => x);
 
     return (
-        <div className={cls.Breadcrumbs}>
+        location.pathname === '/' ? null : <div className={cls.Breadcrumbs}>
             <nav className={cls.container}>
                 <ul className={cls.breadcrumbsList}>
                     {location.pathname === "/" ? null : (
@@ -45,18 +45,26 @@ export const Breadcrumbs = () => {
                         const category = categories.find((category) => category._id === value);
                         const product = products.find((product) => product._id === value);
 
-                        // Проверяем, есть ли соответствующее название маршрута
                         const routeName = routeNames[value];
 
                         return (
                             <li className={cls.breadcrumbItem} key={index}>
                                 {last ? (
                                     category ? (
-                                        category.title
+                                        <div className={cls.currentBreadcrumb}>
+                                        <p>{category.title}</p>
+                                        <h1>{category.title}</h1>
+                                    </div>
                                     ) : product ? (
-                                        product.name
+                                        <div className={cls.currentBreadcrumb}>
+                                        <p>{product.name}</p>
+                                        <h1>{product.name}</h1>
+                                    </div>
                                     ) : (
-                                        routeName || ""
+                                        <div className={cls.currentBreadcrumb}>
+                                            <p>{routeName || ""}</p>
+                                            <h1>{routeName || ""}</h1>
+                                        </div>
                                     )
                                 ) : (
                                     <li className={cls.breadcrumbItem}>

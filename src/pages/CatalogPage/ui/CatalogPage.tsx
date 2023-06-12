@@ -4,7 +4,6 @@ import { CategoryList } from "../../../components/CategoryList/ui/CategoryList";
 const CatalogPage = () => {
     return (
         <div className={cls.container}>
-            <h1>Каталог</h1>
             <div className={cls.Catalog}>
                 <CategoryList popularity={false} />
             </div>

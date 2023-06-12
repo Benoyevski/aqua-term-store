@@ -22,7 +22,6 @@ const ProductPage = ({ className }: ProductPageProps) => {
     return (
         <div className={classNames(cls.ProductPage, {}, [className])}>
             <div className={cls.container}>
-                <h1>{product?.name}</h1>
                 <div className={cls.productPageContent}>
                     <div className={cls.prodImage}>
                         <img src={`http://localhost:5000/${product?.image}`} alt='productImage' />
