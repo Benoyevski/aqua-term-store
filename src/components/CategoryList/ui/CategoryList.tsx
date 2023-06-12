@@ -30,7 +30,7 @@ export const CategoryList = ({ className, popularity }: CategoryListProps) => {
     }, [dispatch, categories, types]);
 
     const sortedCategories = popularity
-        ? [...categories].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
+        ? [...categories].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, 9)
         : categories;
 
     return (

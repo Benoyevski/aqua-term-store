@@ -15,6 +15,20 @@
     margin: 0 auto;
 }
 
-.breadCrumbDash {
+.breadcrumbItem {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(145, 145, 145);
+}
+
+.breadcrumbItemLink {
+    font-size: 14px;
+    font-weight: 600;
+    color: #919191;
+    border-bottom: 1px dashed #919191;
+}
+
+.breadcrumbDash {
     margin: 0 20px;
 }
+

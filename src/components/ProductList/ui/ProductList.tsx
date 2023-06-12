@@ -24,7 +24,7 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
     }, [dispatch, products]);
 
     const sortedProducts = popularity
-        ? [...products].sort((a, b) => (b.popularity || 0) - (a.popularity || 0))
+        ? [...products].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0,20)
         : products;
 
     return (
