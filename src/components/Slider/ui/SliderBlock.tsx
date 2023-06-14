@@ -30,10 +30,10 @@ export const SliderBlock = ({ className }: SliderBlockProps) => {
                         <img src='slider1.jpg' alt='slider' />
                         <div className={cls.sliderText}>
                             <h3>
-                                Котлы, радиаторы, <br /> обогреватели, радиаторы, <br />
+                                Котлы, радиаторы, <br /> обогреватели, водонагреватели, <br />
                                 теплый пол
                             </h3>
-                            <p>Все для гарантии тепла и комфорта в вашем доме по лучшим ценам!</p>
+                            <p>Все для гарантии тепла и комфорта <br/> в вашем доме по лучшим ценам!</p>
                         </div>
                     </div>
                     <div className={cls.columnSlides}>
