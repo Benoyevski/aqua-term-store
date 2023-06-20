@@ -43,7 +43,7 @@ export const Search: FC = ({ className }: SearchProps) => {
                 <img
                     onClick={handleInputActive}
                     className={cls.searchIcon}
-                    src='src/shared/assets/search.png'
+                    src='search.png'
                     alt='lupa'
                 />
             </div>

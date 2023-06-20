@@ -1,3 +1,18 @@
+export interface IUser {
+    _id: string;
+    login: string;
+    password: string;
+    email: string;
+    avatar: string;
+    role: string;
+}
+
+export interface ILoginFormData {
+    login: string;
+    email: string;
+    password: string;
+}
+
 export interface ICategory {
     _id: string;
     title: string;

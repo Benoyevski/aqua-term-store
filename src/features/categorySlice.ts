@@ -76,6 +76,8 @@ export const fetchCategories = createAsyncThunk("category/fetchCategories", asyn
         return thunkAPI.rejectWithValue(e);
     }
 });
+
+
 export const categorySlice = createSlice({
     name: "category",
     initialState,

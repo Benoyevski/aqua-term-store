@@ -13,7 +13,6 @@ function App() {
             <Link to={"/about"}>О сайте</Link>
             <Link to={"/catalog"}>Каталог</Link>
             <Link to={"/admin"}>Админка</Link>
-            <Link to={"/products"}>Товары</Link>
             <Navbar />
             <Breadcrumbs />
             <AppRouter />
