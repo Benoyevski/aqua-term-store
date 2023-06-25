@@ -20,12 +20,14 @@
 }
 
 .content {
-    padding: 20px;
+    padding: 40px;
     border-radius: 12px;
     background: #fff;
     transition: 0.3s transform;
     transform: scale(0.5);
-    max-width: 60%;
+    width: 40%;
+    min-height: 450px;
+    overflow: hidden;
 }
 
 .opened {

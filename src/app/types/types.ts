@@ -7,10 +7,21 @@ export interface IUser {
     role: string;
 }
 
-export interface ILoginFormData {
+export interface IRegisterData {
     login: string;
     email: string;
     password: string;
+}
+
+export interface IUserAuthData {
+    _id: string,
+    login:string,
+    email: string,
+    password: string,
+    avatar:string,
+    role: string,
+    token: string,
+    message?: string;
 }
 
 export interface ICategory {
