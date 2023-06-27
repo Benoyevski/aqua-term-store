@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { addCategory } from "../../../../features/categorySlice";
-import { useAppDispatch } from "../../../../app/utils/hooks";
+import { useAppDispatch } from "../../../../shared/utils/hooks/hooks";
 import cls from "./CategoryAddForm.module.scss";
-import { classNames } from "../../../../shared/classNames/classNames";
+import { classNames } from "../../../../shared/utils/classNames/classNames";
 
 interface CategoryAddForm {
     className?: string;

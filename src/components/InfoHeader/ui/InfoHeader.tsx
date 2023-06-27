@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import cls from "./InfoHeader.module.scss";
 import { Modal } from "../../../shared/ui/Modal/Modal";
 import { LoginForm } from "../../LoginForm";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { logout } from "../../../features/userSlice";
 
 export const InfoHeader = () => {
     const dispatch = useAppDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const token = useAppSelector((state) => state.user.token);
-    const login = useAppSelector((state) => state.user.login);
+    const login = localStorage.getItem("login");
 
     const handleOpenModal = useCallback(() => {
         setIsAuthModal(true);

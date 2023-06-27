@@ -1,7 +1,7 @@
 import cls from "./ProductCard.module.scss";
-import { IProduct } from "../../../app/types/types";
-import { classNames } from "../../classNames/classNames";
-import { useAppDispatch } from "../../../app/utils/hooks";
+import { IProduct } from "../../types/types";
+import { classNames } from "../../utils/classNames/classNames";
+import { useAppDispatch } from "../../utils/hooks/hooks";
 import { incrementProductPopularity } from "../../../features/productSlice";
 import { Link } from "react-router-dom";
 

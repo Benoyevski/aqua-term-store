@@ -1,4 +1,4 @@
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./Footer.module.scss";
 
 interface FooterProps {
@@ -15,8 +15,8 @@ export const Footer = ({ className }: FooterProps) => {
                     <li>Контакты</li>
                 </ul>
 
-                <hr/>
-                <p>2023 © интернет-магазин AQUATERM. Чеченская Республика, г.Урус-Мартан  </p>
+                <hr />
+                <p>2023 © интернет-магазин AQUATERM. Чеченская Республика, г.Урус-Мартан </p>
             </div>
         </footer>
     );

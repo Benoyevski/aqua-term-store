@@ -7,6 +7,7 @@ import AdminPage from "../../../../pages/AdminPage/ui/AdminPage";
 import { ProductListPage } from "../../../../pages/ProductListPage";
 import { Loader } from "../../../../shared/ui/Loader/Loader";
 import { ProductPage } from "../../../../pages/ProductPage";
+import { ProfilePage } from "../../../../pages/ProfilePage";
 
 const AppRouter = () => {
     return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/catalog"} element={<CatalogPage />} />
+                <Route path={"/profile"} element={<ProfilePage />} />
                 <Route path={"/admin"} element={<AdminPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />

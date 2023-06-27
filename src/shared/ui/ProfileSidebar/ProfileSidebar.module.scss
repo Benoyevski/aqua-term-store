@@ -1,0 +1,32 @@
+.ProfileSidebar {
+    width: 200px;
+    border: 1px solid #f0eeee;
+}
+
+.sidebarItem, .logout {
+    border-left: 4px solid transparent;
+    border-bottom: 1px solid #f0eeee;
+    padding: 13px;
+    background: #f3f3f3;
+    color: #000;
+
+    &:hover {
+        color: #c61811;
+        border-left: 4px solid #c61811;
+    }
+}
+
+
+.logout {
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.activeItem {
+    border-left: 4px solid transparent;
+    border-bottom: 1px solid #c61811;
+    padding: 10px;
+    background: #c61811;
+    color: #fff;
+
+}

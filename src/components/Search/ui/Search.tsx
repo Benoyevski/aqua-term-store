@@ -1,10 +1,10 @@
 import { ChangeEvent, FC, useEffect } from "react";
 import { useState } from "react";
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./Search.module.scss";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { fetchProducts } from "../../../features/productSlice";
-import { IProduct } from "../../../app/types/types";
+import { IProduct } from "../../../shared/types/types";
 
 interface SearchProps {
     className?: string;

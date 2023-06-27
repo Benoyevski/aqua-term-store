@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
-import { classNames } from "../../../shared/classNames/classNames";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import { CategoryCard } from "../../../shared/ui/CategoryCard/CategoryCard";
 import cls from "./CategoryList.module.scss";
 import { fetchCategories } from "../../../features/categorySlice";

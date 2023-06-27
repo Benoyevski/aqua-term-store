@@ -1,4 +1,4 @@
-import { classNames } from "../../shared/classNames/classNames";
+import { classNames } from "../../shared/utils/classNames/classNames";
 import { CategoryList } from "../CategoryList/ui/CategoryList";
 import { ProductList } from "../ProductList";
 import cls from "./PopularCategories.module.scss";

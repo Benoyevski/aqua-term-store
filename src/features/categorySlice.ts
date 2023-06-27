@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ICategory } from "../app/types/types";
+import { ICategory } from "../shared/types/types";
 
 interface CategoryState {
     items: ICategory[];
@@ -76,7 +76,6 @@ export const fetchCategories = createAsyncThunk("category/fetchCategories", asyn
         return thunkAPI.rejectWithValue(e);
     }
 });
-
 
 export const categorySlice = createSlice({
     name: "category",

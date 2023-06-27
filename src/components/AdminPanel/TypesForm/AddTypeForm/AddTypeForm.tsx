@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../../app/utils/hooks";
-import { classNames } from "../../../../shared/classNames/classNames";
+import { useAppDispatch, useAppSelector } from "../../../../shared/utils/hooks/hooks";
+import { classNames } from "../../../../shared/utils/classNames/classNames";
 import cls from "./AddTypeForm.module.scss";
 import { addType } from "../../../../features/typeSlice";
 import { fetchCategories } from "../../../../features/categorySlice";

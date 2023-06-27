@@ -1,5 +1,5 @@
 import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IRegisterData, IUser, IUserAuthData } from "../app/types/types";
+import { IRegisterData, IUser, IUserAuthData } from "../shared/types/types";
 
 interface UserState {
     user: IUserAuthData | null;

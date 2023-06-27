@@ -1,5 +1,5 @@
-import { IType } from "../../../app/types/types";
-import { classNames } from "../../classNames/classNames";
+import { IType } from "../../types/types";
+import { classNames } from "../../utils/classNames/classNames";
 import cls from "./TypeCard.module.scss";
 
 interface TypeCardProps {

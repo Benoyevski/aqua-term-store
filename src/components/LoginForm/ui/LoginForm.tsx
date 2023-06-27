@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
-import { classNames } from "../../../shared/classNames/classNames";
+import { useAppDispatch } from "../../../shared/utils/hooks/hooks";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./LoginForm.module.scss";
 import { authorization, register } from "../../../features/userSlice";
 

@@ -1,7 +1,7 @@
 import { CategoryAddForm } from "../../../components/AdminPanel";
 import { AddProductForm } from "../../../components/AdminPanel/ProductForm/AddProductForm/AddProductForm";
 import { AddTypeForm } from "../../../components/AdminPanel/TypesForm/AddTypeForm/AddTypeForm";
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./AdminPage.module.scss";
 
 interface AdminPageProps {

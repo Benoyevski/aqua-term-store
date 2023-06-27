@@ -1,4 +1,4 @@
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import { Logo } from "../../../shared/ui/Logo/Logo";
 import { Menu } from "../../../shared/ui/Menu/Menu";
 import { Search } from "../../Search";

@@ -1,18 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { useEffect } from "react";
 import { fetchCategories } from "../../../features/categorySlice";
 import cls from "./Breadcrumbs.module.scss";
 import { fetchProducts } from "../../../features/productSlice";
+import { routeNames } from "../../../shared/utils/const/common";
 
 export const Breadcrumbs = () => {
-    const routeNames: { [key: string]: string } = {
-        catalog: "Каталог",
-        about: "О сайте",
-        contacts: "Контакты",
-        fabricators: "Производители",
-    };
-
     const dispatch = useAppDispatch();
     const location = useLocation();
 
@@ -26,8 +20,8 @@ export const Breadcrumbs = () => {
 
     const pathnames = location.pathname.split("/").filter((x) => x);
 
-    return (
-        location.pathname === '/' ? null : <div className={cls.Breadcrumbs}>
+    return location.pathname === "/" ? null : (
+        <div className={cls.Breadcrumbs}>
             <nav className={cls.container}>
                 <ul className={cls.breadcrumbsList}>
                     {location.pathname === "/" ? null : (
@@ -52,14 +46,14 @@ export const Breadcrumbs = () => {
                                 {last ? (
                                     category ? (
                                         <div className={cls.currentBreadcrumb}>
-                                        <p>{category.title}</p>
-                                        <h1>{category.title}</h1>
-                                    </div>
+                                            <p>{category.title}</p>
+                                            <h1>{category.title}</h1>
+                                        </div>
                                     ) : product ? (
                                         <div className={cls.currentBreadcrumb}>
-                                        <p>{product.name}</p>
-                                        <h1>{product.name}</h1>
-                                    </div>
+                                            <p>{product.name}</p>
+                                            <h1>{product.name}</h1>
+                                        </div>
                                     ) : (
                                         <div className={cls.currentBreadcrumb}>
                                             <p>{routeName || ""}</p>

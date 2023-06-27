@@ -14,13 +14,13 @@ export interface IRegisterData {
 }
 
 export interface IUserAuthData {
-    _id: string,
-    login:string,
-    email: string,
-    password: string,
-    avatar:string,
-    role: string,
-    token: string,
+    _id: string;
+    login: string;
+    email: string;
+    password: string;
+    avatar: string;
+    role: string;
+    token: string;
     message?: string;
 }
 
@@ -52,3 +52,14 @@ export interface IProduct {
 }
 
 export type ItemsToCard = IType | IProduct;
+
+export interface IMenuList {
+    title: string;
+    childrens?: Array<string>;
+    path: string;
+}
+
+export interface IProfileTabs {
+    title: string;
+    path: string;
+}

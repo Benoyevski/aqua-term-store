@@ -1,7 +1,7 @@
 import cls from "./ProductPage.module.scss";
 import { useEffect } from "react";
-import { classNames } from "../../../shared/classNames/classNames";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { classNames } from "../../../shared/utils/classNames/classNames";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { fetchProducts } from "../../../features/productSlice";
 import { useParams } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
-import { classNames } from "../../../shared/classNames/classNames";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./ProductList.module.scss";
 import { fetchProducts } from "../../../features/productSlice";
 import { Loader } from "../../../shared/ui/Loader/Loader";
@@ -23,7 +23,7 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
     }, [dispatch, products]);
 
     const sortedProducts = popularity
-        ? [...products].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0,20)
+        ? [...products].sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, 20)
         : products;
 
     return (

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { ICategory, IType } from "../../../app/types/types";
-import { classNames } from "../../classNames/classNames";
+import { ICategory, IType } from "../../types/types";
+import { classNames } from "../../utils/classNames/classNames";
 import cls from "./CategoryCard.module.scss";
-import { useAppDispatch } from "../../../app/utils/hooks";
+import { useAppDispatch } from "../../utils/hooks/hooks";
 import { incrementCategoryPopularity } from "../../../features/categorySlice";
 
 interface CategoryCardProps {

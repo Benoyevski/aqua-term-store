@@ -1,30 +1,6 @@
-import { classNames } from "../../classNames/classNames";
+import { Link } from "react-router-dom";
 import cls from "./Menu.module.scss";
-
-interface IMenuList {
-    title: string;
-    childrens?: Array<string>;
-}
-
-let menuList: IMenuList[] = [
-    {
-        title: "Каталог",
-        childrens: ["Котлы", "Радиаторы", "Обогреватели", "Кондиционеры", "Насосы"],
-    },
-    {
-        title: "Производители",
-    },
-    {
-        title: "Акции",
-    },
-    {
-        title: "О компании",
-        childrens: ["Лицензии", "Персональные данные"],
-    },
-    {
-        title: "Контакты",
-    },
-];
+import { menuList } from "../../utils/const/common";
 
 interface MenuProps {
     className?: string;
@@ -36,9 +12,9 @@ export const Menu = ({ className }: MenuProps) => {
             {menuList.map((item) => {
                 return (
                     <li key={item.title} className={cls.menuItemWrapper}>
-                        <p className={cls.menuItem} key={item.title}>
+                        <Link to={item.path} className={cls.menuItem} key={item.title}>
                             {item.title}
-                        </p>
+                        </Link>
                     </li>
                 );
             })}

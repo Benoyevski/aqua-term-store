@@ -1,7 +1,7 @@
 import { FC } from "react";
 import cls from "./CardList.module.scss";
-import { classNames } from "../../classNames/classNames";
-import { ItemsToCard } from "../../../app/types/types";
+import { classNames } from "../../utils/classNames/classNames";
+import { ItemsToCard } from "../../types/types";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { TypeCard } from "../TypeCard/TypeCard";
 

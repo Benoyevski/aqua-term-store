@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./ProductListPage.module.scss";
-import { useAppDispatch, useAppSelector } from "../../../app/utils/hooks";
+import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { fetchTypes } from "../../../features/typeSlice";
 import { useParams } from "react-router-dom";
 import { CardList } from "../../../shared/ui/CardList/CardList";

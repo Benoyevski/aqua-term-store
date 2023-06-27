@@ -1,4 +1,4 @@
-import { classNames } from "../../../shared/classNames/classNames";
+import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./SliderBlock.module.scss";
 
 interface SliderBlockProps {
@@ -33,7 +33,10 @@ export const SliderBlock = ({ className }: SliderBlockProps) => {
                                 Котлы, радиаторы, <br /> обогреватели, водонагреватели, <br />
                                 теплый пол
                             </h3>
-                            <p>Все для гарантии тепла и комфорта <br/> в вашем доме по лучшим ценам!</p>
+                            <p>
+                                Все для гарантии тепла и комфорта <br /> в вашем доме по лучшим
+                                ценам!
+                            </p>
                         </div>
                     </div>
                     <div className={cls.columnSlides}>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mods, classNames } from "../../classNames/classNames";
+import { Mods, classNames } from "../../utils/classNames/classNames";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
 

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { IType } from "../app/types/types";
+import { IType } from "../shared/types/types";
 
 interface TypeState {
     items: IType[];
@@ -34,7 +34,6 @@ export const addType = createAsyncThunk(
         }
     },
 );
-
 
 export const fetchTypes = createAsyncThunk("fetch/type", async (_, thunkAPI) => {
     try {
@@ -71,8 +70,7 @@ export const typeSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.items.push(action.payload);
-            })
-
+            });
     },
 });
 
