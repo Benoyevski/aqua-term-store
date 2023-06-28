@@ -1,14 +1,16 @@
-import React from 'react';
-import { ProfileSidebar } from '../../../shared/ui/ProfileSidebar/ProfileSidebar';
-import cls from './ProfilePage.module.scss'
+import React from "react";
+import cls from "./ProfilePage.module.scss";
+import { Outlet } from "react-router-dom";
+import { ProfileSidebar } from "../../../components/ProfileSidebar";
 
 const ProfilePage = () => {
     return (
         <div className={cls.profilePageWrapper}>
             <div className={cls.container}>
-            <ProfileSidebar />
-            {/* <Profile /> */}
-
+                <div className={cls.profilePage}>
+                    <ProfileSidebar />
+                    <Outlet />
+                </div>
             </div>
         </div>
     );

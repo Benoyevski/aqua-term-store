@@ -8,6 +8,8 @@ import { ProductListPage } from "../../../../pages/ProductListPage";
 import { Loader } from "../../../../shared/ui/Loader/Loader";
 import { ProductPage } from "../../../../pages/ProductPage";
 import { ProfilePage } from "../../../../pages/ProfilePage";
+import { ProfilePrivate } from "../../../../shared/ui/ProfilePrivate/ProfilePrivate";
+import { ProfileMenu } from "../../../../components/ProfileMenu";
 
 const AppRouter = () => {
     return (
@@ -16,10 +18,15 @@ const AppRouter = () => {
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/catalog"} element={<CatalogPage />} />
-                <Route path={"/profile"} element={<ProfilePage />} />
                 <Route path={"/admin"} element={<AdminPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
+                <Route path={"/profile"} element={<ProfilePage />}>
+                    <Route path={""} element={<ProfileMenu />} />
+                    <Route path={"private"} element={<ProfilePrivate />} />
+                    <Route path={"changePassword"} element={<ProfilePrivate />} />
+                    <Route path={"basket"} element={<ProfilePrivate />} />
+                </Route>
             </Routes>
         </Suspense>
     );

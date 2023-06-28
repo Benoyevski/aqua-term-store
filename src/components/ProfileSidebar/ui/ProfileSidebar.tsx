@@ -1,8 +1,9 @@
 import cls from "./ProfileSidebar.module.scss";
-import { classNames } from "../../utils/classNames/classNames";
-import { profileTabs } from "../../utils/const/common";
+import { classNames } from "../../../shared/utils/classNames/classNames";
+import { profileTabs } from "../../../shared/utils/const/common";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { ProfileSidebarItem } from "../../../shared/ui/ProfileSidebarItem/ProfileSidebarItem";
 
 interface ProfileSidebarProps {
     className?: string;
@@ -15,9 +16,11 @@ export const ProfileSidebar = ({ className }: ProfileSidebarProps) => {
         <ul className={classNames(cls.ProfileSidebar, {}, [className])}>
             {profileTabs.map((item) => {
                 return (
-                    <Link to={`/${item.path}`}>
-                        <li className={activeTab === item.path ? cls.activeItem : cls.sidebarItem}>{item.title}</li>
-                    </Link>
+                    <ProfileSidebarItem
+                        item={item}
+                        activeTab={activeTab}
+                        setActiveTab={setActiveTab}
+                    />
                 );
             })}
             <li className={cls.logout}>Выйти</li>

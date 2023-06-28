@@ -1,14 +1,15 @@
 .ProfileSidebar {
     width: 200px;
     border: 1px solid #f0eeee;
+    margin-right: 20px;
 }
 
-.sidebarItem, .logout {
+.logout {
     border-left: 4px solid transparent;
     border-bottom: 1px solid #f0eeee;
     padding: 13px;
     background: #f3f3f3;
-    color: #000;
+    color: #c61811;
 
     &:hover {
         color: #c61811;

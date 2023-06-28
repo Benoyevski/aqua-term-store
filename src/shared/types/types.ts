@@ -59,7 +59,7 @@ export interface IMenuList {
     path: string;
 }
 
-export interface IProfileTabs {
+export interface IProfileTab {
     title: string;
     path: string;
 }

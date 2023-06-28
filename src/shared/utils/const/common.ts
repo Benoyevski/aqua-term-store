@@ -1,4 +1,4 @@
-import { IMenuList, IProfileTabs } from "../../types/types";
+import { IMenuList, IProfileTab } from "../../types/types";
 
 export const menuList: IMenuList[] = [
     {
@@ -38,7 +38,7 @@ export const routeNames: { [key: string]: string } = {
     basket: 'Корзина',
 };
 
-export const profileTabs: IProfileTabs[] = [
+export const profileTabs: IProfileTab[] = [
     {
         title: "Мой кабинет",
         path: "profile",

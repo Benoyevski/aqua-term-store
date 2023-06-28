@@ -43,7 +43,7 @@ export const Search: FC = ({ className }: SearchProps) => {
                 <img
                     onClick={handleInputActive}
                     className={cls.searchIcon}
-                    src='search.png'
+                    src='icons/search.png'
                     alt='lupa'
                 />
             </div>
@@ -67,15 +67,15 @@ export const Search: FC = ({ className }: SearchProps) => {
                         className,
                     ])}
                 >
-                    {searchedProducts?.map((el) => (
-                        <div className={cls.searchItemWrapper}>
-                            <div className={cls.container}>
+                    <div className={cls.searchItemWrapper}>
+                        <div className={cls.container}>
+                            {searchedProducts?.map((el) => (
                                 <div className={cls.searchItem} key={el._id}>
                                     {el.name}
                                 </div>
-                            </div>
+                            ))}
                         </div>
-                    ))}
+                    </div>
                 </div>
             </div>
         </div>
