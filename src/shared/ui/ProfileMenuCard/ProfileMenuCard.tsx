@@ -1,15 +1,22 @@
+import { Link } from "react-router-dom";
 import cls from "./ProfileMenuCard.module.scss";
+import { IProfileTab } from "../../types/types";
 
 interface ProfileMenuCardProps {
-    image: string;
-    title: string;
+    item: IProfileTab;
+    activeTab: string;
+    setActiveTab: (tab: string) => void;
 }
 
-export const ProfileMenuCard = ({ image, title }: ProfileMenuCardProps) => {
+export const ProfileMenuCard = ({ item, activeTab, setActiveTab }: ProfileMenuCardProps) => {
     return (
-        <div className={cls.cardWrapper}>
-            <img className={cls.profileCardImage} src={image} alt={title} />
-            <p className={cls.profileCardTitle}>{title}</p>
-        </div>
+        <Link
+            to={`/${item.path}`}
+            onClick={() => setActiveTab(item.path)}
+            className={cls.cardWrapper}
+        >
+            <img className={cls.profileCardImage} src={item.image} alt={item.path} />
+            <p className={cls.profileCardTitle}>{item.title}</p>
+        </Link>
     );
 };

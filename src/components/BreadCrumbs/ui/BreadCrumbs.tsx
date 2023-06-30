@@ -61,7 +61,7 @@ export const Breadcrumbs = () => {
                                         </div>
                                     )
                                 ) : (
-                                    <li className={cls.breadcrumbItem}>
+                                    <div className={cls.breadcrumbItem}>
                                         <Link className={cls.breadcrumbItemLink} to={to}>
                                             {category
                                                 ? category.title
@@ -70,7 +70,7 @@ export const Breadcrumbs = () => {
                                                 : routeName || ""}
                                         </Link>
                                         <span className={cls.breadcrumbDash}>-</span>
-                                    </li>
+                                    </div>
                                 )}
                             </li>
                         );

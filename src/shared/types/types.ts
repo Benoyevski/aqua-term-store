@@ -62,4 +62,5 @@ export interface IMenuList {
 export interface IProfileTab {
     title: string;
     path: string;
+    image?: string;
 }

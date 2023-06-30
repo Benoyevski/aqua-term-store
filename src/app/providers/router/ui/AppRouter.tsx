@@ -26,6 +26,7 @@ const AppRouter = () => {
                     <Route path={"private"} element={<ProfilePrivate />} />
                     <Route path={"changePassword"} element={<ProfilePrivate />} />
                     <Route path={"basket"} element={<ProfilePrivate />} />
+                    <Route path={"wallet"} element={<ProfilePrivate />} />
                 </Route>
             </Routes>
         </Suspense>

@@ -4,21 +4,15 @@ import { Dispatch } from "react";
 import { IProfileTab } from "../../types/types";
 
 interface ProfileSidebarItemProps {
-    className?: string;
     item: IProfileTab;
     activeTab: string;
-    setActiveTab: Dispatch<React.SetStateAction<string>>;
+    setActiveTab: (tab: string) => void;
 }
 
-export const ProfileSidebarItem = ({
-    className,
-    item,
-    activeTab,
-    setActiveTab,
-}: ProfileSidebarItemProps) => {
+export const ProfileSidebarItem = ({ item, activeTab, setActiveTab }: ProfileSidebarItemProps) => {
     return (
         <Link to={`/${item.path}`}>
-            <li
+            <li 
                 onClick={() => setActiveTab(item.path)}
                 className={activeTab === item.path ? cls.activeItem : cls.sidebarItem}
             >

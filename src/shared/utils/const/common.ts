@@ -33,9 +33,10 @@ export const routeNames: { [key: string]: string } = {
     sale: "Акции",
     profile: "Личный кабинет",
     admin: "Страница администратора",
-    private: 'Личные данные',
-    changePassword: 'Сменить пароль',
-    basket: 'Корзина',
+    private: "Личные данные",
+    changePassword: "Сменить пароль",
+    basket: "Корзина",
+    wallet: "Кошелек",
 };
 
 export const profileTabs: IProfileTab[] = [
@@ -46,17 +47,26 @@ export const profileTabs: IProfileTab[] = [
     {
         title: "Личные данные",
         path: "profile/private",
+        image: "icons/profile/pers.png",
+    },
+    {
+        title: "Кошелек",
+        path: "profile/wallet",
+        image: "icons/profile/wallet.png",
     },
     {
         title: "Сменить пароль",
         path: "profile/changePassword",
+        image: "icons/profile/pass.png",
     },
     {
         title: "Корзина",
         path: "profile/basket",
+        image: "icons/profile/basket.png",
     },
     {
         title: "Контакты",
         path: "contacts",
+        image: "icons/profile/contacts.png",
     },
 ];
