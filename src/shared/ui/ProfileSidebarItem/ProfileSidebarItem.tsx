@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import cls from "./ProfileSidebarItem.module.scss";
-import { Dispatch } from "react";
 import { IProfileTab } from "../../types/types";
 
 interface ProfileSidebarItemProps {

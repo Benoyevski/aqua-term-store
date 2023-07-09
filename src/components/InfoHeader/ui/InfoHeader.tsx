@@ -4,6 +4,7 @@ import { Modal } from "../../../shared/ui/Modal/Modal";
 import { LoginForm } from "../../LoginForm";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { logout } from "../../../features/userSlice";
+import { Link } from "react-router-dom";
 
 export const InfoHeader = () => {
     const dispatch = useAppDispatch();
@@ -27,6 +28,8 @@ export const InfoHeader = () => {
     return (
         <div className={cls.infoHeader}>
             <div className={cls.container}>
+            <Link to={"/admin"}>Админка</Link>
+            <Link to={"/profile"}>Личный кабинет</Link>
                 <div className={cls.infoHeaderContent}>
                     <p className={cls.city}>Урус-Мартан</p>
                     <p className={cls.phone}>+7 (967) 000-77-27</p>

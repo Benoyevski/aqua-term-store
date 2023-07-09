@@ -59,12 +59,12 @@ export const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
                     <button className={cls.loginBtn} onClick={handleAuth} disabled={authFormReady}>
                         Войти
                     </button>
-                    <p className={cls.haveAcc}>
+                    <div className={cls.haveAcc}>
                         Еще нет аккаунта?
                         <p onClick={() => setLoginForm(false)} className={cls.haveAccLink}>
                             Зарегистрироваться
                         </p>
-                    </p>
+                    </div>
                 </>
             ) : (
                 <>

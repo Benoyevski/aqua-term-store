@@ -17,6 +17,20 @@ const initialState: UserState = {
     error: null,
 };
 
+export const fetchUser = createAsyncThunk<IUserAuthData, string | null>(
+    "user/fetch",
+    async (id, thunkAPI) => {
+        try {
+            const res = await fetch(`http://localhost:5000/auth/users/${id}`);
+
+            const data = await res.json();
+            return data;
+        } catch (e) {
+            return thunkAPI.rejectWithValue(e);
+        }
+    },
+);
+
 export const authorization = createAsyncThunk<IUserAuthData, Record<string, string>>(
     "user/auth",
     async ({ email, password }, { rejectWithValue }) => {
@@ -39,8 +53,8 @@ export const authorization = createAsyncThunk<IUserAuthData, Record<string, stri
             }
             localStorage.setItem("token", user.token);
             localStorage.setItem("login", user.login);
+            localStorage.setItem("id", user.id);
 
-            console.log(user);
             return user as IUserAuthData;
         } catch (e) {
             return rejectWithValue(e);
@@ -65,7 +79,6 @@ export const register = createAsyncThunk<IUser, IRegisterData>(
             }
 
             const newUser: IUser = await response.json();
-            console.log(newUser);
 
             return newUser;
         } catch (e) {
@@ -112,6 +125,12 @@ export const userSlice = createSlice({
                 state.error = null;
                 state.token = action.payload.token;
                 state.user = action.payload;
+            })
+            .addCase(fetchUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.error = null;
+                state.user = action.payload;
+                state.token = action.payload.token;
             })
             .addCase(logout, (state) => {
                 state.token = null;

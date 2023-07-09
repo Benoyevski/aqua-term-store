@@ -3,9 +3,12 @@ import { Outlet } from "react-router-dom";
 import { ProfileSidebar } from "../../../components/ProfileSidebar";
 import { useState } from "react";
 import { ProfileMenu } from "../../../components/ProfileMenu";
+import { useAppSelector } from "../../../shared/utils/hooks/hooks";
 
 const ProfilePage = () => {
     const [activeTab, setActiveTab] = useState("profile");
+
+    
 
     return (
         <div className={cls.profilePageWrapper}>

@@ -61,7 +61,7 @@ export const profileTabs: IProfileTab[] = [
     },
     {
         title: "Корзина",
-        path: "profile/basket",
+        path: "basket",
         image: "icons/profile/basket.png",
     },
     {
