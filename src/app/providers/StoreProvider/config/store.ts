@@ -3,6 +3,7 @@ import category from "../../../../features/categorySlice";
 import typeSlice from "../../../../features/typeSlice";
 import product from "../../../../features/productSlice";
 import user from "../../../../features/userSlice";
+import fabricator from "../../../../features/fabricatorSlice";
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         typeSlice,
         product,
         user,
+        fabricator,
     },
 });
 

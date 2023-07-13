@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { AppRouter } from "./providers/router";
 import { InfoHeader } from "../components/InfoHeader";
 import { Navbar } from "../components/Navbar";

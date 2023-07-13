@@ -38,6 +38,13 @@ export interface IType {
     category: string;
 }
 
+export interface IFabricator {
+    _id: string;
+    title: string;
+    description: string;
+    image: string;
+}
+
 export interface IProduct {
     _id: string;
     name: string;
