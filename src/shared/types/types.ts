@@ -41,8 +41,8 @@ export interface IType {
 export interface IFabricator {
     _id: string;
     title: string;
-    description: string;
     image: string;
+    description: string;
 }
 
 export interface IProduct {

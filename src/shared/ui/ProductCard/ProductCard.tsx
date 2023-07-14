@@ -30,7 +30,7 @@ export const ProductCard = ({ className, prod, popularity }: ProductCardProps) =
             <h4 onClick={handleIncrementPopularity} className={cls.prodTitle}>
                 <Link to={`/catalog/${prod.category}/${prod._id}`}>{prod.name}</Link>
             </h4>
-            <p className={cls.prodPrice}>{prod.price}</p>
+            {/* <p className={cls.prodPrice}>{prod.price}</p> */}
         </div>
     );
 };

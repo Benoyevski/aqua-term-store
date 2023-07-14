@@ -28,7 +28,6 @@ const ProductPage = ({ className }: ProductPageProps) => {
                         <div className={cls.prodMainInfo}>
                             <div className={cls.fabricator}>{product?.fabricator}</div>
                             <h3 className={cls.prodPrice}>{product?.price} руб./шт</h3>
-                            <p>{product?.country}</p>
                         </div>
                     </div>
                     <div className={cls.info}>
