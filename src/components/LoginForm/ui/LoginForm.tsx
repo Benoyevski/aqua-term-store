@@ -21,7 +21,7 @@ export const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
     const regFormReady = !login || !password || !email;
     const authFormReady = !password || !email;
 
-    const onLoginClick = () => {
+    const handleRegister = () => {
         dispatch(register({ login, email, password }));
     };
 
@@ -97,7 +97,11 @@ export const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
                         }
                         value={password}
                     />
-                    <button className={cls.loginBtn} onClick={onLoginClick} disabled={regFormReady}>
+                    <button
+                        className={cls.loginBtn}
+                        onClick={handleRegister}
+                        disabled={regFormReady}
+                    >
                         Зарегистрироваться
                     </button>
                     <p className={cls.haveAcc}>
@@ -145,7 +149,7 @@ export const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
                     />
                     <label htmlFor='input'>Пароль</label>
                 </div>
-                <button className={cls.loginBtn} onClick={onLoginClick} disabled={formReady}>
+                <button className={cls.loginBtn} onClick={handleRegister} disabled={formReady}>
                     Зарегистрироваться
                 </button>
                 <div>

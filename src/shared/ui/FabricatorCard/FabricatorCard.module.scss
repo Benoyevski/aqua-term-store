@@ -1,0 +1,31 @@
+
+.FabricatorCard {
+    width: 33.33%;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgb(240, 240, 240);
+
+    &:hover {
+        box-shadow: 0px 0px 20px 5px rgba(199, 199, 199, 0.458);
+        transition: all 0.2s;
+    }
+}
+
+
+.fabricatorsImgWrapper {
+    max-width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fabricatorImg{
+    width: 100%;
+    max-height: 100px;
+}

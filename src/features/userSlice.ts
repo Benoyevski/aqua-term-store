@@ -2,7 +2,7 @@ import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IRegisterData, IUser, IUserAuthData } from "../shared/types/types";
 
 interface UserState {
-    user: IUserAuthData | null;
+    user: IUser | null;
     token: string | null;
     login: string | null;
     isLoading: boolean;
@@ -52,9 +52,9 @@ export const authorization = createAsyncThunk<IUserAuthData, Record<string, stri
                 return rejectWithValue(user.error);
             }
             localStorage.setItem("token", user.token);
-            localStorage.setItem("login", user.login);
-            localStorage.setItem("id", user.id);
-
+            localStorage.setItem("login", user.user.login);
+            localStorage.setItem("id", user.user._id);
+            console.log(user);
             return user as IUserAuthData;
         } catch (e) {
             return rejectWithValue(e);
@@ -124,12 +124,12 @@ export const userSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.token = action.payload.token;
-                state.user = action.payload;
+                state.user = action.payload.user;
             })
             .addCase(fetchUser.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.error = null;
-                state.user = action.payload;
+                state.user = action.payload.user;
                 state.token = action.payload.token;
             })
             .addCase(logout, (state) => {

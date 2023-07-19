@@ -4,7 +4,7 @@ export interface IUser {
     password: string;
     email: string;
     avatar: string;
-    role: string;
+    isAdmin: boolean;
 }
 
 export interface IRegisterData {
@@ -14,14 +14,14 @@ export interface IRegisterData {
 }
 
 export interface IUserAuthData {
-    _id: string;
-    login: string;
-    email: string;
-    password: string;
-    avatar: string;
-    role: string;
+    // _id: string;
+    // login: string;
+    // email: string;
+    // password: string;
+    // avatar: string;
+    // isAdmin: boolean;
     token: string;
-    message?: string;
+    user: IUser
 }
 
 export interface ICategory {
