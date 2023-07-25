@@ -1,16 +1,14 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import cls from "./InfoHeader.module.scss";
 import { Modal } from "../../../shared/ui/Modal/Modal";
-import { LoginForm } from "../../LoginForm";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
-import { logout } from "../../../features/userSlice";
 import { Link } from "react-router-dom";
+import { AuthForm } from "../../AuthForm";
 
 export const InfoHeader = () => {
     const dispatch = useAppDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const token = useAppSelector((state) => state.user.token);
-    const login = localStorage.getItem("login");
+    const user = useAppSelector((state) => state.user.user);
 
     const handleOpenModal = useCallback(() => {
         setIsAuthModal(true);
@@ -20,24 +18,18 @@ export const InfoHeader = () => {
         setIsAuthModal(false);
     }, []);
 
-    const handleLogout = () => {
-        dispatch(logout());
-        localStorage.clear();
-    };
-
     return (
         <div className={cls.infoHeader}>
             <div className={cls.container}>
-            <Link to={"/admin"}>Админка</Link>
-            <Link to={"/profile"}>Личный кабинет</Link>
+                <Link to={"/admin"}>Админка</Link>
+                <Link to={"/profile"}>Личный кабинет</Link>
                 <div className={cls.infoHeaderContent}>
                     <p className={cls.city}>Урус-Мартан</p>
                     <p className={cls.phone}>+7 (967) 000-77-27</p>
-                    {token ? (
+                    {user ? (
                         <div>
-                            <span>{login}</span>
-                            <span onClick={handleLogout} className={cls.logoutBtn}>
-                                Выйти
+                            <span className={cls.logoutBtn}>
+                                <Link to={"/profile"}>{user?.login}</Link>
                             </span>
                         </div>
                     ) : (
@@ -49,7 +41,7 @@ export const InfoHeader = () => {
             </div>
             {isAuthModal && (
                 <Modal isOpen={isAuthModal} onClose={handleCloseModal}>
-                    <LoginForm onSuccess={handleCloseModal} />
+                    <AuthForm onSuccess={handleCloseModal} />
                 </Modal>
             )}
         </div>

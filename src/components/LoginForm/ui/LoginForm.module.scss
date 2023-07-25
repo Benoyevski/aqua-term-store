@@ -6,55 +6,18 @@
     position: relative;
 }
 
-.input {
-    padding: 8px;
-    margin-top: 20px;
-    outline: none;
-    border: 1px solid #d5d5d5;
-    color: #646464;
-    border-radius: 5px;
-    padding-left: 10px;
-    background: transparent;
-
-    // padding: 5px;
-    // margin-top: 10px;
-    // outline: none;
-    // border: 1px solid transparent;
-    // border-bottom: 1px solid #000;
-    
-
-    &:focus {
-        outline: none;
-    }
-}
-
-.loginBtn {
-    padding: 7px 25px;
-    margin-top: 30px;
-    margin-left: auto;
-    background: #d8130d;
-    color: #fff;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:disabled {
-        background: #d8140d41;
-        cursor:default;
-
-    }
-}
 
 .haveAcc {
     margin: 20px auto;
     font-size: 18px;
-    color:#b1b1b1;
+    color:#a1a1a1;
 }
 
 .haveAccLink {
     margin-top: 10px;
     cursor: pointer;
     text-decoration: underline;
+    color:#dc0000;
 
 }
 

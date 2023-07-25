@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { classNames } from "../../utils/classNames/classNames";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks/hooks";
 import cls from "./ProfilePrivate.module.scss";
-import { fetchUser } from "../../../features/userSlice";
 
 interface ProfilePrivateProps {
     className?: string;
@@ -10,19 +9,14 @@ interface ProfilePrivateProps {
 
 export const ProfilePrivate = ({ className }: ProfilePrivateProps) => {
     const dispatch = useAppDispatch();
-    const currentUser = useAppSelector((state) => state.user.user);
-    console.log(currentUser);
-
-    const id = localStorage.getItem("id");
-
-    useEffect(() => {
-        dispatch(fetchUser(id));
-    }, [dispatch]);
+    const user = useAppSelector((state) => state.user.user);
 
     return (
         <div className={classNames(cls.ProfilePrivate, {}, [className])}>
             <h1>ЛИЧНЫЕ ДАННЫЕ</h1>
-            <h2>{currentUser?.login}</h2>
+            <img src={user?.avatar} alt='' />
+            <h2>{user?.login}</h2>
+            <p>{user?.email}</p>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 export interface IUser {
     _id: string;
     login: string;
-    password: string;
     email: string;
     avatar: string;
     isAdmin: boolean;
@@ -11,17 +10,6 @@ export interface IRegisterData {
     login: string;
     email: string;
     password: string;
-}
-
-export interface IUserAuthData {
-    // _id: string;
-    // login: string;
-    // email: string;
-    // password: string;
-    // avatar: string;
-    // isAdmin: boolean;
-    token: string;
-    user: IUser
 }
 
 export interface ICategory {

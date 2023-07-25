@@ -12,15 +12,6 @@ interface ProfileSidebarProps {
 }
 
 export const ProfileSidebar = ({ className, activeTab, setActiveTab }: ProfileSidebarProps) => {
-    // const { pathname } = useLocation();
-    // const tab = pathname.slice(1); // Извлечь часть пути без первого слэша
-
-    // useEffect(() => {
-    //     // Обновить activeTab при изменении маршрута
-    //     setActiveTab(tab);
-    //     console.log(tab);
-    // }, [setActiveTab]);
-    
 
     return (
         <ul className={classNames(cls.ProfileSidebar, {}, [className])}>

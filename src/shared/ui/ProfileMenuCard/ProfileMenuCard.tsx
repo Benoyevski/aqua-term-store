@@ -15,7 +15,7 @@ export const ProfileMenuCard = ({ item, activeTab, setActiveTab }: ProfileMenuCa
             onClick={() => setActiveTab(item.path)}
             className={cls.cardWrapper}
         >
-            <img className={cls.profileCardImage} src={item.image} alt={item.path} />
+            <img className={cls.profileCardImage} src={`/${item.image}`} alt={item.path} />
             <p className={cls.profileCardTitle}>{item.title}</p>
         </Link>
     );

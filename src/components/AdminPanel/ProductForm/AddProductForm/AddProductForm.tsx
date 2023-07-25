@@ -40,8 +40,6 @@ export const AddProductForm: React.FC = ({ className }: AddProductFormProps) => 
         }
     };
 
-    console.log(image);
-
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         const formData = new FormData();

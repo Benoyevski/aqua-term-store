@@ -8,6 +8,7 @@
     pointer-events: none;
     z-index: -1;
     color: #000;
+    
 }
 
 .overlay {
@@ -20,12 +21,11 @@
 }
 
 .content {
-    padding: 40px;
-    border-radius: 12px;
     background: #fff;
     transition: 0.3s transform;
     transform: scale(0.5);
-    width: 40%;
+    width: 35%;
+    min-width: 500px;
     min-height: 450px;
     overflow: hidden;
 }
