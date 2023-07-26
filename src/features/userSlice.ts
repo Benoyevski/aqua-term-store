@@ -69,7 +69,6 @@ export const register = createAsyncThunk<string, IRegisterData>(
     },
 );
 
-export const logout = createAction("user/logout");
 
 export const userSlice = createSlice({
     name: "user",
@@ -105,12 +104,10 @@ export const userSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.user = action.payload;
-            })
-
-            .addCase(logout, (state) => {
-                state.user = null;
             });
     },
 });
+
+export const { logout } = userSlice.actions;
 
 export default userSlice.reducer;

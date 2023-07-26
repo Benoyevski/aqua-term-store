@@ -25,12 +25,17 @@ export const Form = ({
     onSubmit,
 }: FormProps) => {
     const error = useAppSelector((state) => state.user.error);
+    const isLoading = useAppSelector((state) => state.user.isLoading);
 
     return (
         <form onSubmit={onSubmit}>
             <h2>{label}</h2>
 
-      {     error && <div className={cls.errorWrapper}><span className={cls.error}>{error.message}</span></div>}
+            {error && (
+                <div className={cls.errorWrapper}>
+                    <span className={cls.error}>{error.message}</span>
+                </div>
+            )}
             <div className={cls.formContainer}>
                 {label === "Регистрация" && (
                     <div className={cls.inputWrapper}>
@@ -75,7 +80,7 @@ export const Form = ({
                 </div>
 
                 <button type='submit' className={cls.loginBtn}>
-                    {btnLabel}
+                    {isLoading ? <span className={cls.btnLoader} >loading....</span> : btnLabel}
                 </button>
             </div>
         </form>

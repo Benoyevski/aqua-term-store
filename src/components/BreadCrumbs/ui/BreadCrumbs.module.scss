@@ -1,6 +1,6 @@
 .Breadcrumbs {
-    background: #f3f3f3;
-    padding: 15px 0 60px 0;
+    background: #f7f7f7;
+    padding: 15px 0 80px 0;
 } 
 
 .breadcrumbsList {
@@ -16,18 +16,17 @@
     margin: 0 auto;
 }
 
-.breadcrumbItem {
+
+.breadcrumbItemLink, .breadcrumbItem, .currentBreadcrumb p {
     font-size: 14px;
-    font-weight: 600;
-    color: rgb(145, 145, 145);
+    font-weight: 500;
+    color: #a5a5a5;
 }
 
-.breadcrumbItemLink {
-    font-size: 14px;
-    font-weight: 600;
-    color: #919191;
-    border-bottom: 1px dashed #919191;
+.breadcrumbItemLink:hover {
+    color: #c61811;
 }
+
 
 .breadcrumbDash {
     margin: 0 20px;
@@ -36,7 +35,7 @@
 .currentBreadcrumb h1 {
     font-size: 30px;
     position: absolute;
-    top: 25px;
+    top: 35px;
     left: 0;
     color: #000;
 

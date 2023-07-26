@@ -1,7 +1,7 @@
 import cls from "./ProfilePage.module.scss";
 import { Outlet } from "react-router-dom";
 import { ProfileSidebar } from "../../../components/ProfileSidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ProfileMenu } from "../../../components/ProfileMenu";
 
 const ProfilePage = () => {

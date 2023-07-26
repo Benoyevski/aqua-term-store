@@ -4,13 +4,16 @@ import App from "./app/App.tsx";
 import "./app/styles/index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { StoreProvider } from "./app/providers/StoreProvider/index.ts";
+import { ProfileProvider } from "./app/providers/ProfileContext/ProfileContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-    <StoreProvider>
-        <React.StrictMode>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </React.StrictMode>
-    </StoreProvider>,
+    <ProfileProvider>
+        <StoreProvider>
+            <React.StrictMode>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </React.StrictMode>
+        </StoreProvider>
+    </ProfileProvider>,
 );

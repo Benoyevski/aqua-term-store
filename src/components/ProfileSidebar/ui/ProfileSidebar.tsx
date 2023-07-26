@@ -1,9 +1,11 @@
 import cls from "./ProfileSidebar.module.scss";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import { profileTabs } from "../../../shared/utils/const/common";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ProfileSidebarItem } from "../../../shared/ui/ProfileSidebarItem/ProfileSidebarItem";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../../shared/utils/hooks/hooks";
+import { logout } from "../../../features/userSlice";
 
 interface ProfileSidebarProps {
     className?: string;
@@ -12,6 +14,21 @@ interface ProfileSidebarProps {
 }
 
 export const ProfileSidebar = ({ className, activeTab, setActiveTab }: ProfileSidebarProps) => {
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.clear();
+        navigate("/", { replace: true });
+        dispatch(logout());
+    };
+
+    const loc = useLocation();
+
+    useEffect(() => {
+        if (loc.pathname === "/profile") {
+            setActiveTab("profile");
+        }
+    }, [loc.pathname]);
 
     return (
         <ul className={classNames(cls.ProfileSidebar, {}, [className])}>
@@ -25,7 +42,9 @@ export const ProfileSidebar = ({ className, activeTab, setActiveTab }: ProfileSi
                     />
                 );
             })}
-            <li className={cls.logout}>Выйти</li>
+            <li onClick={handleLogout} className={cls.logout}>
+                Выйти
+            </li>
         </ul>
     );
 };

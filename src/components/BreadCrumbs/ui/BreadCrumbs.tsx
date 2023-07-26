@@ -20,6 +20,7 @@ export const Breadcrumbs = () => {
 
     const pathnames = location.pathname.split("/").filter((x) => x);
 
+
     return location.pathname === "/" ? null : (
         <div className={cls.Breadcrumbs}>
             <nav className={cls.container}>

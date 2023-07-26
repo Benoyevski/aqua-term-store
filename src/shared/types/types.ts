@@ -2,7 +2,7 @@ export interface IUser {
     _id: string;
     login: string;
     email: string;
-    avatar: string;
+    wallet: number;
     isAdmin: boolean;
 }
 

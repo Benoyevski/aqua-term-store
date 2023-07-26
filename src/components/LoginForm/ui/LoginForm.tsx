@@ -3,6 +3,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import cls from "./LoginForm.module.scss";
 import { authorization } from "../../../features/userSlice";
 import { Form } from "../../../shared/ui/Form/Form";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormProps {
     setAuthForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,10 +12,10 @@ interface LoginFormProps {
 
 export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
 
     const onSubmit = useCallback(
         async (event: React.FormEvent<HTMLFormElement>) => {
@@ -22,8 +23,8 @@ export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
 
             const result = await dispatch(authorization({ email, password }));
             if (result.meta.requestStatus === "fulfilled") {
-
                 onSuccess();
+                navigate("/");
             }
         },
         [onSuccess, dispatch, email, password],
