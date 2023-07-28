@@ -1,12 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback,  useState } from "react";
 import cls from "./InfoHeader.module.scss";
 import { Modal } from "../../../shared/ui/Modal/Modal";
-import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
+import {  useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { Link } from "react-router-dom";
 import { AuthForm } from "../../AuthForm";
 
 export const InfoHeader = () => {
-    const dispatch = useAppDispatch();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const user = useAppSelector((state) => state.user.user);
 

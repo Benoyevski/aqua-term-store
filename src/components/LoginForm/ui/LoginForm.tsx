@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import cls from "./LoginForm.module.scss";
-import { authorization } from "../../../features/userSlice";
+import { authorization, clearError } from "../../../features/userSlice";
 import { Form } from "../../../shared/ui/Form/Form";
 import { useNavigate } from "react-router-dom";
 
@@ -30,6 +30,11 @@ export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
         [onSuccess, dispatch, email, password],
     );
 
+        const toggleForm = () => {
+            dispatch(clearError())
+            setAuthForm(false)
+        }
+
     return (
         <>
             <Form
@@ -43,7 +48,7 @@ export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
             />
             <div className={cls.haveAcc}>
                 Еще нет аккаунта?
-                <p onClick={() => setAuthForm(false)} className={cls.haveAccLink}>
+                <p onClick={toggleForm} className={cls.haveAccLink}>
                     Зарегистрироваться
                 </p>
             </div>

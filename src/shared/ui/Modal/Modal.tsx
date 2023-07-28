@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Mods, classNames } from "../../utils/classNames/classNames";
 import cls from "./Modal.module.scss";
 import { Portal } from "../Portal/Portal";
+import { useAppDispatch } from "../../utils/hooks/hooks";
+import { clearError } from "../../../features/userSlice";
 
 interface ModalProps {
     className?: string;
@@ -11,9 +13,11 @@ interface ModalProps {
 }
 export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
+    const dispatch = useAppDispatch()
 
     const closeHandler = () => {
         if (onClose) {
+            dispatch(clearError())
             setIsClosing(true);
             onClose();
         }

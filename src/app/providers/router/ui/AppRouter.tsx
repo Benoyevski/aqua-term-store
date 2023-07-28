@@ -11,6 +11,7 @@ import { ProfilePage } from "../../../../pages/ProfilePage";
 import { ProfilePrivate } from "../../../../shared/ui/ProfilePrivate/ProfilePrivate";
 import { useAppSelector } from "../../../../shared/utils/hooks/hooks";
 import { ProfileWallet } from "../../../../shared/ui/ProfileWallet/ProfileWallet";
+import { ChangePassword } from "../../../../shared/ui/ChangePassword/ChangePassword";
 
 const AppRouter = () => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -29,7 +30,7 @@ const AppRouter = () => {
                 {authUser && (
                     <Route path={"/profile"} element={<ProfilePage />}>
                         <Route path={"private"} element={<ProfilePrivate />} />
-                        <Route path={"changePassword"} element={<ProfilePrivate />} />
+                        <Route path={"changePassword"} element={<ChangePassword />} />
                         <Route path={"wallet"} element={<ProfileWallet />} />
                     </Route>
                 )}

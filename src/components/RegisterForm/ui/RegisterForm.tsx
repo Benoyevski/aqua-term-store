@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import cls from "./RegisterForm.module.scss";
-import { register } from "../../../features/userSlice";
+import { clearError, register } from "../../../features/userSlice";
 import { Form } from "../../../shared/ui/Form/Form";
 
 interface RegisterFormProps {
@@ -15,8 +15,6 @@ export const RegisterForm = ({ setAuthForm }: RegisterFormProps) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const err = useAppSelector((state) => state.user.error);
-
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -24,6 +22,11 @@ export const RegisterForm = ({ setAuthForm }: RegisterFormProps) => {
         if (result.meta.requestStatus === "fulfilled") {
             alert("Вы успешно зарегистрированы!!!");
         }
+    };
+
+    const toggleForm = () => {
+        dispatch(clearError());
+        setAuthForm(true);
     };
 
     return (
@@ -41,11 +44,10 @@ export const RegisterForm = ({ setAuthForm }: RegisterFormProps) => {
             />
             <div className={cls.haveAcc}>
                 Уже есть аккаунт?
-                <p onClick={() => setAuthForm(true)} className={cls.haveAccLink}>
+                <p onClick={toggleForm} className={cls.haveAccLink}>
                     Войти
                 </p>
             </div>
-            <p>{err && err.message}</p>
         </>
     );
 };
