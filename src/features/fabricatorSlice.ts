@@ -21,6 +21,7 @@ export const addFabricator = createAsyncThunk(
             const response = await fetch(`http://localhost:5000/fabricators`, {
                 method: "POST",
                 body: formData,
+                credentials: "include",
             });
 
             if (!response.ok) {

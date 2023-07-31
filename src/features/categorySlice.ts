@@ -48,6 +48,7 @@ export const addCategory = createAsyncThunk(
             const response = await fetch(`http://localhost:5000/categories`, {
                 method: "POST",
                 body: formData,
+                credentials: "include",
             });
 
             if (!response.ok) {

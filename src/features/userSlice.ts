@@ -20,10 +20,12 @@ export const authorization = createAsyncThunk<IUser, Record<string, string>>(
         try {
             const response = await fetch("http://localhost:5000/auth/login", {
                 method: "POST",
+
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ email, password }),
+                credentials: "include",
             });
 
             if (!response.ok) {

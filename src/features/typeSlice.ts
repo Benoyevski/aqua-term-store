@@ -21,6 +21,7 @@ export const addType = createAsyncThunk(
             const response = await fetch(`http://localhost:5000/types`, {
                 method: "POST",
                 body: formData,
+                credentials: "include",
             });
 
             if (!response.ok) {
