@@ -14,6 +14,33 @@ const initialState: UserState = {
     error: null,
 };
 
+export const changePassword = createAsyncThunk<IUser, { id: string; password: string }>(
+    "password/change",
+    async ({ id, password }, { rejectWithValue }) => {
+      try {
+        const response = await fetch("http://localhost:5000/auth/changePassword", {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id, password }),
+          credentials: "include",
+        });
+  
+        if (!response.ok) {
+          const err = await response.json();
+          return rejectWithValue(err);
+        }
+  
+        const user = await response.json();
+        return user as IUser;
+      } catch (e) {
+        return rejectWithValue(e);
+      }
+    }
+  );
+  
+
 export const authorization = createAsyncThunk<IUser, Record<string, string>>(
     "user/auth",
     async ({ email, password }, { rejectWithValue }) => {
@@ -108,7 +135,17 @@ export const userSlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.user = action.payload;
-            });
+            })
+            .addCase(changePassword.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.error = null;
+                state.user = action.payload;
+              })
+              .addCase(changePassword.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+              });
+
     },
 });
 
