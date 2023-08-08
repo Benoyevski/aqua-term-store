@@ -3,7 +3,6 @@ import { addCategory } from "../../../../features/categorySlice";
 import { useAppDispatch } from "../../../../shared/utils/hooks/hooks";
 import cls from "./CategoryAddForm.module.scss";
 import { classNames } from "../../../../shared/utils/classNames/classNames";
-
 interface CategoryAddForm {
     className?: string;
 }

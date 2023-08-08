@@ -5,7 +5,7 @@ import { ICategory } from "../shared/types/types";
 interface CategoryState {
     items: ICategory[];
     isLoading: boolean;
-    error: string | null;
+    error: any;
 }
 
 const initialState: CategoryState = {
@@ -52,7 +52,8 @@ export const addCategory = createAsyncThunk(
             });
 
             if (!response.ok) {
-                throw new Error("Ошибка при добавлении категории");
+                const err = await response.json();
+                return rejectWithValue(err);
             }
 
             const category: ICategory = await response.json();
@@ -109,6 +110,11 @@ export const categorySlice = createSlice({
                 state.isLoading = false;
                 state.error = null;
                 state.items.push(action.payload);
+            })
+            .addCase(addCategory.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+                console.log(action.payload);
             })
             .addCase(
                 incrementCategoryPopularity.fulfilled,
