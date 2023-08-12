@@ -15,3 +15,17 @@
     flex-flow: row wrap;
 }
 
+.FabricatorsPageWrapper {
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    float: right;
+    
+}
+
+.fabricatorsText {
+    width: 80%;
+    float: right;
+    text-align: center;
+    margin: 30px 0;
+}

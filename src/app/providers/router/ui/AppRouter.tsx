@@ -12,6 +12,9 @@ import { ProfilePrivate } from "../../../../shared/ui/ProfilePrivate/ProfilePriv
 import { useAppSelector } from "../../../../shared/utils/hooks/hooks";
 import { ProfileWallet } from "../../../../shared/ui/ProfileWallet/ProfileWallet";
 import { ChangePassword } from "../../../../shared/ui/ChangePassword/ChangePassword";
+import { FabricatorsList } from "../../../../components/FabricatorsList";
+import { Stocks } from "../../../../shared/ui/Stocks/Stocks";
+import { FabricatorPage } from "../../../../pages/FabricatorPage";
 
 const AppRouter = () => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -22,6 +25,9 @@ const AppRouter = () => {
                 <Route path={"/"} element={<MainPage />} />
                 <Route path={"/about"} element={<AboutPage />} />
                 <Route path={"/catalog"} element={<CatalogPage />} />
+                <Route path={"/fabricators"} element={<FabricatorsList />} />
+                <Route path={"/fabricators/:id"} element={<FabricatorPage />} />
+                <Route path={"sale"} element={<Stocks />} />
                 <Route path={"/admin"} element={<AdminPage />} />
                 <Route path={"/contacts"} element={<AboutPage />} />
                 <Route path={"/basket"} element={<AboutPage />} />

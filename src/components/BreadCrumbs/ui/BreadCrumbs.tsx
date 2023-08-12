@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { useEffect } from "react";
 import { fetchCategories } from "../../../features/categorySlice";
+import { fetchFabricators } from "../../../features/fabricatorSlice";
 import cls from "./Breadcrumbs.module.scss";
 import { fetchProducts } from "../../../features/productSlice";
 import { routeNames } from "../../../shared/utils/const/common";
@@ -13,14 +14,14 @@ export const Breadcrumbs = () => {
     useEffect(() => {
         dispatch(fetchCategories());
         dispatch(fetchProducts());
+        dispatch(fetchFabricators());
     }, [dispatch]);
 
     const categories = useAppSelector((state) => state.category.items);
     const products = useAppSelector((state) => state.product.items);
+    const fabricators = useAppSelector((state) => state.fabricator.items);
 
     const pathnames = location.pathname.split("/").filter((x) => x);
-
-
     return location.pathname === "/" ? null : (
         <div className={cls.Breadcrumbs}>
             <nav className={cls.container}>
@@ -39,6 +40,9 @@ export const Breadcrumbs = () => {
                         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
                         const category = categories.find((category) => category._id === value);
                         const product = products.find((product) => product._id === value);
+                        const fabricator = fabricators.find(
+                            (fabricator) => fabricator._id === value,
+                        );
 
                         const routeName = routeNames[value];
 
@@ -55,6 +59,11 @@ export const Breadcrumbs = () => {
                                             <p>{product.name}</p>
                                             <h1>{product.name}</h1>
                                         </div>
+                                    ) : fabricator ? (
+                                        <div className={cls.currentBreadcrumb}>
+                                            <p>{fabricator.title}</p>
+                                            <h1>{fabricator.title}</h1>
+                                        </div>
                                     ) : (
                                         <div className={cls.currentBreadcrumb}>
                                             <p>{routeName || ""}</p>
@@ -68,6 +77,8 @@ export const Breadcrumbs = () => {
                                                 ? category.title
                                                 : product
                                                 ? product.name
+                                                : fabricator
+                                                ? fabricator.title
                                                 : routeName || ""}
                                         </Link>
                                         <span className={cls.breadcrumbDash}>-</span>
@@ -77,8 +88,6 @@ export const Breadcrumbs = () => {
                         );
                     })}
                 </ul>
-
-                <h1>{}</h1>
             </nav>
         </div>
     );

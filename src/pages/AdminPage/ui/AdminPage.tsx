@@ -12,7 +12,6 @@ export const AdminPage = ({ className }: AdminPageProps) => {
     return (
         <div className={cls.container}>
             <div className={classNames(cls.AdminPage, {}, [className])}>
-                <h1>Страница Администратора!</h1>
                 <section className={cls.section}>
                     <CategoryAddForm />
                 </section>

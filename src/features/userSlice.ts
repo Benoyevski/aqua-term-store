@@ -14,6 +14,27 @@ const initialState: UserState = {
     error: null,
 };
 
+export const fetchUser = createAsyncThunk<any, string>(
+    "user/fetch",
+    async (id, { rejectWithValue }) => {
+        try {
+            const response = await fetch(`http://localhost:5000/auth/users/${id}`, {
+                credentials: "include",
+            });
+
+            if (!response.ok) {
+                const err = await response.json();
+                return rejectWithValue(err);
+            }
+
+            const user = await response.json();
+            return user;
+        } catch (e) {
+            return rejectWithValue(e);
+        }
+    },
+);
+
 export const changePassword = createAsyncThunk<IUser, { id: string; password: string }>(
     "password/change",
     async ({ id, password }, { rejectWithValue }) => {
@@ -97,6 +118,26 @@ export const register = createAsyncThunk<string, IRegisterData>(
     },
 );
 
+export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWithValue }) => {
+    try {
+        const response = await fetch("http://localhost:5000/auth/logout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: "include",
+        });
+
+        if (!response.ok) {
+            const err = await response.json();
+            return rejectWithValue(err);
+        }
+
+        const message = await response.json();
+        return message;
+    } catch (error) {}
+});
+
 export const userSlice = createSlice({
     name: "user",
     initialState,
@@ -143,6 +184,11 @@ export const userSlice = createSlice({
             .addCase(changePassword.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
+            })
+            .addCase(logoutUser.fulfilled, (state) => {
+                state.error = null;
+                state.isLoading = false;
+                state.user = null;
             });
     },
 });
