@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { ProfileSidebarItem } from "../../../shared/ui/ProfileSidebarItem/ProfileSidebarItem";
 import { useEffect } from "react";
 import { useAppDispatch } from "../../../shared/utils/hooks/hooks";
-import { logout, logoutUser } from "../../../features/userSlice";
+import { logoutUser } from "../../../features/userSlice";
 
 interface ProfileSidebarProps {
     className?: string;
@@ -20,7 +20,6 @@ export const ProfileSidebar = ({ className, activeTab, setActiveTab }: ProfileSi
         localStorage.clear();
         navigate("/", { replace: true });
         dispatch(logoutUser());
-        // dispatch(logout());
     };
 
     const loc = useLocation();

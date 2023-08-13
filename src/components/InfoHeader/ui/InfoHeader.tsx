@@ -20,12 +20,17 @@ export const InfoHeader = () => {
     return (
         <div className={cls.infoHeader}>
             <div className={cls.container}>
-                {isAdmin && <Link to={"/admin"}>Админка</Link>}
                 <div className={cls.infoHeaderContent}>
                     <p className={cls.city}>Урус-Мартан</p>
                     <p className={cls.phone}>+7 (967) 000-77-27</p>
+
                     {user ? (
-                        <div>
+                        <div className={cls.authUserPanel}>
+                            {isAdmin && (
+                                <Link to={"/admin"}>
+                                    <div className={cls.adminPanel}>Админка</div>
+                                </Link>
+                            )}
                             <span className={cls.logoutBtn}>
                                 <Link to={`/profile`}>{user?.login}</Link>
                             </span>
