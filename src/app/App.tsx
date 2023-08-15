@@ -3,8 +3,7 @@ import { InfoHeader } from "../components/InfoHeader";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 import { Breadcrumbs } from "../components/Breadcrumbs";
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../shared/utils/hooks/hooks";
+import { useAppDispatch } from "../shared/utils/hooks/hooks";
 import { logout } from "../features/userSlice";
 
 function App() {

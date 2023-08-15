@@ -15,10 +15,16 @@
         transition: all 0.2s;
     }
 
+    & div {
+        width: 120px;
+        height: 120px;    
+        margin-bottom: 30px;
+
+        & img {
+            width: 100px;
+        }
+    }
+
 }
 
-.TypeCard div {
-    width: 120px;
-    height: 120px;    
-    margin-bottom: 30px;
-}
+

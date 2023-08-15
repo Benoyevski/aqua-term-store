@@ -114,7 +114,6 @@ export const categorySlice = createSlice({
             .addCase(addCategory.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
-                console.log(action.payload);
             })
             .addCase(
                 incrementCategoryPopularity.fulfilled,

@@ -1,0 +1,8 @@
+.RatingWrapper {
+    display: flex;
+    gap: 3px;
+    
+    & svg {
+        fill: #fb2020;
+    }
+}

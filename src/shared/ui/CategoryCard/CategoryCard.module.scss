@@ -5,6 +5,7 @@
     padding: 20px;
     align-items: start;
     min-height: 160px;
+    overflow: auto;
 
     &:hover {
         box-shadow: 0px 0px 20px 5px rgba(199, 199, 199, 0.458);
@@ -15,24 +16,27 @@
 
 
 .imgWrapper {
-    width: 180px;
+    width: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
-.imgWrapper img {
-    max-width: 140px;
-    max-height: 140px;
-    object-fit: contain;
-    padding: 0 35px 10px 0;
-
-    &:hover {
-        cursor: pointer;
-    }
+    & img {
+        max-width: 120px;
+        max-height: 100px;
+        object-fit: contain;
+        padding: 0 35px 10px 0;
     
+        &:hover {
+            cursor: pointer;
+        }
+        
+    }
 }
+
+
 .productsTitle {
+    width: calc(100% - 150px);
     display: flex;
     flex-direction: column;
 }

@@ -5,7 +5,7 @@ import { CategoryCard } from "../../../shared/ui/CategoryCard/CategoryCard";
 import cls from "./CategoryList.module.scss";
 import { fetchCategories } from "../../../features/categorySlice";
 import { fetchTypes } from "../../../features/typeSlice";
-import { Loader } from "../../../shared/ui/Loader/Loader";
+import SkeletonCategory from "../../../shared/ui/Skeletons/SkeletonCategory";
 
 interface CategoryListProps {
     className?: string;
@@ -35,22 +35,22 @@ export const CategoryList = ({ className, popularity }: CategoryListProps) => {
 
     return (
         <ul className={classNames(cls.CategoryList, {}, [className])}>
-            {isLoading ? (
-                <div className={cls.loader}>
-                    <Loader />
-                </div>
-            ) : (
-                sortedCategories.map((category) => {
-                    return (
-                        <CategoryCard
-                            popularBlock={popularity}
-                            category={category}
-                            typeList={types}
-                            key={category._id}
-                        />
-                    );
-                })
-            )}
+            {isLoading
+                ? [...new Array(9)].map((_, index) => (
+                      <div className={cls.skeletonCat}>
+                          <SkeletonCategory key={index} />
+                      </div>
+                  ))
+                : sortedCategories.map((category) => {
+                      return (
+                          <CategoryCard
+                              popularBlock={popularity}
+                              category={category}
+                              typeList={types}
+                              key={category._id}
+                          />
+                      );
+                  })}
         </ul>
     );
 };

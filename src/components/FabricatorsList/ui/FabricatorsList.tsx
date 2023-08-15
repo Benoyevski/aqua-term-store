@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import cls from "./FabricatorsList.module.scss";
 import { FabricatorCard } from "../../../shared/ui/FabricatorCard/FabricatorCard";
 import { useLocation } from "react-router-dom";
+import SkeletonFabricator from "../../../shared/ui/Skeletons/SkeletonFabricator";
 
 interface FabricatorsListProps {
     className?: string;
@@ -13,13 +14,14 @@ interface FabricatorsListProps {
 export const FabricatorsList = ({ className }: FabricatorsListProps) => {
     const dispatch = useAppDispatch();
     const fabricators = useAppSelector((state) => state.fabricator.items);
+    const isLoading = useAppSelector((state) => state.fabricator.isLoading);
 
     const loc = useLocation().pathname;
     const fabricatorsPage = loc !== "/";
 
     useEffect(() => {
         dispatch(fetchFabricators());
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={classNames(cls.FabricatorsList, {}, [className])}>
@@ -32,16 +34,24 @@ export const FabricatorsList = ({ className }: FabricatorsListProps) => {
                         </p>
                     </section>
                 ) : (
-                    <h2>Производители</h2>
+                    <h2 className={cls.fabricatorsListTitle}>Производители</h2>
                 )}
                 <div
                     className={
                         fabricatorsPage ? cls.FabricatorsPageWrapper : cls.FabricatorsListWrapper
                     }
                 >
-                    {fabricators.map((fabricator) => {
-                        return <FabricatorCard key={fabricator._id} fabricator={fabricator} />;
-                    })}
+                    {isLoading
+                        ? [...new Array(12)].map((_, index) => (
+                              <div className={cls.skeletonFabrList}>
+                                  <SkeletonFabricator key={index} />
+                              </div>
+                          ))
+                        : fabricators.map((fabricator) => {
+                              return (
+                                  <FabricatorCard key={fabricator._id} fabricator={fabricator} />
+                              );
+                          })}
                 </div>
             </div>
         </div>

@@ -41,7 +41,6 @@ export interface IProduct {
     type: string;
     price?: number;
     description?: string;
-    country?: string;
     fabricator?: string;
     popularity: number;
 }

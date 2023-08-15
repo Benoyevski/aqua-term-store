@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./ProductList.module.scss";
 import { fetchProducts } from "../../../features/productSlice";
-import { Loader } from "../../../shared/ui/Loader/Loader";
 import { ProductCard } from "../../../shared/ui/ProductCard/ProductCard";
+import SkeletonProduct from "../../../shared/ui/Skeletons/SkeletonProduct";
 
 interface ProductListProps {
     className?: string;
@@ -28,15 +28,15 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
 
     return (
         <ul className={classNames(cls.ProductList, {}, [className])}>
-            {isLoading ? (
-                <div className={cls.loader}>
-                    <Loader />
-                </div>
-            ) : (
-                sortedProducts.map((product) => {
-                    return <ProductCard key={product._id} prod={product} popularity />;
-                })
-            )}
+            {isLoading
+                ? [...new Array(12)].map((_, index) => (
+                      <div className={cls.skeletonList}>
+                          <SkeletonProduct key={index} />
+                      </div>
+                  ))
+                : sortedProducts.map((product) => {
+                      return <ProductCard key={product._id} prod={product} popularity />;
+                  })}
         </ul>
     );
 };

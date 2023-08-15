@@ -1,0 +1,36 @@
+.priceInfo {
+    display: flex;
+    border-top: 1px solid #efefef;
+    padding-top: 20px;
+    margin-top: 30px;
+
+    .saleImage {
+        width: 15%;      
+        height: 60px;
+        margin-right: 5px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .priceText {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+
+        & h3 {
+            margin-bottom: 10px;
+        }
+
+        & p {
+            letter-spacing: 0.6px;
+        }
+
+        & span {
+            font-weight: 600;
+        }
+    }
+}
