@@ -7,15 +7,6 @@ import { selectBasket } from "../../../features/basketSlice";
 const BasketPage = () => {
     const { products } = useAppSelector(selectBasket);
 
-    const isMounted = React.useRef(false);
-
-    React.useEffect(() => {
-        if (isMounted.current) {
-            const json = JSON.stringify(products);
-            localStorage.setItem("basket", json);
-        }
-        isMounted.current = true;
-    }, [products]);
 
     return (
         <div className={classNames(cls.BasketPage, {}, [])}>
