@@ -37,8 +37,8 @@ export const CategoryList = ({ className, popularity }: CategoryListProps) => {
         <ul className={classNames(cls.CategoryList, {}, [className])}>
             {isLoading
                 ? [...new Array(9)].map((_, index) => (
-                      <div className={cls.skeletonCat}>
-                          <SkeletonCategory key={index} />
+                      <div  key={index} className={cls.skeletonCat}>
+                          <SkeletonCategory />
                       </div>
                   ))
                 : sortedCategories.map((category) => {

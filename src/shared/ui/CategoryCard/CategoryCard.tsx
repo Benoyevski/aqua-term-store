@@ -41,7 +41,7 @@ export const CategoryCard = ({
             </div>
             <div className={cls.productsTitle}>
                 <h3 className={cls.title} onClick={handleIncrementPopularity}>
-                    <Link to={`/catalog/${category._id}`}> {category.title}</Link>
+                    <Link className={cls.titleLink} to={`/catalog/${category._id}`}> {category.title}</Link>
                 </h3>
                 <ul className={cls.typesList}>
                     {types.map((el) => {

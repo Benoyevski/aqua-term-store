@@ -5,7 +5,7 @@
     padding: 20px;
     align-items: start;
     min-height: 160px;
-    overflow: auto;
+    overflow:hidden;
 
     &:hover {
         box-shadow: 0px 0px 20px 5px rgba(199, 199, 199, 0.458);
@@ -16,7 +16,7 @@
 
 
 .imgWrapper {
-    width: 150px;
+    width: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +45,11 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
+    word-break: break-all;
+
 
     
-    &:hover {
+    .titleLink:hover {
         cursor: pointer;
         color: rgb(228, 1, 1);
     }

@@ -4,19 +4,16 @@ import App from "./app/App.tsx";
 import "./app/styles/index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { StoreProvider } from "./app/providers/StoreProvider/index.ts";
-import { ProfileProvider } from "./app/providers/ProfileContext/ProfileContext.tsx";
 import { YMaps } from "@pbe/react-yandex-maps";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-    <YMaps>
-        <ProfileProvider>
-            <StoreProvider>
-                <React.StrictMode>
-                    <BrowserRouter>
+        <StoreProvider>
+            <React.StrictMode>
+                <BrowserRouter>
+                    <YMaps>
                         <App />
-                    </BrowserRouter>
-                </React.StrictMode>
-            </StoreProvider>
-        </ProfileProvider>
-    </YMaps>,
+                    </YMaps>
+                </BrowserRouter>
+            </React.StrictMode>
+        </StoreProvider>
 );

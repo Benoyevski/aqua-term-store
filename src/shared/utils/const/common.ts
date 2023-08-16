@@ -70,3 +70,13 @@ export const profileTabs: IProfileTab[] = [
         image: "icons/profile/contacts.png",
     },
 ];
+
+export const exceptPaths = [
+    "/profile",
+    "/contacts",
+    "/basket",
+    "/admin",
+    "/profile/private",
+    "/profile/wallet",
+    "/profile/changePassword",
+];

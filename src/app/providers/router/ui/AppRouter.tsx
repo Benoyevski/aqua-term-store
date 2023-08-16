@@ -16,6 +16,7 @@ import { FabricatorsList } from "../../../../components/FabricatorsList";
 import { Stocks } from "../../../../shared/ui/Stocks/Stocks";
 import { FabricatorPage } from "../../../../pages/FabricatorPage";
 import { ContactsPage } from "../../../../pages/ContactsPage";
+import { BasketPage } from "../../../../pages/BasketPage";
 
 const AppRouter = () => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -28,10 +29,10 @@ const AppRouter = () => {
                 <Route path={"/catalog"} element={<CatalogPage />} />
                 <Route path={"/fabricators"} element={<FabricatorsList />} />
                 <Route path={"/fabricators/:id"} element={<FabricatorPage />} />
-                <Route path={"sale"} element={<Stocks />} />
+                <Route path={"/sale"} element={<Stocks />} />
                 <Route path={"/admin"} element={<AdminPage />} />
                 <Route path={"/contacts"} element={<ContactsPage />} />
-                <Route path={"/basket"} element={<AboutPage />} />
+                <Route path={"/basket"} element={<BasketPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
                 {authUser && (

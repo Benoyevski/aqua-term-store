@@ -30,8 +30,8 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
         <ul className={classNames(cls.ProductList, {}, [className])}>
             {isLoading
                 ? [...new Array(12)].map((_, index) => (
-                      <div className={cls.skeletonList}>
-                          <SkeletonProduct key={index} />
+                      <div key={index} className={cls.skeletonList}>
+                          <SkeletonProduct />
                       </div>
                   ))
                 : sortedProducts.map((product) => {

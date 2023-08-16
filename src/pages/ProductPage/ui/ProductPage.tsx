@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { Loader } from "../../../shared/ui/Loader/Loader";
 import { Rating } from "../../../shared/ui/Rating/Rating";
 import { PriceInfo } from "../../../shared/ui/PriceInfo/PriceInfo";
+import { TBasketProduct, addProductToBasket } from "../../../features/basketSlice";
 
 interface ProductPageProps {
     className?: string;
@@ -25,6 +26,18 @@ const ProductPage = ({ className }: ProductPageProps) => {
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
+
+    
+    const handleAddToBasket = () => {
+        if (product) {
+            const prod: TBasketProduct = {
+                id: product._id,
+                title: product.name,
+                imageSrc: product.image,
+            };
+            dispatch(addProductToBasket(prod));
+        }
+    };
 
     return (
         <div className={classNames(cls.ProductPage, {}, [className])}>
@@ -55,7 +68,7 @@ const ProductPage = ({ className }: ProductPageProps) => {
                                 </div>
                                 <div className={cls.productInfo}>
                                     <div className={cls.productToBasket}>
-                                        <button>В корзину</button>
+                                        <button onClick={handleAddToBasket}>В корзину</button>
                                     </div>
                                     <div className={cls.productFabricator}>
                                         <p>Производитель</p>

@@ -50,7 +50,7 @@ const FabricatorPage = ({ className }: FabricatorPageProps) => {
                                 <p>идет загрузка...</p>
                             ) : (
                                 <div className={cls.prodList}>
-                                    {fabricatorProds.length > 1 ? (
+                                    {fabricatorProds.length > 0 ? (
                                         fabricatorProds.map((prod) => (
                                             <ProductCard key={prod._id} prod={prod} />
                                         ))

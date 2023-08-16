@@ -43,8 +43,8 @@ export const FabricatorsList = ({ className }: FabricatorsListProps) => {
                 >
                     {isLoading
                         ? [...new Array(12)].map((_, index) => (
-                              <div className={cls.skeletonFabrList}>
-                                  <SkeletonFabricator key={index} />
+                              <div key={index} className={cls.skeletonFabrList}>
+                                  <SkeletonFabricator />
                               </div>
                           ))
                         : fabricators.map((fabricator) => {
