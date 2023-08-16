@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { FabricatorsList } from "../../../components/FabricatorsList";
 import { PopularCategories } from "../../../components/PopularCategories/PopularCategories";
 import { SliderBlock } from "../../../components/Slider";
+import { AboutStore } from "../../../shared/ui/AboutStore/AboutStore";
 
 const MainPage = () => {
     useEffect(() => {
@@ -12,6 +13,7 @@ const MainPage = () => {
         <div>
             <SliderBlock />
             <PopularCategories />
+            <AboutStore />
             <FabricatorsList />
         </div>
     );

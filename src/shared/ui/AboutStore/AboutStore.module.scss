@@ -1,0 +1,32 @@
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.aboutStore {
+    display: flex;
+    padding: 50px 0;
+    border-bottom: 1px solid #efefef;
+
+    .aboutStoreImage {
+        width: 25%;
+        padding: 20px;
+        position: relative;
+
+        & img {
+            width: 100%;
+        }
+
+    }
+
+    .aboutStoreText {
+        width: 75%;
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+        line-height: 1.6;
+    }
+
+}

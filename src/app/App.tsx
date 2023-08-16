@@ -5,7 +5,6 @@ import { Footer } from "../components/Footer";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import { useAppDispatch } from "../shared/utils/hooks/hooks";
 import { logout } from "../features/userSlice";
-
 function App() {
     const dispatch = useAppDispatch();
 
@@ -16,14 +15,14 @@ function App() {
     });
 
     return (
-        <div className='app'>
-            <InfoHeader />
-
-            <Navbar />
-            <Breadcrumbs />
-            <AppRouter />
-            <Footer />
-        </div>
+ 
+            <div className='app'>
+                <InfoHeader />
+                <Navbar />
+                <Breadcrumbs />
+                <AppRouter />
+                <Footer />
+            </div>
     );
 }
 

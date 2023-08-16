@@ -1,0 +1,55 @@
+.contactsRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+
+    & div {
+        display: flex;
+        
+        & span {
+            width: 50px;
+            height: 50px;
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                top: 0;
+                left: 0;
+                background: red;
+                display: block;
+            }
+
+            & svg {
+                font-size: 24px;
+                fill: #fff;
+                stroke: red;
+                position: absolute;
+                top: 6px;
+                left: 6px;
+
+              
+            }
+        }
+
+        .columnBlock {
+            display: block;
+            font-size: 12px;
+
+            & h3 {
+                margin-bottom: 8px;
+                font-weight: normal;
+                font-size: 12px;
+                color: rgb(119, 119, 119);
+            }
+
+            & p {
+                font-size: 13px;
+                color: red;
+            }
+        }
+    }
+}
