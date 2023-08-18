@@ -12,11 +12,11 @@ export const PopularCategories = ({ className }: PopularCategoriesProps) => {
         <div className={classNames(cls.PopularCategories, {}, [className])}>
             <div className={cls.container}>
                 <section className={cls.popularSection}>
-                    <h1>Популярные категории</h1>
+                    <h3 className={cls.popularBlockTitle}>Популярные категории</h3>
                     <CategoryList popularity />
                 </section>
                 <section className={cls.popularSection}>
-                    <h1>Популярные товары</h1>
+                    <h3 className={cls.popularBlockTitle}>Популярные товары</h3>
                     <ProductList popularity />
                 </section>
             </div>

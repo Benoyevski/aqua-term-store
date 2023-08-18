@@ -34,7 +34,7 @@ export const FabricatorsList = ({ className }: FabricatorsListProps) => {
                         </p>
                     </section>
                 ) : (
-                    <h2 className={cls.fabricatorsListTitle}>Производители</h2>
+                    <h3 className={cls.fabricatorsListTitle}>Производители</h3>
                 )}
                 <div
                     className={

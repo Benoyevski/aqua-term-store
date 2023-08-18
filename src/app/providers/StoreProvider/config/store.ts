@@ -4,7 +4,8 @@ import typeSlice from "../../../../features/typeSlice";
 import product from "../../../../features/productSlice";
 import user from "../../../../features/userSlice";
 import fabricator from "../../../../features/fabricatorSlice";
-import basket from '../../../../features/basketSlice'
+import basket from "../../../../features/basketSlice";
+import post from "../../../../features/postSlice";
 
 export const store = configureStore({
     reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
         product,
         user,
         fabricator,
-        basket
+        basket,
+        post,
     },
 });
 

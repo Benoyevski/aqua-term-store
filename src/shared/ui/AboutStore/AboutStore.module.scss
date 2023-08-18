@@ -8,7 +8,7 @@
 .aboutStore {
     display: flex;
     padding: 50px 0;
-    border-bottom: 1px solid #efefef;
+    // border-bottom: 1px solid #efefef;
 
     .aboutStoreImage {
         width: 25%;
@@ -17,6 +17,7 @@
 
         & img {
             width: 100%;
+            
         }
 
     }

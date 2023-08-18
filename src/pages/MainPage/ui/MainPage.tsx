@@ -3,6 +3,7 @@ import { FabricatorsList } from "../../../components/FabricatorsList";
 import { PopularCategories } from "../../../components/PopularCategories/PopularCategories";
 import { SliderBlock } from "../../../components/Slider";
 import { AboutStore } from "../../../shared/ui/AboutStore/AboutStore";
+import { Blog } from "../../../components/Blog";
 
 const MainPage = () => {
     useEffect(() => {
@@ -14,6 +15,7 @@ const MainPage = () => {
             <SliderBlock />
             <PopularCategories />
             <AboutStore />
+            <Blog />
             <FabricatorsList />
         </div>
     );

@@ -33,6 +33,14 @@ export interface IFabricator {
     description: string;
 }
 
+export interface IPost {
+    _id: string;
+    title: string;
+    text: string;
+    image: string;
+    time: string;
+}
+
 export interface IProduct {
     _id: string;
     name: string;
