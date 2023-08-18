@@ -3,6 +3,7 @@ import { classNames } from "../../../shared/utils/classNames/classNames";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { useEffect } from "react";
 import { fetchPosts } from "../../../features/postSlice";
+import { PostCard } from "../../../shared/ui/PostCard/PostCard";
 interface BlogProps {
     className?: string;
 }
@@ -21,30 +22,18 @@ export const Blog = ({ className }: BlogProps) => {
             <div className={cls.container}>
                 <section className={cls.blogContent}>
                     <div className={cls.blogContentHeader}>
-                    <h3>Блог Админа</h3>
-                    <p>Все посты</p>
-
+                        <h3>Блог Админа</h3>
+                        <p>Все посты</p>
                     </div>
-                        {isLoadingPosts ? (
-                            <div>loading posts....</div>
-                        ) : (
-                            <div className={cls.blogList}>
-                                {posts.map((post) => {
-                                    return (
-                                        <div className={cls.postCard} key={post._id}>
-                                            <div className={cls.postImageWrapper}>
-                                                <img
-                                                    className={cls.fabricatorImg}
-                                                    src={`http://localhost:5000/${post.image}`}
-                                                    alt='productImage'
-                                                />
-                                                <p>{post.title}</p>
-                                            </div>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        )}
+                    {isLoadingPosts ? (
+                        <div>loading posts....</div>
+                    ) : (
+                        <div className={cls.blogList}>
+                            {posts.map((post) => {
+                                return <PostCard key={post._id} post={post} />;
+                            })}
+                        </div>
+                    )}
                 </section>
             </div>
         </div>
