@@ -5,6 +5,8 @@ import cls from "./Search.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { fetchProducts } from "../../../features/productSlice";
 import { IProduct } from "../../../shared/types/types";
+import { Link, useNavigate } from "react-router-dom";
+import { SearchedProduct } from "../../../shared/ui/SearchedProduct/SearchedProduct";
 
 interface SearchProps {
     className?: string;
@@ -20,9 +22,15 @@ export const Search: FC = ({ className }: SearchProps) => {
         (el) => inputValue.length > 2 && el.name.toLowerCase().includes(inputValue.toLowerCase()),
     );
 
+    const navigate = useNavigate();
     useEffect(() => {
         dispatch(fetchProducts());
     }, []);
+
+    useEffect(() => {
+        setInputActive(false);
+        setInputValue("");
+    }, [navigate]);
 
     const handleInputActive = () => {
         setInputActive(!inputActive);
@@ -68,13 +76,9 @@ export const Search: FC = ({ className }: SearchProps) => {
                     ])}
                 >
                     <div className={cls.searchItemWrapper}>
-                        <div className={cls.container}>
-                            {searchedProducts?.map((el) => (
-                                <div className={cls.searchItem} key={el._id}>
-                                    {el.name}
-                                </div>
-                            ))}
-                        </div>
+                        {searchedProducts?.map((prod) => {
+                            return <SearchedProduct product={prod} />;
+                        })}
                     </div>
                 </div>
             </div>

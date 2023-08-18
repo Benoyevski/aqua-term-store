@@ -15,7 +15,7 @@ export const menuList: IMenuList[] = [
         path: "/sale",
     },
     {
-        title: "О компании",
+        title: "О магазине",
         childrens: ["Лицензии", "Персональные данные"],
         path: "/about",
     },

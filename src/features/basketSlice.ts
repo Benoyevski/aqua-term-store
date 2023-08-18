@@ -15,7 +15,7 @@ interface IBasketSliceState {
 const { products } = getBasketFromLS();
 
 const initialState: IBasketSliceState = {
-    products
+    products,
 };
 
 const basketSlice = createSlice({
@@ -26,13 +26,6 @@ const basketSlice = createSlice({
             const findProduct = state.products.find((prod) => prod.id === action.payload.id);
             if (!findProduct) {
                 state.products.push(action.payload);
-            }
-        },
-
-        minusProduct: (state, action: PayloadAction<string>) => {
-            const findProduct = state.products.find((prod) => prod.id === action.payload);
-
-            if (findProduct) {
             }
         },
         removeProductFromBasket: (state, action: PayloadAction<string>) => {
@@ -48,7 +41,6 @@ export const selectBasket = (state: RootState) => state.basket;
 export const selectBasketProductById = (id: string) => (state: RootState) =>
     state.basket.products.find((prod) => prod.id === id);
 
-export const { addProductToBasket, removeProductFromBasket, minusProduct, clearProducts } =
-    basketSlice.actions;
+export const { addProductToBasket, removeProductFromBasket, clearProducts } = basketSlice.actions;
 
 export default basketSlice.reducer;

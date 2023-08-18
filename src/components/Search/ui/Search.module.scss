@@ -90,10 +90,7 @@
 
 .searchItemWrapper {
     border-bottom: 1px solid #e3e3e3;
-
-}
-
-.searchItem {
-    padding: 18px 0;
+    max-height: 400px;
+    overflow-y: auto;
 
 }
