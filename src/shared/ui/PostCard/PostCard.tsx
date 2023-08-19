@@ -1,5 +1,6 @@
 import cls from "./PostCard.module.scss";
 import { IPost } from "../../types/types";
+import { Link } from "react-router-dom";
 interface PostCardProps {
     className?: string;
     post: IPost;
@@ -7,14 +8,16 @@ interface PostCardProps {
 export const PostCard = ({ post }: PostCardProps) => {
     return (
         <div className={cls.postCard} key={post._id}>
-            <div className={cls.postImageWrapper}>
-                <img
-                    className={cls.fabricatorImg}
-                    src={`http://localhost:5000/${post.image}`}
-                    alt='productImage'
-                />
-                <p>{post.title}</p>
-            </div>
+            <Link to={`/posts/${post._id}`}>
+                <div className={cls.postImageWrapper}>
+                    <img
+                        className={cls.fabricatorImg}
+                        src={`http://localhost:5000/${post.image}`}
+                        alt='productImage'
+                    />
+                    <p>{post.title}</p>
+                </div>
+            </Link>
         </div>
     );
 };

@@ -17,6 +17,7 @@ import { Stocks } from "../../../../shared/ui/Stocks/Stocks";
 import { FabricatorPage } from "../../../../pages/FabricatorPage";
 import { ContactsPage } from "../../../../pages/ContactsPage";
 import { BasketPage } from "../../../../pages/BasketPage";
+import { PostPage } from "../../../../pages/PostPage";
 
 const AppRouter = () => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -35,6 +36,9 @@ const AppRouter = () => {
                 <Route path={"/basket"} element={<BasketPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
+                <Route path={"/blog"} element={<PostPage />} />
+                <Route path={"/blog/:id"} element={<ProductListPage />} />
+
                 {authUser && (
                     <Route path={"/profile"} element={<ProfilePage />}>
                         <Route path={"private"} element={<ProfilePrivate />} />
