@@ -8,12 +8,12 @@ interface PostCardProps {
 export const PostCard = ({ post }: PostCardProps) => {
     return (
         <div className={cls.postCard} key={post._id}>
-            <Link to={`/posts/${post._id}`}>
+            <Link to={`/blog/${post._id}`}>
                 <div className={cls.postImageWrapper}>
                     <img
                         className={cls.fabricatorImg}
                         src={`http://localhost:5000/${post.image}`}
-                        alt='productImage'
+                        alt='postImage'
                     />
                     <p>{post.title}</p>
                 </div>

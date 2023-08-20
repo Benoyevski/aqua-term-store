@@ -18,6 +18,7 @@ import { FabricatorPage } from "../../../../pages/FabricatorPage";
 import { ContactsPage } from "../../../../pages/ContactsPage";
 import { BasketPage } from "../../../../pages/BasketPage";
 import { PostPage } from "../../../../pages/PostPage";
+import { PostList } from "../../../../shared/ui/PostList/PostList";
 
 const AppRouter = () => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -36,8 +37,8 @@ const AppRouter = () => {
                 <Route path={"/basket"} element={<BasketPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
-                <Route path={"/blog"} element={<PostPage />} />
-                <Route path={"/blog/:id"} element={<ProductListPage />} />
+                <Route path={"/blog"} element={<PostList className='blogPage' />} />
+                <Route path={"/blog/:id"} element={<PostPage />} />
 
                 {authUser && (
                     <Route path={"/profile"} element={<ProfilePage />}>

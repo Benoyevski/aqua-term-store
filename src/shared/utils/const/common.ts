@@ -37,6 +37,7 @@ export const routeNames: { [key: string]: string } = {
     changePassword: "Сменить пароль",
     basket: "Корзина",
     wallet: "Кошелек",
+    blog: "Блог",
 };
 
 export const profileTabs: IProfileTab[] = [

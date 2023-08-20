@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import { useEffect } from "react";
 import { fetchPosts } from "../../../features/postSlice";
 import { PostCard } from "../../../shared/ui/PostCard/PostCard";
-import { Link } from "react-router-dom";
+import { BlogPageCard } from "../BlogPageCard/BlogPageCard";
 
 interface PostListProps {
     className?: string;
@@ -28,19 +28,7 @@ export const PostList = ({ className }: PostListProps) => {
                 <div className={classNames(cls.blogList, { [cls.blogPage]: className })}>
                     {posts.map((post) => {
                         return className === "blogPage" ? (
-                            <div className={cls.blogCard} key={post._id}>
-                                <div className={cls.postImageWrapper}>
-                                    <img
-                                        src={`http://localhost:5000/${post.image}`}
-                                        alt='productImage'
-                                    />
-                                </div>
-                                <div className={cls.postInfo}>
-                                    <h3>{post.title}</h3>
-                                    <span>{post.time}</span>
-                                    <p>{post.text}</p>
-                                </div>
-                            </div>
+                            <BlogPageCard post={post} />
                         ) : (
                             <PostCard key={post._id} post={post} />
                         );

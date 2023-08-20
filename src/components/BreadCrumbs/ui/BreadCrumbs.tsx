@@ -6,6 +6,7 @@ import { fetchFabricators } from "../../../features/fabricatorSlice";
 import cls from "./Breadcrumbs.module.scss";
 import { fetchProducts } from "../../../features/productSlice";
 import { routeNames } from "../../../shared/utils/const/common";
+import { fetchPosts } from "../../../features/postSlice";
 
 export const Breadcrumbs = () => {
     const dispatch = useAppDispatch();
@@ -15,11 +16,13 @@ export const Breadcrumbs = () => {
         dispatch(fetchCategories());
         dispatch(fetchProducts());
         dispatch(fetchFabricators());
+        dispatch(fetchPosts());
     }, [dispatch]);
 
     const categories = useAppSelector((state) => state.category.items);
     const products = useAppSelector((state) => state.product.items);
     const fabricators = useAppSelector((state) => state.fabricator.items);
+    const posts = useAppSelector((state) => state.post.posts);
 
     const pathnames = location.pathname.split("/").filter((x) => x);
     return location.pathname === "/" ? null : (
@@ -38,7 +41,9 @@ export const Breadcrumbs = () => {
                     {pathnames.map((value, index) => {
                         const last = index === pathnames.length - 1;
                         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-                        const category = categories.find((category) => category._id === value);
+                        const categoryAndPost =
+                            categories.find((category) => category._id === value) ||
+                            posts.find((post) => post._id === value);
                         const product = products.find((product) => product._id === value);
                         const fabricator = fabricators.find(
                             (fabricator) => fabricator._id === value,
@@ -49,10 +54,10 @@ export const Breadcrumbs = () => {
                         return (
                             <li className={cls.breadcrumbItem} key={index}>
                                 {last ? (
-                                    category ? (
+                                    categoryAndPost ? (
                                         <div className={cls.currentBreadcrumb}>
-                                            <p>{category.title}</p>
-                                            <h1>{category.title}</h1>
+                                            <p>{categoryAndPost.title}</p>
+                                            <h1>{categoryAndPost.title}</h1>
                                         </div>
                                     ) : product ? (
                                         <div className={cls.currentBreadcrumb}>
@@ -73,8 +78,8 @@ export const Breadcrumbs = () => {
                                 ) : (
                                     <div className={cls.breadcrumbItem}>
                                         <Link className={cls.breadcrumbItemLink} to={to}>
-                                            {category
-                                                ? category.title
+                                            {categoryAndPost
+                                                ? categoryAndPost.title
                                                 : product
                                                 ? product.name
                                                 : fabricator
