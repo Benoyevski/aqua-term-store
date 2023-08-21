@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { fetchPosts } from "../../../features/postSlice";
 import { PostCard } from "../../../shared/ui/PostCard/PostCard";
 import { BlogPageCard } from "../BlogPageCard/BlogPageCard";
+import { AddPostForm } from "../AddPostForm/AddPostForm";
 
 interface PostListProps {
     className?: string;
@@ -13,6 +14,7 @@ interface PostListProps {
 export const PostList = ({ className }: PostListProps) => {
     const dispatch = useAppDispatch();
 
+    const isAdmin = useAppSelector((state) => state.user.user)?.isAdmin;
     const posts = useAppSelector((state) => state.post.posts);
     const isLoadingPosts = useAppSelector((state) => state.post.isLoading);
 
@@ -26,13 +28,23 @@ export const PostList = ({ className }: PostListProps) => {
                 <div>loading posts....</div>
             ) : (
                 <div className={classNames(cls.blogList, { [cls.blogPage]: className })}>
-                    {posts.map((post) => {
-                        return className === "blogPage" ? (
-                            <BlogPageCard post={post} />
-                        ) : (
-                            <PostCard key={post._id} post={post} />
-                        );
-                    })}
+                    {className ? (
+                        <div className={cls.container}>
+                            {isAdmin && <AddPostForm />}
+                            {posts
+                                .map((post) => {
+                                    return <BlogPageCard key={post._id} post={post} />;
+                                })
+                                .reverse()}
+                            .
+                        </div>
+                    ) : (
+                        posts
+                            .map((post) => {
+                                return <PostCard key={post._id} post={post} />;
+                            })
+                            .reverse()
+                    )}
                 </div>
             )}
         </div>

@@ -10,13 +10,9 @@ export const PostCard = ({ post }: PostCardProps) => {
         <div className={cls.postCard} key={post._id}>
             <Link to={`/blog/${post._id}`}>
                 <div className={cls.postImageWrapper}>
-                    <img
-                        className={cls.fabricatorImg}
-                        src={`http://localhost:5000/${post.image}`}
-                        alt='postImage'
-                    />
-                    <p>{post.title}</p>
+                    <img src={`http://localhost:5000/${post.image}`} alt='postImage' />
                 </div>
+                <p>{post.title}</p>
             </Link>
         </div>
     );

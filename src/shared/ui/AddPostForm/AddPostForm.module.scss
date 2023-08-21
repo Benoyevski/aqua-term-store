@@ -1,0 +1,121 @@
+.addPostWrapper {
+    width: 100%;
+
+    .postFormOpen {
+        margin-bottom: 20px;
+        border: 1px solid #b3b3b3;
+        padding: 10px 30px;
+        background: #ffffff;
+        color: #b3b3b3;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+            border: 1px solid #e71717;
+            color: #e71717;
+        }
+    }
+
+    .postFormVisible {
+        height: 300px;
+        border: 1px solid #d7d7d7;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        transition: height 0.5s;
+
+        & input,
+        textarea {
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            opacity: 1;
+            transition: 0.5s;
+            resize: none;
+            outline: none;
+            border: 1px solid #d7d7d7;
+        }
+
+        .addPostBtn {
+            width: 200px;
+            font-weight: 600;
+            border: none;
+            padding: 10px;
+            background: #de1a14;
+            color: #fff;
+            cursor: pointer;
+            &:hover {
+                background: #ff2821;
+            }
+
+            &:disabled {
+            background: rgba(244, 57, 51, 0.387)
+                
+            }
+        }
+
+        [type="file"] {
+            height: 0;
+            overflow: hidden;
+            width: 0;
+            padding: 0;
+            border: none;
+        }
+
+        [type="file"] + label {
+            cursor: pointer;
+
+            font-weight: 500;
+            margin-bottom: 30px;
+            outline: none;
+            padding: 10px 20px;
+            transition: all 0.2s;
+            border-radius: 0;
+
+            &.imageBtn {
+                background-color: #c2c2c2;
+
+                &:hover {
+                    background-color: #787878;
+                }
+            }
+        }
+    }
+
+    .postFormHide {
+        display: flex;
+        flex-direction: column;
+        height: 0px;
+        border: 1px solid transparent;
+        transition: 0.5s;
+
+        & input,
+        textarea {
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        & button {
+            width: 200px;
+
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        [type="file"] {
+            opacity: 0;
+        }
+
+        [type="file"] + label {
+            opacity: 0;
+
+            &.imageBtn {
+                background-color: #c2c2c2;
+                &:hover {
+                    background-color: #787878;
+                }
+            }
+        }
+    }
+}
