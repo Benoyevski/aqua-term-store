@@ -66,3 +66,10 @@ export interface IProfileTab {
     path: string;
     image?: string;
 }
+
+export interface IReview {
+    date: string;
+    name: string;
+    text: string;
+    avatar: string;
+}

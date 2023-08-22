@@ -36,7 +36,6 @@ export const PostList = ({ className }: PostListProps) => {
                                     return <BlogPageCard key={post._id} post={post} />;
                                 })
                                 .reverse()}
-                            .
                         </div>
                     ) : (
                         posts

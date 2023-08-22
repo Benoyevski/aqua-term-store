@@ -27,7 +27,7 @@ export const SliderBlock = ({ className }: SliderBlockProps) => {
                         </div>
                     </div>
                     <div className={cls.slider}>
-                        <img src='slider/slider1.jpg' alt='slider' />
+                        <img src='slider/slider211.jpg' alt='slider' />
                         <div className={cls.sliderText}>
                             <h3>
                                 Котлы, радиаторы, <br /> обогреватели, водонагреватели, <br />

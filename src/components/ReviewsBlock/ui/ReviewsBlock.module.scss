@@ -1,0 +1,22 @@
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.reviewsBlock {
+    height: 320px;
+    overflow: hidden;
+
+    & h3 {
+        margin: 20px 0;
+    }
+
+    .reviewList {
+        display: flex;
+    }
+
+    
+}

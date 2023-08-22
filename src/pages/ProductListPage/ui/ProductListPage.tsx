@@ -27,12 +27,12 @@ export const ProductListPage = ({ className }: ProductListPageProps) => {
 
     return (
         <div className={classNames(cls.ProductListPage, {}, [className])}>
-            <div className={cls.productListWrapper}>
-                <div className={cls.container}>
+            <div className={cls.container}>
+                <div className={cls.productListWrapper}>
                     <CardList items={types} />
 
                     <div className={cls.productsBlock}>
-                        <h1>Товары</h1>
+                        <h2>Товары</h2>
                         <CardList items={products} />
                     </div>
                 </div>
@@ -42,3 +42,4 @@ export const ProductListPage = ({ className }: ProductListPageProps) => {
 };
 
 export default ProductListPage;
+ 
