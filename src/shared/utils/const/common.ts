@@ -99,7 +99,7 @@ export const reviewsList = [
         date: "19 декабря 2022",
         name: "Адам",
         text: "Отличный магазин, хороший выбор. Продавцы на высшем уровне, подберут качественное оборудование по приемлемым ценам",
-        avatar: "reviewers/review3.jpg",
+        avatar: "reviewers/review3.png",
     },
     {
         date: "22 января 2023",

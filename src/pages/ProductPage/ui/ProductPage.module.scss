@@ -66,7 +66,7 @@
         padding: 20px 0;
 
         .productToBasket {
-            button {
+            .btnAddToBasket {
                 cursor: pointer;
                 padding: 10px 20px;
                 border: 1px solid transparent;
@@ -76,6 +76,21 @@
 
                 &:hover {
                 background: #d30000;
+
+                }
+            }
+
+            .btnInBasket {
+                cursor: pointer;
+                padding: 10px 20px;
+                border: 1px solid transparent;
+                background: #1eb503;
+                color: #fff;
+                font-weight: 500;
+                
+
+                &:hover {
+                background: #20d600;
 
                 }
             }

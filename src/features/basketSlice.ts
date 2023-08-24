@@ -6,6 +6,7 @@ export type TBasketProduct = {
     id: string;
     title: string;
     imageSrc: string;
+    category: string;
 };
 
 interface IBasketSliceState {

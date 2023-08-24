@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { Loader } from "../../../shared/ui/Loader/Loader";
 import { Rating } from "../../../shared/ui/Rating/Rating";
 import { PriceInfo } from "../../../shared/ui/PriceInfo/PriceInfo";
-import { TBasketProduct, addProductToBasket } from "../../../features/basketSlice";
+import { TBasketProduct, addProductToBasket, selectBasket } from "../../../features/basketSlice";
 
 interface ProductPageProps {
     className?: string;
@@ -22,18 +22,20 @@ const ProductPage = ({ className }: ProductPageProps) => {
     const fabricator = useAppSelector((state) => state.fabricator.items).find(
         (item) => item._id === product?.fabricator,
     );
+    const basket = useAppSelector(selectBasket);
 
+    const inBasket = basket.products.find((el) => el.id === product?._id);
     useEffect(() => {
         dispatch(fetchProducts());
     }, [dispatch]);
 
-    
     const handleAddToBasket = () => {
         if (product) {
             const prod: TBasketProduct = {
                 id: product._id,
                 title: product.name,
                 imageSrc: product.image,
+                category: product.category,
             };
             dispatch(addProductToBasket(prod));
         }
@@ -68,7 +70,9 @@ const ProductPage = ({ className }: ProductPageProps) => {
                                 </div>
                                 <div className={cls.productInfo}>
                                     <div className={cls.productToBasket}>
-                                        <button onClick={handleAddToBasket}>В корзину</button>
+                                        <button className={inBasket ? cls.btnInBasket : cls.btnAddToBasket} onClick={handleAddToBasket}>
+                                            {inBasket ? "Уже в корзине" : "В корзину"}
+                                        </button>
                                     </div>
                                     <div className={cls.productFabricator}>
                                         <p>Производитель</p>

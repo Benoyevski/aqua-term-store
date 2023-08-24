@@ -6,6 +6,7 @@ import {
     removeProductFromBasket,
     selectBasket,
 } from "../../../features/basketSlice";
+import { BasketProduct } from "../../../shared/ui/BasketProduct/BasketProduct";
 
 const BasketPage = () => {
     const dispatch = useAppDispatch();
@@ -35,23 +36,11 @@ const BasketPage = () => {
                             </div>
                             {products.map((prod) => {
                                 return (
-                                    <div className={cls.basketProductCard} key={prod.id}>
-                                        <div className={cls.imgWrapper}>
-                                            <img
-                                                src={`http://localhost:5000/${prod.imageSrc}`}
-                                                alt={prod.title}
-                                            />
-                                        </div>
-                                        <div className={cls.basketProdInfo}>
-                                            <p>{prod.title}</p>
-                                        </div>
-                                        <button
-                                            onClick={() => handleRemoveFromBasket(prod.id)}
-                                            className={cls.removeFromBasketBtn}
-                                        >
-                                            Убрать из корзины
-                                        </button>
-                                    </div>
+                                    <BasketProduct
+                                        key={prod.id}
+                                        handleRemoveFromBasket={handleRemoveFromBasket}
+                                        prod={prod}
+                                    />
                                 );
                             })}
                         </>

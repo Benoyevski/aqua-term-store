@@ -10,7 +10,7 @@ export const ReviewsBlock = () => {
                     <h3>О нас пишут</h3>
                     <div className={cls.reviewList}>
                         {reviewsList.map((review) => {
-                            return <ReviewCard review={review} />;
+                            return <ReviewCard key={review.date} review={review} />;
                         })}
                     </div>
                 </section>
