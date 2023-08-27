@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import cls from "./RegisterForm.module.scss";
 import { clearError, register } from "../../../features/userSlice";
@@ -8,7 +8,7 @@ interface RegisterFormProps {
     setAuthForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const RegisterForm = ({ setAuthForm }: RegisterFormProps) => {
+export const RegisterForm =memo( ({ setAuthForm }: RegisterFormProps) => {
     const dispatch = useAppDispatch();
 
     const [login, setLogin] = useState("");
@@ -50,4 +50,4 @@ export const RegisterForm = ({ setAuthForm }: RegisterFormProps) => {
             </div>
         </>
     );
-};
+});

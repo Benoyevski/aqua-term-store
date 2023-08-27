@@ -21,7 +21,6 @@ const ProfilePage = () => {
     return (
         <div className={cls.profilePageWrapper}>
             <div className={cls.container}>
-   
                 <div className={cls.profilePage}>
                     <ProfileSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
                     {activeTab === "profile" ? (

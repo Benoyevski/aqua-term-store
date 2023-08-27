@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { FiEye } from "react-icons/fi"; // Импортируйте иконку глаза
 import cls from "./ChangePassword.module.scss";
 import { changePassword } from "../../../features/userSlice";
 import { useAppDispatch, useAppSelector } from "../../utils/hooks/hooks";
 
-export const ChangePassword = () => {
+export const ChangePassword = memo(() => {
     const dispatch = useAppDispatch();
 
     const userId = useAppSelector((state) => state.user.user?._id);
@@ -63,4 +63,4 @@ export const ChangePassword = () => {
             </form>
         </div>
     );
-};
+});

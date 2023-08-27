@@ -11,7 +11,7 @@ interface ProfileSidebarItemProps {
 export const ProfileSidebarItem = ({ item, activeTab, setActiveTab }: ProfileSidebarItemProps) => {
     return (
         <Link to={`/${item.path}`}>
-            <li 
+            <li
                 onClick={() => setActiveTab(item.path)}
                 className={activeTab === item.path ? cls.activeItem : cls.sidebarItem}
             >

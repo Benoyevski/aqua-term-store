@@ -2,12 +2,13 @@ import { classNames } from "../../shared/utils/classNames/classNames";
 import { CategoryList } from "../CategoryList/ui/CategoryList";
 import { ProductList } from "../ProductList";
 import cls from "./PopularCategories.module.scss";
+import { memo } from "react";
 
 interface PopularCategoriesProps {
     className?: string;
 }
 
-export const PopularCategories = ({ className }: PopularCategoriesProps) => {
+export const PopularCategories = memo(({ className }: PopularCategoriesProps) => {
     return (
         <div className={classNames(cls.PopularCategories, {}, [className])}>
             <div className={cls.container}>
@@ -22,4 +23,4 @@ export const PopularCategories = ({ className }: PopularCategoriesProps) => {
             </div>
         </div>
     );
-};
+});

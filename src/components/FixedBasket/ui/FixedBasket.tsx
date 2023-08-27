@@ -8,7 +8,7 @@ import { classNames } from "../../../shared/utils/classNames/classNames";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import cls from "./FixedBasket.module.scss";
 import { exceptPaths } from "../../../shared/utils/const/common";
-import React from "react";
+import React, { memo } from "react";
 import { BsCart3 } from "react-icons/bs";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { BasketProduct } from "../../../shared/ui/BasketProduct/BasketProduct";
@@ -17,7 +17,7 @@ interface FixedBasketProps {
     className?: string;
 }
 
-export const FixedBasket = ({ className }: FixedBasketProps) => {
+export const FixedBasket = memo(({ className }: FixedBasketProps) => {
     const dispatch = useAppDispatch();
 
     const [showBasket, setShowBasket] = React.useState(false);
@@ -110,4 +110,4 @@ export const FixedBasket = ({ className }: FixedBasketProps) => {
             </div>
         </div>
     );
-};
+});

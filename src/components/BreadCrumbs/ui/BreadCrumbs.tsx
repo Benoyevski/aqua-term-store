@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { fetchCategories } from "../../../features/categorySlice";
 import { fetchFabricators } from "../../../features/fabricatorSlice";
 import cls from "./Breadcrumbs.module.scss";
@@ -8,7 +8,7 @@ import { fetchProducts } from "../../../features/productSlice";
 import { routeNames } from "../../../shared/utils/const/common";
 import { fetchPosts } from "../../../features/postSlice";
 
-export const Breadcrumbs = () => {
+export const Breadcrumbs = memo(() => {
     const dispatch = useAppDispatch();
     const location = useLocation();
 
@@ -96,4 +96,4 @@ export const Breadcrumbs = () => {
             </nav>
         </div>
     );
-};
+});

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./AuthForm.module.scss";
 import { LoginForm } from "../../LoginForm";
@@ -9,7 +9,7 @@ interface AuthFormProps {
     onSuccess: () => void;
 }
 
-export const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
+export const AuthForm = memo(({ className, onSuccess }: AuthFormProps) => {
     const [authForm, setAuthForm] = useState(true);
 
     return (
@@ -21,4 +21,4 @@ export const AuthForm = ({ className, onSuccess }: AuthFormProps) => {
             )}
         </div>
     );
-};
+});

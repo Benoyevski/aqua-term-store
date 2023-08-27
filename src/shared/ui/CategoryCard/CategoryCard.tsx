@@ -4,6 +4,7 @@ import { classNames } from "../../utils/classNames/classNames";
 import cls from "./CategoryCard.module.scss";
 import { useAppDispatch } from "../../utils/hooks/hooks";
 import { incrementCategoryPopularity } from "../../../features/categorySlice";
+import { memo } from "react";
 
 interface CategoryCardProps {
     className?: string;
@@ -12,7 +13,7 @@ interface CategoryCardProps {
     popularBlock?: boolean;
 }
 
-export const CategoryCard = ({
+export const CategoryCard = memo(({
     className,
     category,
     typeList,
@@ -55,4 +56,4 @@ export const CategoryCard = ({
             </div>
         </li>
     );
-};
+});

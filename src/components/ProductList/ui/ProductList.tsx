@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./ProductList.module.scss";
@@ -11,7 +11,7 @@ interface ProductListProps {
     popularity?: boolean;
 }
 
-export const ProductList = ({ className, popularity }: ProductListProps) => {
+export const ProductList = memo(({ className, popularity }: ProductListProps) => {
     const dispatch = useAppDispatch();
     const products = useAppSelector((state) => state.product.items);
     const isLoading = useAppSelector((state) => state.product.isLoading);
@@ -39,4 +39,4 @@ export const ProductList = ({ className, popularity }: ProductListProps) => {
                   })}
         </ul>
     );
-};
+});

@@ -1,11 +1,11 @@
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./SliderBlock.module.scss";
-
+import { memo } from "react";
 interface SliderBlockProps {
     className?: string;
 }
 
-export const SliderBlock = ({ className }: SliderBlockProps) => {
+export const SliderBlock = memo(({ className }: SliderBlockProps) => {
     return (
         <div className={classNames(cls.SliderBlock, {}, [className])}>
             <div className={cls.container}>
@@ -59,4 +59,4 @@ export const SliderBlock = ({ className }: SliderBlockProps) => {
             </div>
         </div>
     );
-};
+});

@@ -1,11 +1,12 @@
 import cls from "./PostCard.module.scss";
 import { IPost } from "../../types/types";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 interface PostCardProps {
     className?: string;
     post: IPost;
 }
-export const PostCard = ({ post }: PostCardProps) => {
+export const PostCard = memo(({ post }: PostCardProps) => {
     return (
         <div className={cls.postCard} key={post._id}>
             <Link to={`/blog/${post._id}`}>
@@ -16,4 +17,4 @@ export const PostCard = ({ post }: PostCardProps) => {
             </Link>
         </div>
     );
-};
+});

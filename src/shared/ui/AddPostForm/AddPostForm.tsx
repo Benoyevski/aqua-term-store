@@ -1,9 +1,9 @@
 import { addPost } from "../../../features/postSlice";
 import { useAppDispatch } from "../../utils/hooks/hooks";
 import cls from "./AddPostForm.module.scss";
-import { useState } from "react";
+import { memo, useState } from "react";
 
-export const AddPostForm = () => {
+export const AddPostForm = memo(() => {
     const dispatch = useAppDispatch();
     const [postForm, setPostForm] = useState(false);
     const [title, setTitle] = useState("");
@@ -75,4 +75,4 @@ export const AddPostForm = () => {
             </div>
         </div>
     );
-};
+});

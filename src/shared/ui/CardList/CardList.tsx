@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 import cls from "./CardList.module.scss";
 import { classNames } from "../../utils/classNames/classNames";
 import { ItemsToCard } from "../../types/types";
@@ -10,7 +10,7 @@ interface CardListProps {
     items: ItemsToCard[];
 }
 
-export const CardList: FC<CardListProps> = ({ className, items }) => {
+export const CardList = memo(({ className, items }: CardListProps) => {
     return (
         <div className={classNames(cls.CardList, {}, [className])}>
             {items.map((item) => {
@@ -28,4 +28,4 @@ export const CardList: FC<CardListProps> = ({ className, items }) => {
             })}
         </div>
     );
-};
+});

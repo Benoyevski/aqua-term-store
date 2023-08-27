@@ -2,10 +2,11 @@ import cls from "./Blog.module.scss";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import { PostList } from "../../../shared/ui/PostList/PostList";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 interface BlogProps {
     className?: string;
 }
-export const Blog = ({ className }: BlogProps) => {
+export const Blog = memo(({ className }: BlogProps) => {
     return (
         <div className={classNames(cls.Blog, {}, [className])}>
             <div className={cls.container}>
@@ -21,4 +22,4 @@ export const Blog = ({ className }: BlogProps) => {
             </div>
         </div>
     );
-};
+});

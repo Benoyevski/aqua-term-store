@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useEffect } from "react";
+import { ChangeEvent, FC, memo, useEffect } from "react";
 import { useState } from "react";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./Search.module.scss";
@@ -12,7 +12,7 @@ interface SearchProps {
     className?: string;
 }
 
-export const Search: FC = ({ className }: SearchProps) => {
+export const Search: FC = memo(({ className }: SearchProps) => {
     const dispatch = useAppDispatch();
     const [inputActive, setInputActive] = useState<boolean>(false);
     const [inputValue, setInputValue] = useState<string>("");
@@ -84,4 +84,4 @@ export const Search: FC = ({ className }: SearchProps) => {
             </div>
         </div>
     );
-};
+});

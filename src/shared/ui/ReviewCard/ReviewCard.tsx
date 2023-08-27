@@ -1,9 +1,10 @@
+import { memo } from "react";
 import { IReview } from "../../types/types";
 import cls from "./ReviewCard.module.scss";
 interface ReviewCardProps {
     review: IReview;
 }
-export const ReviewCard = ({ review }: ReviewCardProps) => {
+export const ReviewCard = memo(({ review }: ReviewCardProps) => {
     return (
         <div className={cls.review}>
             <div className={cls.reviewHeader}>
@@ -16,4 +17,4 @@ export const ReviewCard = ({ review }: ReviewCardProps) => {
             <p className={cls.reviewText}>{review.text}</p>
         </div>
     );
-};
+});

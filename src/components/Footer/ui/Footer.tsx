@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
-import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./Footer.module.scss";
+import { memo } from "react";
 
-interface FooterProps {
-    className?: string;
-}
 
-export const Footer = ({ className }: FooterProps) => {
+
+export const Footer = memo(() => {
     return (
-        <footer className={classNames(cls.Footer, {}, [className])}>
+        <footer className={cls.Footer}>
             <div className={cls.container}>
                 <ul className={cls.sections}>
                     <li>
@@ -45,4 +43,4 @@ export const Footer = ({ className }: FooterProps) => {
             </div>
         </footer>
     );
-};
+});

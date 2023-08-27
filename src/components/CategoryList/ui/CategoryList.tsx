@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import { CategoryCard } from "../../../shared/ui/CategoryCard/CategoryCard";
@@ -12,7 +12,7 @@ interface CategoryListProps {
     popularity?: boolean;
 }
 
-export const CategoryList = ({ className, popularity }: CategoryListProps) => {
+export const CategoryList = memo(({ className, popularity }: CategoryListProps) => {
     const dispatch = useAppDispatch();
     const categories = useAppSelector((state) => state.category.items);
     const types = useAppSelector((state) => state.typeSlice.items);
@@ -53,4 +53,4 @@ export const CategoryList = ({ className, popularity }: CategoryListProps) => {
                   })}
         </ul>
     );
-};
+});

@@ -1,7 +1,7 @@
 import cls from "./PostList.module.scss";
 import { classNames } from "../../utils/classNames/classNames";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { fetchPosts } from "../../../features/postSlice";
 import { PostCard } from "../../../shared/ui/PostCard/PostCard";
 import { BlogPageCard } from "../BlogPageCard/BlogPageCard";
@@ -11,7 +11,7 @@ interface PostListProps {
     className?: string;
 }
 
-export const PostList = ({ className }: PostListProps) => {
+export const PostList = memo(({ className }: PostListProps) => {
     const dispatch = useAppDispatch();
 
     const isAdmin = useAppSelector((state) => state.user.user)?.isAdmin;
@@ -48,4 +48,4 @@ export const PostList = ({ className }: PostListProps) => {
             )}
         </div>
     );
-};
+});

@@ -4,6 +4,7 @@ import { classNames } from "../../utils/classNames/classNames";
 import { useAppDispatch } from "../../utils/hooks/hooks";
 import { incrementProductPopularity } from "../../../features/productSlice";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 interface ProductCardProps {
     className?: string;
@@ -11,7 +12,7 @@ interface ProductCardProps {
     popularity?: boolean;
 }
 
-export const ProductCard = ({ className, prod, popularity }: ProductCardProps) => {
+export const ProductCard = memo(({ className, prod, popularity }: ProductCardProps) => {
     const dispatch = useAppDispatch();
 
     const handleIncrementPopularity = () => {
@@ -32,4 +33,4 @@ export const ProductCard = ({ className, prod, popularity }: ProductCardProps) =
             </h4>
         </div>
     );
-};
+});

@@ -1,15 +1,12 @@
 import { Link } from "react-router-dom";
 import cls from "./Menu.module.scss";
 import { menuList } from "../../utils/const/common";
+import { useMemo } from "react";
 
-interface MenuProps {
-    className?: string;
-}
-
-export const Menu = ({ className }: MenuProps) => {
-    return (
-        <ul className={cls.menu}>
-            {menuList.map((item) => {
+export const Menu = () => {
+    const memoMenuList = useMemo(
+        () =>
+            menuList.map((item) => {
                 return (
                     <li key={item.title} className={cls.menuItemWrapper}>
                         <Link to={item.path} className={cls.menuItem} key={item.title}>
@@ -17,7 +14,8 @@ export const Menu = ({ className }: MenuProps) => {
                         </Link>
                     </li>
                 );
-            })}
-        </ul>
+            }),
+        [],
     );
+    return <ul className={cls.menu}>{memoMenuList}</ul>;
 };

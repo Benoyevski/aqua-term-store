@@ -1,7 +1,7 @@
-import React from "react";
+import { memo } from "react";
 import { Map, Placemark, ZoomControl } from "@pbe/react-yandex-maps";
 import cls from "./ContactsMap.module.scss";
-const ContactsMap = React.memo(() => {
+const ContactsMap = memo(() => {
     return (
         <Map
             instanceRef={(ref) => {

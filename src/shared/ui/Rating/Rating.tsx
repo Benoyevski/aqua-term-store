@@ -1,6 +1,7 @@
 import { BsStar } from "react-icons/bs";
 import cls from "./Rating.module.scss";
-export const Rating = () => {
+import { memo } from "react";
+export const Rating = memo(() => {
     return (
         <div className={cls.RatingWrapper}>
             <BsStar />
@@ -10,4 +11,4 @@ export const Rating = () => {
             <BsStar />
         </div>
     );
-};
+});

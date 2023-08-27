@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { ReviewCard } from "../../../shared/ui/ReviewCard/ReviewCard";
 import { reviewsList } from "../../../shared/utils/const/common";
 import cls from "./ReviewsBlock.module.scss";
 
-export const ReviewsBlock = () => {
+export const ReviewsBlock = memo(() => {
     return (
         <div className={cls.ReviewsBlockWrapper}>
             <div className={cls.container}>
@@ -17,4 +18,4 @@ export const ReviewsBlock = () => {
             </div>
         </div>
     );
-};
+});

@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, memo, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { AboutPage } from "../../../../pages/AboutPage";
 import { MainPage } from "../../../../pages/MainPage";
@@ -20,7 +20,7 @@ import { BasketPage } from "../../../../pages/BasketPage";
 import { PostPage } from "../../../../pages/PostPage";
 import { PostList } from "../../../../shared/ui/PostList/PostList";
 
-const AppRouter = () => {
+const AppRouter = memo(() => {
     const authUser = useAppSelector((state) => state.user.user);
 
     return (
@@ -37,7 +37,7 @@ const AppRouter = () => {
                 <Route path={"/basket"} element={<BasketPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
-                <Route path={"/blog"} element={<PostList className='blogPage' />} />
+                <Route path={"/blog"} element={<PostList />} />
                 <Route path={"/blog/:id"} element={<PostPage />} />
 
                 {authUser && (
@@ -50,5 +50,5 @@ const AppRouter = () => {
             </Routes>
         </Suspense>
     );
-};
+});
 export default AppRouter;

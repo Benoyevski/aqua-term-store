@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { IProduct } from "../../types/types";
 import cls from "./SearchedProduct.module.scss";
+import { memo } from "react";
 
 interface SearchedProductProps {
     product: IProduct;
 }
 
-export const SearchedProduct = ({ product }: SearchedProductProps) => {
+export const SearchedProduct = memo(({ product }: SearchedProductProps) => {
     return (
         <Link to={`/catalog/${product.category}/${product._id}`}>
             <div className={cls.searchItem} key={product._id}>
@@ -19,4 +20,4 @@ export const SearchedProduct = ({ product }: SearchedProductProps) => {
             </div>
         </Link>
     );
-};
+});

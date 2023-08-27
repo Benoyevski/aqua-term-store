@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { memo, useEffect } from "react";
 import { fetchFabricators } from "../../../features/fabricatorSlice";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
@@ -11,7 +11,7 @@ interface FabricatorsListProps {
     className?: string;
 }
 
-export const FabricatorsList = ({ className }: FabricatorsListProps) => {
+export const FabricatorsList = memo(({ className }: FabricatorsListProps) => {
     const dispatch = useAppDispatch();
     const fabricators = useAppSelector((state) => state.fabricator.items);
     const isLoading = useAppSelector((state) => state.fabricator.isLoading);
@@ -56,4 +56,4 @@ export const FabricatorsList = ({ className }: FabricatorsListProps) => {
             </div>
         </div>
     );
-};
+});

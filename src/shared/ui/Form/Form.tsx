@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { useAppSelector } from "../../utils/hooks/hooks";
 import cls from "./Form.module.scss";
 
@@ -13,7 +14,7 @@ interface FormProps {
     onSubmit: (event: React.FormEvent<HTMLFormElement>) => Promise<void>;
 }
 
-export const Form = ({
+export const Form = memo(({
     login,
     setLogin,
     email,
@@ -85,4 +86,4 @@ export const Form = ({
             </div>
         </form>
     );
-};
+});

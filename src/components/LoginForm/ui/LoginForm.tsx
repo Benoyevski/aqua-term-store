@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, memo } from "react";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import cls from "./LoginForm.module.scss";
 import { authorization, clearError } from "../../../features/userSlice";
@@ -10,7 +10,7 @@ interface LoginFormProps {
     onSuccess: () => void;
 }
 
-export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
+export const LoginForm = memo(({ setAuthForm, onSuccess }: LoginFormProps) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -54,4 +54,4 @@ export const LoginForm = ({ setAuthForm, onSuccess }: LoginFormProps) => {
             </div>
         </>
     );
-};
+});

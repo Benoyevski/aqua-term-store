@@ -1,6 +1,7 @@
+import { memo } from "react";
 import cls from "./AboutStore.module.scss";
 
-export const AboutStore = () => {
+export const AboutStore = memo(() => {
     return (
         <div className={cls.aboutStoreWrapper}>
             <div className={cls.container}>
@@ -22,4 +23,4 @@ export const AboutStore = () => {
             </div>
         </div>
     );
-};
+});

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { TBasketProduct } from "../../../features/basketSlice";
 import cls from "./BasketProduct.module.scss";
+import { memo } from "react";
 interface BasketProductProps {
     inFixedBasket?: boolean;
     prod: TBasketProduct;
     handleRemoveFromBasket: (id: string) => void;
 }
-export const BasketProduct = ({
+export const BasketProduct = memo(({
     prod,
     handleRemoveFromBasket,
     inFixedBasket,
@@ -32,4 +33,4 @@ export const BasketProduct = ({
             </button>
         </div>
     );
-};
+});

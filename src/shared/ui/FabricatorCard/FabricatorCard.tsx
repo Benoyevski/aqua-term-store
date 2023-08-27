@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { memo } from "react";
 import cls from "./FabricatorCard.module.scss";
 import { classNames } from "../../utils/classNames/classNames";
 import { IFabricator } from "../../types/types";
@@ -9,7 +9,7 @@ interface FabricatorCardProps {
     fabricator: IFabricator;
 }
 
-export const FabricatorCard = ({ className, fabricator }: FabricatorCardProps) => {
+export const FabricatorCard = memo(({ className, fabricator }: FabricatorCardProps) => {
     return (
         <div className={classNames(cls.FabricatorCard, {}, [className])}>
             <div className={cls.fabricatorsImgWrapper}>
@@ -23,4 +23,4 @@ export const FabricatorCard = ({ className, fabricator }: FabricatorCardProps) =
             </div>
         </div>
     );
-};
+});
