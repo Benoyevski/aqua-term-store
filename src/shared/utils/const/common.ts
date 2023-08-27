@@ -31,7 +31,7 @@ export const menuList: IMenuList[] = [
 
 export const routeNames: { [key: string]: string } = {
     catalog: "Каталог",
-    about: "О сайте",
+    about: "О магазине",
     contacts: "Контакты",
     fabricators: "Производители",
     sale: "Акции",

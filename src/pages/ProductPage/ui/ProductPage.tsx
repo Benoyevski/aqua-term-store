@@ -71,7 +71,7 @@ const ProductPage = ({ className }: ProductPageProps) => {
                                 <div className={cls.productInfo}>
                                     <div className={cls.productToBasket}>
                                         <button className={inBasket ? cls.btnInBasket : cls.btnAddToBasket} onClick={handleAddToBasket}>
-                                            {inBasket ? "Уже в корзине" : "В корзину"}
+                                            {inBasket ? "Товар в корзине" : "В корзину"}
                                         </button>
                                     </div>
                                     <div className={cls.productFabricator}>
