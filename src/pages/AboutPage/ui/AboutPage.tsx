@@ -1,7 +1,9 @@
-import cls from "./AboutPage.module.scss";
+import { AboutStore } from "../../../shared/ui/AboutStore/AboutStore";
 
 const AboutPage = () => {
-    return <div></div>;
+    return <div>
+        <AboutStore/>
+    </div>;
 };
 
 export default AboutPage;
