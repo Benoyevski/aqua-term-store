@@ -6,6 +6,7 @@ import { useAppDispatch } from "../shared/utils/hooks/hooks";
 import { logout } from "../features/userSlice";
 import { FixedBasket } from "../components/FixedBasket";
 import { memo } from "react";
+import { Crumbs } from "../components/Crumbs";
 
 const App = memo(() => {
     const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ const App = memo(() => {
         <div className='app'>
             <InfoHeader />
             <Navbar />
-            {/* <Breadcrumbs /> */}
+            <Crumbs/>
             <FixedBasket />
             <AppRouter />
             <Footer />
