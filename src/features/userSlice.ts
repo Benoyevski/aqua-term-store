@@ -5,7 +5,7 @@ import { serverUrl } from "../serverUrl";
 interface UserState {
     user: IUser | null;
     isLoading: boolean;
-    error: unknown;
+    error: any;
 }
 
 const storedUser = localStorage.getItem("user");
@@ -15,7 +15,7 @@ const initialState: UserState = {
     error: null,
 };
 
-export const fetchUser = createAsyncThunk<unknown, string>(
+export const fetchUser = createAsyncThunk<any, string>(
     "user/fetch",
     async (id, { rejectWithValue }) => {
         try {

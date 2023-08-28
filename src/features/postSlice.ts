@@ -5,7 +5,7 @@ import { serverUrl } from "../serverUrl";
 interface PostState {
     posts: IPost[];
     isLoading: boolean;
-    error: unknown;
+    error: any;
 }
 
 const initialState: PostState = {
