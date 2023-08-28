@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { IType } from "../shared/types/types";
+import { serverUrl } from "../serverUrl";
 
 interface TypeState {
     items: IType[];
@@ -18,7 +19,7 @@ export const addType = createAsyncThunk(
     "type/addToDB",
     async (formData: FormData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/types`, {
+            const response = await fetch(`${serverUrl}types`, {
                 method: "POST",
                 body: formData,
                 credentials: "include",
@@ -38,7 +39,7 @@ export const addType = createAsyncThunk(
 
 export const fetchTypes = createAsyncThunk("fetch/type", async (_, thunkAPI) => {
     try {
-        const res = await fetch("http://localhost:5000/types");
+        const res = await fetch(`${serverUrl}types`);
 
         const data = await res.json();
 

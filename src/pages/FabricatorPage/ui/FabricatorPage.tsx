@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { fetchFabricators } from "../../../features/fabricatorSlice";
 import { fetchProducts } from "../../../features/productSlice";
 import { ProductCard } from "../../../shared/ui/ProductCard/ProductCard";
+import { serverUrl } from "../../../serverUrl";
 interface FabricatorPageProps {
     className?: string;
 }
@@ -37,7 +38,7 @@ const FabricatorPage = ({ className }: FabricatorPageProps) => {
                             <div className={cls.imageWrapper}>
                                 <img
                                     className={cls.fabricatorImg}
-                                    src={`http://localhost:5000/${fabricator?.image}`}
+                                    src={`${serverUrl}${fabricator?.image}`}
                                     alt='productImage'
                                 />
                             </div>

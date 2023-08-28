@@ -3,6 +3,7 @@ import cls from "./FabricatorCard.module.scss";
 import { classNames } from "../../utils/classNames/classNames";
 import { IFabricator } from "../../types/types";
 import { Link } from "react-router-dom";
+import { serverUrl } from "../../../serverUrl";
 
 interface FabricatorCardProps {
     className?: string;
@@ -16,7 +17,7 @@ export const FabricatorCard = memo(({ className, fabricator }: FabricatorCardPro
                 <Link to={`/fabricators/${fabricator._id}`}>
                     <img
                         className={cls.fabricatorImg}
-                        src={`http://localhost:5000/${fabricator.image}`}
+                        src={`${serverUrl}${fabricator.image}`}
                         alt='productImage'
                     />
                 </Link>

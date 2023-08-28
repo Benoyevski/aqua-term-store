@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import { useParams } from "react-router-dom";
 import { fetchPosts } from "../../../features/postSlice";
 import { timeConverter } from "../../../shared/utils/timeConverter/timeConverter";
+import { serverUrl } from "../../../serverUrl";
 
 interface PostPageProps {
     className?: string;
@@ -35,10 +36,7 @@ const PostPage = ({ className }: PostPageProps) => {
                             <p className={cls.postDate}>{postTime}</p>
                             <div className={cls.postContent}>
                                 <div className={cls.postImageWrapper}>
-                                    <img
-                                        src={`http://localhost:5000/${post?.image}`}
-                                        alt='productImage'
-                                    />
+                                    <img src={`${serverUrl}${post?.image}`} alt='productImage' />
                                 </div>
                                 <p> {post?.text.slice(0, firstParagraf)}</p>
                                 <p className={cls.firstParagrafunderline}></p>

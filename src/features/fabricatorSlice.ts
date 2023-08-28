@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { IFabricator } from "../shared/types/types";
-
+import { serverUrl } from "../serverUrl";
 interface FabricatorState {
     items: IFabricator[];
     isLoading: boolean;
@@ -18,7 +18,7 @@ export const addFabricator = createAsyncThunk(
     "fabricator/addToDB",
     async (formData: FormData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/fabricators`, {
+            const response = await fetch(`${serverUrl}fabricators`, {
                 method: "POST",
                 body: formData,
                 credentials: "include",
@@ -38,7 +38,7 @@ export const addFabricator = createAsyncThunk(
 
 export const fetchFabricators = createAsyncThunk("fetch/fabricator", async (_, thunkAPI) => {
     try {
-        const res = await fetch("http://localhost:5000/fabricators");
+        const res = await fetch(`${serverUrl}fabricators`);
 
         const data = await res.json();
 

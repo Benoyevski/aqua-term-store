@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../utils/hooks/hooks";
 import { incrementProductPopularity } from "../../../features/productSlice";
 import { Link } from "react-router-dom";
 import { memo } from "react";
+import { serverUrl } from "../../../serverUrl";
 
 interface ProductCardProps {
     className?: string;
@@ -26,7 +27,7 @@ export const ProductCard = memo(({ className, prod, popularity }: ProductCardPro
             ])}
         >
             <div className={cls.imageWrapper}>
-                <img src={`http://localhost:5000/${prod.image}`} alt={prod.name} />
+                <img src={`${serverUrl}${prod.image}`} alt={prod.name} />
             </div>
             <h4 onClick={handleIncrementPopularity} className={cls.prodTitle}>
                 <Link to={`/catalog/${prod.category}/${prod._id}`}>{prod.name}</Link>

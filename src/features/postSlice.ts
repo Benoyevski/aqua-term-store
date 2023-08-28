@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { IPost } from "../shared/types/types";
-
+import { serverUrl } from "../serverUrl";
 interface PostState {
     posts: IPost[];
     isLoading: boolean;
@@ -18,7 +18,7 @@ export const addPost = createAsyncThunk(
     "post/addToDB",
     async (formData: FormData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/posts`, {
+            const response = await fetch(`${serverUrl}posts`, {
                 method: "POST",
                 body: formData,
             });
@@ -37,7 +37,7 @@ export const addPost = createAsyncThunk(
 
 export const fetchPosts = createAsyncThunk("fetch/post", async (_, thunkAPI) => {
     try {
-        const res = await fetch("http://localhost:5000/posts");
+        const res = await fetch(`${serverUrl}posts`);
 
         const data = await res.json();
 

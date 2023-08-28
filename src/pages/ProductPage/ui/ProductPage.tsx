@@ -8,6 +8,7 @@ import { Loader } from "../../../shared/ui/Loader/Loader";
 import { Rating } from "../../../shared/ui/Rating/Rating";
 import { PriceInfo } from "../../../shared/ui/PriceInfo/PriceInfo";
 import { TBasketProduct, addProductToBasket, selectBasket } from "../../../features/basketSlice";
+import { serverUrl } from "../../../serverUrl";
 
 interface ProductPageProps {
     className?: string;
@@ -50,10 +51,7 @@ const ProductPage = ({ className }: ProductPageProps) => {
                     <div className={cls.productPageContent}>
                         <div className={cls.prodImage}>
                             <div className={cls.prodImageWrapper}>
-                                <img
-                                    src={`http://localhost:5000/${product?.image}`}
-                                    alt='productImage'
-                                />
+                                <img src={`${serverUrl}${product?.image}`} alt='productImage' />
                             </div>
                             <div className={cls.prodMainInfo}>
                                 <div className={cls.fabricator}>
@@ -63,14 +61,19 @@ const ProductPage = ({ className }: ProductPageProps) => {
                                     <span className={cls.fabricatorImageWrapper}>
                                         <img
                                             className={cls.fabricatorImage}
-                                            src={`http://localhost:5000/${fabricator?.image}`}
+                                            src={`${serverUrl}${fabricator?.image}`}
                                             alt=''
                                         />
                                     </span>
                                 </div>
                                 <div className={cls.productInfo}>
                                     <div className={cls.productToBasket}>
-                                        <button className={inBasket ? cls.btnInBasket : cls.btnAddToBasket} onClick={handleAddToBasket}>
+                                        <button
+                                            className={
+                                                inBasket ? cls.btnInBasket : cls.btnAddToBasket
+                                            }
+                                            onClick={handleAddToBasket}
+                                        >
                                             {inBasket ? "Товар в корзине" : "В корзину"}
                                         </button>
                                     </div>

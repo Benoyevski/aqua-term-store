@@ -1,5 +1,6 @@
-import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IRegisterData, IUser } from "../shared/types/types";
+import { serverUrl } from "../serverUrl";
 
 interface UserState {
     user: IUser | null;
@@ -18,7 +19,7 @@ export const fetchUser = createAsyncThunk<any, string>(
     "user/fetch",
     async (id, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/auth/users/${id}`, {
+            const response = await fetch(`${serverUrl}auth/users/${id}`, {
                 credentials: "include",
             });
 
@@ -39,7 +40,7 @@ export const changePassword = createAsyncThunk<IUser, { id: string; password: st
     "password/change",
     async ({ id, password }, { rejectWithValue }) => {
         try {
-            const response = await fetch("http://localhost:5000/auth/changePassword", {
+            const response = await fetch(`${serverUrl}auth/changePassword`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
@@ -65,7 +66,7 @@ export const authorization = createAsyncThunk<IUser, Record<string, string>>(
     "user/auth",
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const response = await fetch("http://localhost:5000/auth/login", {
+            const response = await fetch(`${serverUrl}auth/login`, {
                 method: "POST",
 
                 headers: {
@@ -96,7 +97,7 @@ export const register = createAsyncThunk<string, IRegisterData>(
     "user/register",
     async ({ login, email, password }, { rejectWithValue }) => {
         try {
-            const response = await fetch("http://localhost:5000/auth/register", {
+            const response = await fetch(`${serverUrl}auth/register`, {
                 method: "POST",
 
                 headers: {
@@ -120,7 +121,7 @@ export const register = createAsyncThunk<string, IRegisterData>(
 
 export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWithValue }) => {
     try {
-        const response = await fetch("http://localhost:5000/auth/logout", {
+        const response = await fetch(`${serverUrl}auth/logout`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

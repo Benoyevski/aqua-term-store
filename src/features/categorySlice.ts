@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { ICategory } from "../shared/types/types";
-
+import { serverUrl } from "../serverUrl";
 interface CategoryState {
     items: ICategory[];
     isLoading: boolean;
@@ -18,12 +18,9 @@ export const incrementCategoryPopularity = createAsyncThunk(
     "category/incrementCategoryPopularity",
     async (categoryId: string, { dispatch, rejectWithValue }) => {
         try {
-            const response = await fetch(
-                `http://localhost:5000/categories/incPopularity/${categoryId}`,
-                {
-                    method: "PATCH",
-                },
-            );
+            const response = await fetch(`${serverUrl}categories/incPopularity/${categoryId}`, {
+                method: "PATCH",
+            });
 
             if (!response.ok) {
                 throw new Error("Ошибка при увеличении популярности категории");
@@ -45,7 +42,7 @@ export const addCategory = createAsyncThunk(
     "category/addCategory",
     async (formData: FormData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/categories`, {
+            const response = await fetch(`${serverUrl}categories`, {
                 method: "POST",
                 body: formData,
                 credentials: "include",
@@ -66,7 +63,7 @@ export const addCategory = createAsyncThunk(
 
 export const fetchCategories = createAsyncThunk("category/fetchCategories", async (_, thunkAPI) => {
     try {
-        const res = await fetch("http://localhost:5000/categories", {
+        const res = await fetch(`${serverUrl}categories`, {
             headers: {
                 "Cache-Control": "public, max-age=36000",
                 Expires: "Tue, 01 Jan 2024 00:00:00 GMT",

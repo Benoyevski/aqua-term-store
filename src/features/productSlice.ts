@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { IProduct } from "../shared/types/types";
+import { serverUrl } from "../serverUrl";
 
 interface ProductState {
     items: IProduct[];
@@ -18,12 +19,9 @@ export const incrementProductPopularity = createAsyncThunk(
     "product/incrementProductPopularity",
     async (productId: string, { dispatch, rejectWithValue }) => {
         try {
-            const response = await fetch(
-                `http://localhost:5000/products/incPopularity/${productId}`,
-                {
-                    method: "PATCH",
-                },
-            );
+            const response = await fetch(`${serverUrl}products/incPopularity/${productId}`, {
+                method: "PATCH",
+            });
 
             if (!response.ok) {
                 throw new Error("Ошибка при увеличении популярности категории");
@@ -45,7 +43,7 @@ export const addProduct = createAsyncThunk(
     "product/add",
     async (formData: FormData, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:5000/products`, {
+            const response = await fetch(`${serverUrl}products`, {
                 method: "POST",
                 body: formData,
                 credentials: "include",
@@ -65,7 +63,7 @@ export const addProduct = createAsyncThunk(
 
 export const fetchProducts = createAsyncThunk("fetch/product", async (_, thunkAPI) => {
     try {
-        const res = await fetch("http://localhost:5000/products");
+        const res = await fetch(`${serverUrl}products`);
 
         const data = await res.json();
 
