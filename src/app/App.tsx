@@ -2,11 +2,11 @@ import { AppRouter } from "./providers/router";
 import { InfoHeader } from "../components/InfoHeader";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
-import { Breadcrumbs } from "../components/Breadcrumbs";
 import { useAppDispatch } from "../shared/utils/hooks/hooks";
 import { logout } from "../features/userSlice";
 import { FixedBasket } from "../components/FixedBasket";
 import { memo } from "react";
+import { Breadcrumbs } from "../components/Breadcrumbs";
 
 const App = memo(() => {
     const dispatch = useAppDispatch();
