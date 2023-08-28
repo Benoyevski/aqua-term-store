@@ -5,7 +5,7 @@ import cls from "./Search.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
 import { fetchProducts } from "../../../features/productSlice";
 import { IProduct } from "../../../shared/types/types";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { SearchedProduct } from "../../../shared/ui/SearchedProduct/SearchedProduct";
 
 interface SearchProps {
@@ -25,7 +25,7 @@ export const Search: FC = memo(({ className }: SearchProps) => {
     const navigate = useNavigate();
     useEffect(() => {
         dispatch(fetchProducts());
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         setInputActive(false);

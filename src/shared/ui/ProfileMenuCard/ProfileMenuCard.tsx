@@ -4,11 +4,11 @@ import { IProfileTab } from "../../types/types";
 
 interface ProfileMenuCardProps {
     item: IProfileTab;
-    activeTab: string;
+    activeTab?: string;
     setActiveTab: (tab: string) => void;
 }
 
-export const ProfileMenuCard = ({ item, activeTab, setActiveTab }: ProfileMenuCardProps) => {
+export const ProfileMenuCard = ({ item, setActiveTab }: ProfileMenuCardProps) => {
     return (
         <Link
             to={`/${item.path}`}

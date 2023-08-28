@@ -37,20 +37,20 @@ export const CategoryList = memo(({ className, popularity }: CategoryListProps) 
         <ul className={classNames(cls.CategoryList, {}, [className])}>
             {isLoading
                 ? [...new Array(9)].map((_, index) => (
-                      <div  key={index} className={cls.skeletonCat}>
-                          <SkeletonCategory />
-                      </div>
-                  ))
+                    <div  key={index} className={cls.skeletonCat}>
+                        <SkeletonCategory />
+                    </div>
+                ))
                 : sortedCategories.map((category) => {
-                      return (
-                          <CategoryCard
-                              popularBlock={popularity}
-                              category={category}
-                              typeList={types}
-                              key={category._id}
-                          />
-                      );
-                  })}
+                    return (
+                        <CategoryCard
+                            popularBlock={popularity}
+                            category={category}
+                            typeList={types}
+                            key={category._id}
+                        />
+                    );
+                })}
         </ul>
     );
 });

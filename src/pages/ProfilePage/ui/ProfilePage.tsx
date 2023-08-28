@@ -1,5 +1,5 @@
 import cls from "./ProfilePage.module.scss";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { ProfileSidebar } from "../../../components/ProfileSidebar";
 import { useEffect, useState } from "react";
 import { ProfileMenu } from "../../../components/ProfileMenu";
@@ -16,7 +16,7 @@ const ProfilePage = () => {
         if (userId) {
             dispatch(fetchUser(userId));
         }
-    }, []);
+    }, [dispatch, userId]);
 
     return (
         <div className={cls.profilePageWrapper}>

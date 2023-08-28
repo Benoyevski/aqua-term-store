@@ -81,10 +81,10 @@ export const Breadcrumbs = memo(() => {
                                             {categoryAndPost
                                                 ? categoryAndPost.title
                                                 : product
-                                                ? product.name
-                                                : fabricator
-                                                ? fabricator.title
-                                                : routeName || ""}
+                                                    ? product.name
+                                                    : fabricator
+                                                        ? fabricator.title
+                                                        : routeName || ""}
                                         </Link>
                                         <span className={cls.breadcrumbDash}>-</span>
                                     </div>

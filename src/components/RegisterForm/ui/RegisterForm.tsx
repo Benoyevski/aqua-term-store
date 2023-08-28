@@ -1,5 +1,5 @@
 import { memo, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
+import { useAppDispatch } from "../../../shared/utils/hooks/hooks";
 import cls from "./RegisterForm.module.scss";
 import { clearError, register } from "../../../features/userSlice";
 import { Form } from "../../../shared/ui/Form/Form";

@@ -5,7 +5,7 @@ import { serverUrl } from "../serverUrl";
 interface UserState {
     user: IUser | null;
     isLoading: boolean;
-    error: any;
+    error: unknown;
 }
 
 const storedUser = localStorage.getItem("user");
@@ -15,7 +15,7 @@ const initialState: UserState = {
     error: null,
 };
 
-export const fetchUser = createAsyncThunk<any, string>(
+export const fetchUser = createAsyncThunk<unknown, string>(
     "user/fetch",
     async (id, { rejectWithValue }) => {
         try {
@@ -136,7 +136,9 @@ export const logoutUser = createAsyncThunk("user/logout", async (_, { rejectWith
 
         const message = await response.json();
         return message;
-    } catch (error) {}
+    } catch (error) {
+        return rejectWithValue(error);
+    }
 });
 
 export const userSlice = createSlice({

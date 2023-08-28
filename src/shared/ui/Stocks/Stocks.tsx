@@ -1,8 +1,6 @@
 import cls from "./Stocks.module.scss";
-interface StocksProps {
-    className?: string;
-}
-export const Stocks = ({ className }: StocksProps) => {
+
+export const Stocks = () => {
     return (
         <div className={cls.StocksWrapper}>
             <div className={cls.container}>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { IMenuList, IProfileTab } from "../../types/types";
 
 export const menuList: IMenuList[] = [

@@ -1,5 +1,5 @@
 import { useState, useCallback, memo } from "react";
-import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
+import { useAppDispatch } from "../../../shared/utils/hooks/hooks";
 import cls from "./LoginForm.module.scss";
 import { authorization, clearError } from "../../../features/userSlice";
 import { Form } from "../../../shared/ui/Form/Form";
@@ -27,13 +27,13 @@ export const LoginForm = memo(({ setAuthForm, onSuccess }: LoginFormProps) => {
                 navigate("/");
             }
         },
-        [onSuccess, dispatch, email, password],
+        [dispatch, email, password, onSuccess, navigate],
     );
 
-        const toggleForm = () => {
-            dispatch(clearError())
-            setAuthForm(false)
-        }
+    const toggleForm = () => {
+        dispatch(clearError());
+        setAuthForm(false);
+    };
 
     return (
         <>

@@ -5,7 +5,7 @@ import { serverUrl } from "../serverUrl";
 interface CategoryState {
     items: ICategory[];
     isLoading: boolean;
-    error: any;
+    error: unknown;
 }
 
 const initialState: CategoryState = {

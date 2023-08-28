@@ -29,7 +29,7 @@ export const ProfileSidebar = memo(
             if (loc.pathname === "/profile") {
                 setActiveTab("profile");
             }
-        }, [loc.pathname]);
+        }, [loc.pathname, setActiveTab]);
 
         return (
             <ul className={classNames(cls.ProfileSidebar, {}, [className])}>

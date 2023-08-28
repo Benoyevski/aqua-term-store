@@ -10,9 +10,9 @@ const ContactsBlock = () => {
                     <MdLocationOn />
                 </span>
                 <div className={cls.columnBlock}>
-                <h3>Адрес</h3>
-                <p>г.Урус-Мартан,</p>
-                <p>ул.Нурди Усамова</p>
+                    <h3>Адрес</h3>
+                    <p>г.Урус-Мартан,</p>
+                    <p>ул.Нурди Усамова</p>
 
                 </div>
 
@@ -22,8 +22,8 @@ const ContactsBlock = () => {
                     <MdLocalPhone />
                 </span>
                 <div className={cls.columnBlock}>
-                <h3>Телефон</h3>
-                <p>+7 (967) 000-77-27</p>
+                    <h3>Телефон</h3>
+                    <p>+7 (967) 000-77-27</p>
 
                 </div>
             </div>
@@ -32,8 +32,8 @@ const ContactsBlock = () => {
                     <MdEmail />
                 </span>
                 <div className={cls.columnBlock}>
-                <h3>E-mail</h3>
-                <p>mansur@dzhan.ru</p>
+                    <h3>E-mail</h3>
+                    <p>mansur@dzhan.ru</p>
 
                 </div>
             </div>
@@ -42,9 +42,9 @@ const ContactsBlock = () => {
                     <LuClock />
                 </span>
                 <div className={cls.columnBlock}>
-                <h3>Режим работы</h3>
-                <p>с 10:00 до 22:00</p>
-                <p>Пятница: с 15:00</p>
+                    <h3>Режим работы</h3>
+                    <p>с 10:00 до 22:00</p>
+                    <p>Пятница: с 15:00</p>
 
                 </div>
             </div>

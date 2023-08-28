@@ -3,11 +3,11 @@ import { addCategory } from "../../../../features/categorySlice";
 import { useAppDispatch } from "../../../../shared/utils/hooks/hooks";
 import cls from "./CategoryAddForm.module.scss";
 import { classNames } from "../../../../shared/utils/classNames/classNames";
-interface CategoryAddForm {
+interface CategoryAddFormProps {
     className?: string;
 }
 
-export const CategoryAddForm: React.FC = ({ className }: CategoryAddForm) => {
+export const CategoryAddForm = ({ className }: CategoryAddFormProps) => {
     const dispatch = useAppDispatch();
     const [title, setTitle] = useState("");
     const [image, setImage] = useState<File | null>(null);

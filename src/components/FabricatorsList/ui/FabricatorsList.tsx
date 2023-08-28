@@ -43,15 +43,15 @@ export const FabricatorsList = memo(({ className }: FabricatorsListProps) => {
                 >
                     {isLoading
                         ? [...new Array(12)].map((_, index) => (
-                              <div key={index} className={cls.skeletonFabrList}>
-                                  <SkeletonFabricator />
-                              </div>
-                          ))
+                            <div key={index} className={cls.skeletonFabrList}>
+                                <SkeletonFabricator />
+                            </div>
+                        ))
                         : fabricators.map((fabricator) => {
-                              return (
-                                  <FabricatorCard key={fabricator._id} fabricator={fabricator} />
-                              );
-                          })}
+                            return (
+                                <FabricatorCard key={fabricator._id} fabricator={fabricator} />
+                            );
+                        })}
                 </div>
             </div>
         </div>

@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hook
 import { fetchTypes } from "../../../features/typeSlice";
 import { useParams } from "react-router-dom";
 import { CardList } from "../../../shared/ui/CardList/CardList";
-import { ProductList } from "../../../components/ProductList";
 import { fetchProducts } from "../../../features/productSlice";
 
 interface ProductListPageProps {

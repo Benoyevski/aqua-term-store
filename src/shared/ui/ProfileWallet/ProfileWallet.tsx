@@ -1,9 +1,7 @@
 import { useAppSelector } from "../../utils/hooks/hooks";
 import cls from "./ProfileWallet.module.scss";
-interface ProfileWalletProps {
-    className?: string;
-}
-export const ProfileWallet = ({ className }: ProfileWalletProps) => {
+
+export const ProfileWallet = () => {
     const userWallet = useAppSelector((state) => state.user.user?.wallet);
     return (
         <div className={cls.ProfileWallet}>

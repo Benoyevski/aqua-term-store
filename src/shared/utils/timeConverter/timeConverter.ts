@@ -14,8 +14,8 @@ const months: { [key: string]: string } = {
 };
 
 export const timeConverter = (time?: string) => {
-    let monthNumber = time?.split("T")[0].split("-")[1];
-    let monthText = monthNumber && months[monthNumber];
+    const monthNumber = time?.split("T")[0].split("-")[1];
+    const monthText = monthNumber && months[monthNumber];
     const day = time?.split("T")[0].split("-")[2];
     const year = time?.split("T")[0].split("-")[0];
     return `${day} ${monthText} ${year}`;
