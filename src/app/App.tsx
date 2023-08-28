@@ -6,7 +6,7 @@ import { useAppDispatch } from "../shared/utils/hooks/hooks";
 import { logout } from "../features/userSlice";
 import { FixedBasket } from "../components/FixedBasket";
 import { memo } from "react";
-import { Breadcrumbs } from "../components/Breadcrumbs";
+import { Breadcrumbs } from "../components/Breadcrumbs/ui/Breadcrumbs";
 
 const App = memo(() => {
     const dispatch = useAppDispatch();
