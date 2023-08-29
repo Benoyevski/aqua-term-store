@@ -1,9 +1,6 @@
 import cls from './PageError.module.scss';
 
-interface PageErrorProps {
-className?: string
-}
-export const PageError = ({ className }: PageErrorProps) => {
+export const PageError = () => {
 
     const reloadPage = () => {
         // eslint-disable-next-line no-restricted-globals
