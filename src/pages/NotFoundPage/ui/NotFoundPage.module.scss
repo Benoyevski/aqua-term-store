@@ -1,0 +1,23 @@
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+
+    & .notFoundContent {
+        width: 100%;
+        min-height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #efefef;
+        margin: 30px 0;
+
+        & p {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            color: #7b7b7b;
+        }
+    }
+}

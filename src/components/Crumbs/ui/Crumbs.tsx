@@ -71,8 +71,8 @@ export const Crumbs = memo(() => {
                                         </div>
                                     ) : (
                                         <div className={cls.currentBreadcrumb}>
-                                            <p>{routeName || ""}</p>
-                                            <h1>{routeName || ""}</h1>
+                                            <p>{routeName || "Not Found Page"}</p>
+                                            <h1>{routeName || "Not Found Page"}</h1>
                                         </div>
                                     )
                                 ) : (

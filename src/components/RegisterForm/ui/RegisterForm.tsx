@@ -18,11 +18,17 @@ export const RegisterForm =memo( ({ setAuthForm }: RegisterFormProps) => {
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
+        if (!password || password.length < 6) {
+            return alert("Пароль должен содержать не меньше 6 символов");
+        }
+
         const result = await dispatch(register({ login, email, password }));
         if (result.meta.requestStatus === "fulfilled") {
             alert("Вы успешно зарегистрированы!!!");
+            setAuthForm(true)
         }
     };
+    
 
     const toggleForm = () => {
         dispatch(clearError());

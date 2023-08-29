@@ -19,6 +19,7 @@ import { ContactsPage } from "../../../../pages/ContactsPage";
 import { BasketPage } from "../../../../pages/BasketPage";
 import { PostPage } from "../../../../pages/PostPage";
 import { PostList } from "../../../../shared/ui/PostList/PostList";
+import { NotFoundPage } from "../../../../pages/NotFoundPage";
 
 const AppRouter = memo(() => {
     const authUser = useAppSelector((state) => state.user.user);
@@ -37,7 +38,7 @@ const AppRouter = memo(() => {
                 <Route path={"/basket"} element={<BasketPage />} />
                 <Route path={"/catalog/:id"} element={<ProductListPage />} />
                 <Route path={"/catalog/:categoryId/:id"} element={<ProductPage />} />
-                <Route path={"/blog"} element={<PostList />} />
+                <Route path={"/blog"} element={<PostList className={'blog'} />} />
                 <Route path={"/blog/:id"} element={<PostPage />} />
 
                 {authUser && (
@@ -47,6 +48,8 @@ const AppRouter = memo(() => {
                         <Route path={"wallet"} element={<ProfileWallet />} />
                     </Route>
                 )}
+
+                <Route path="*" element={<NotFoundPage/>}/>
             </Routes>
         </Suspense>
     );

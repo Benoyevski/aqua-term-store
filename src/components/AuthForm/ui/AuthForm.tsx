@@ -11,6 +11,7 @@ interface AuthFormProps {
 
 export const AuthForm = memo(({ className, onSuccess }: AuthFormProps) => {
     const [authForm, setAuthForm] = useState(true);
+    console.log(authForm);
 
     return (
         <div className={classNames(cls.AuthForm, {}, [className])}>
