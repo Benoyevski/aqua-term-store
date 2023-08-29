@@ -29,3 +29,33 @@
     width: 100%;
     max-height: 100px;
 }
+
+
+@media (max-width: 1200px) {
+
+    .FabricatorCard {
+        width: calc(50% + (33.33 - 50) * ((100vw - 320px) / (1200 - 320)));
+        height: 150px;
+        padding: calc(10px + (20 - 10) * ((100vw - 320px) / (1200 - 320)));
+        justify-content: center;
+    }
+    
+    
+    .fabricatorsImgWrapper {
+        max-width: calc(100px + (180 - 100) * ((100vw - 320px) / (1200 - 320)));
+        height: calc(80px + (120 - 80) * ((100vw - 320px) / (1200 - 320)));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    
+    .fabricatorImg{
+        width: 100%;
+        max-height: 100px;
+        object-fit: contain;
+    }
+    
+    
+}
+

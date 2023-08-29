@@ -10,3 +10,15 @@
     align-items: start;
     min-height: 160px;
 }
+
+@media (max-width: 1200px) {
+    .skeletonCat {
+        width: calc(50% + (33 - 50) * ((100vw - 320px) / (1200 - 320)));
+        padding: calc(6px + (20 - 6) * ((100vw - 320px) / (1200 - 320)));
+ 
+    }
+    .popularBlockTitle {
+        font-size: calc(12px + (19 - 12) * ((100vw - 320px) / (1200 - 320)));
+    }
+
+}

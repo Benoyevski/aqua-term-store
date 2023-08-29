@@ -13,3 +13,25 @@
     text-align: center;
     padding: 20px;
 }
+
+
+
+@media (max-width: 1200px) {
+    
+        .skeletonList {
+            width: 33%;
+            height: calc(150px + (300 - 150) * ((100vw - 320px) / (1200 - 320)));
+            padding: calc(6px + (20 - 6) * ((100vw - 320px) / (1200 - 320)));
+        }
+ 
+}
+
+@media (max-width: 800px) {
+    
+    .skeletonList {
+        width: 50%;
+        height: calc(150px + (300 - 150) * ((100vw - 320px) / (1200 - 320)));
+        padding: calc(6px + (20 - 6) * ((100vw - 320px) / (1200 - 320)));
+    }
+
+}

@@ -40,7 +40,6 @@ export const CategoryCard = memo(
                 <div className={cls.productsTitle}>
                     <h3 className={cls.title} onClick={handleIncrementPopularity}>
                         <Link className={cls.titleLink} to={`/catalog/${category._id}`}>
-                            {" "}
                             {category.title}
                         </Link>
                     </h3>

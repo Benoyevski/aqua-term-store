@@ -33,3 +33,20 @@
 
 
 }
+
+@media (max-width: 1200px) {
+    .postCard {
+        min-width: 32%;
+        height: calc(130px + (280 - 130) * ((100vw - 320px) / (1200 - 320)));
+        margin-right: 2%;
+    
+        & .postImageWrapper {
+            width: 100%;
+            height: calc(110px + (280 - 110) * ((100vw - 320px) / (1200 - 320)));
+
+        }
+        & p {
+            font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1200 - 320)));
+        }
+    }
+}

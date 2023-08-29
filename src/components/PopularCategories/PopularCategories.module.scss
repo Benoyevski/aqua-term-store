@@ -2,7 +2,6 @@
     width: 100%;
     min-height: 500px;
     border-bottom: 1px solid #efefef;
-
 }
 
 .container {
@@ -15,4 +14,15 @@
 
 .popularBlockTitle {
     margin: 40px 0px 30px 0px;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: 96%;      
+    }
+    .popularBlockTitle {
+        margin: calc(20px + (40 - 20) * ((100vw - 320px) / (1200 - 320)))  0px calc(8px + (30 - 8) * ((100vw - 320px) / (1200 - 320)))  0px;
+        font-size: calc(12px + (19 - 12) * ((100vw - 320px) / (1200 - 320)));
+    }
+
 }

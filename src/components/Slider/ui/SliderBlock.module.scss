@@ -114,3 +114,90 @@
     height: 100%;
 } 
 
+@media (max-width: 1200px) {
+    .container {
+        width: 96%;      
+    }
+
+    .SliderBlock {
+          height: calc(200px + (500 - 200) * ((100vw - 320px) / (1600 - 320)));  
+    }
+    
+    .sliderBlockWrapper {
+        height: 100%;
+        padding:  calc(5px + (20 - 5) * ((100vw - 320px) / (1600 - 320))) 0;  
+        gap: calc(5px + (20 - 5) * ((100vw - 320px) / (1600 - 320)));
+    }
+    
+    .columnSlides {
+        width: 20%;
+        height: 100%;
+        gap: calc(5px + (20 - 5) * ((100vw - 320px) / (1600 - 320)));
+    }
+    
+    .smallSlide {
+        height:calc(90px + (220 - 90) * ((100vw - 320px) / (1600 - 320)));
+    }
+    
+    .text {
+        top: 40%;
+    }
+    
+    .text h4 {
+        font-size: calc(8px + (12 - 8) * ((100vw - 320px) / (1600 - 320)));
+        padding: 2px 3px;
+    }
+    
+    
+    .text p {
+        font-size: calc(8px + (11 - 8) * ((100vw - 320px) / (1600 - 320)));
+        margin-top: 3px;
+    }
+
+    
+    .sliderText {
+        top: 1%;
+        left: 3%;
+    }
+    
+    .sliderText h3 {
+        font-size: calc(12px + (30 - 12) * ((100vw - 320px) / (1600 - 320)));
+        line-height: 1.1;
+    
+    }
+    
+    
+    .sliderText p {
+        font-size: calc(8px + (14 - 8) * ((100vw - 320px) / (1600 - 320)));
+        margin-top: 10px;
+    
+    }
+
+}
+
+@media (max-width: 800px) {
+    .SliderBlock {
+        height: calc(250px + (600 - 250) * ((100vw - 320px) / (1600 - 320)));
+  }
+    .sliderBlockWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columnSlides {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 25%;
+    }
+
+    .smallSlide {
+        width: 50%;
+        height: 100%;
+    }
+
+    .slider {
+        width: 100%;
+        height: 50%;
+    }
+}

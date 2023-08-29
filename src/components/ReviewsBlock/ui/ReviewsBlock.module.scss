@@ -20,3 +20,33 @@
 
     
 }
+
+
+@media (max-width: 1200px) {
+    .container {
+        width: 96%;      
+    }
+
+    .reviewsBlock {
+        height: calc(180px + (320 - 180) * ((100vw - 320px) / (1200 - 320)));
+    
+        & h3 {
+            margin: 12px 0;
+        }
+    }
+}
+
+
+@media (max-width: 800px) { 
+
+    .reviewsBlock {
+        height: auto;
+     
+    
+        .reviewList {
+            flex-direction: column;
+        }
+    
+        
+    }
+}

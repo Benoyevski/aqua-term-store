@@ -24,7 +24,7 @@ export const Footer = memo(() => {
                             <p>Сертификаты</p>
                         </Link>
                     </li>
-                    <li>
+                    <li className={cls.footerHelp}>
                         Помощь
                         <Link to={"/contants"}>
                             <p>Как к нам добраться?</p>

@@ -44,3 +44,22 @@
     padding: 20px;
 
 }
+
+
+@media (max-width: 1200px) {
+    .container {
+        width: 96%;      
+    }
+    .fabricatorsListTitle {
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1200 - 320)));
+        margin: calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320))) 0;
+    }
+    
+    .skeletonFabrList {
+        width: 50%;
+        height: 150px;
+    }
+    
+    
+}
+

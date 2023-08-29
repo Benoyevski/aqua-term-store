@@ -8,7 +8,6 @@
 .aboutStore {
     display: flex;
     padding: 50px 0;
-    // border-bottom: 1px solid #efefef;
 
     .aboutStoreImage {
         width: 25%;
@@ -30,4 +29,50 @@
         line-height: 1.6;
     }
 
+}
+
+
+@media (max-width: 1200px) {
+    
+
+    .container {
+        width: 96%;      
+    }
+    .aboutStore {
+        padding: calc(20px + (50 - 20) * ((100vw - 320px) / (1600 - 320))) 0;
+    
+        .aboutStoreImage {
+            padding: 10px;
+            position: relative;
+        }
+    
+        .aboutStoreText {
+            margin-left: calc(30px + (100 - 30) * ((100vw - 320px) / (1600 - 320)));
+            line-height: 1.2;
+        }
+    
+    }
+}
+
+@media (max-width: 800px) {
+    
+
+    .aboutStore {
+        flex-direction: column;
+        padding: calc(30px + (10 - 30) * ((100vw - 320px) / (1600 - 320))) 0;
+
+        .aboutStoreImage {
+            width: 70%;
+            margin: 0 auto;
+
+        }
+    
+        .aboutStoreText {
+            margin: 0;
+            line-height: 1.2;
+            margin: 0 auto;
+            font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1600 - 320)));;
+        }
+    
+    }
 }
