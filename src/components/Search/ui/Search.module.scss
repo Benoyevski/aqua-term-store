@@ -94,3 +94,13 @@
     overflow-y: auto;
 
 }
+
+
+@media (max-width: 1200px) {
+    .searchIcon {
+        width: calc(15px + (35 - 15) * ((100vw - 320px) / (1600 - 320)));   
+        height: calc(15px + (35 - 15) * ((100vw - 320px) / (1600 - 320)));   
+
+    }
+    
+}

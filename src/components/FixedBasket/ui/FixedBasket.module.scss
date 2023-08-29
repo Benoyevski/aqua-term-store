@@ -151,3 +151,82 @@
 }
 
 
+@media (max-width: 1200px) {
+    .FixedBasket {
+        width: calc(300px + (655 - 300) * ((100vw - 320px) / (1200 - 320)));   //655px;
+        height:calc(40px + (80 - 40) * ((100vw - 320px) / (1200 - 320)));
+        right: calc(-285px + (-605 + 285) * ((100vw - 320px) / (1200 - 320))); 
+    
+            & svg {
+                font-size: calc(12px + (22 - 12) * ((100vw - 320px) / (1200 - 320)));
+            }
+    
+            .show {
+                width: calc(20px + (55 - 20) * ((100vw - 320px) / (1200 - 320))); // 55px;
+        
+                
+    
+                & span {
+                    height: calc(12px + (25 - 12) * ((100vw - 320px) / (1200 - 320)));
+                    width: calc(12px + (25 - 12) * ((100vw - 320px) / (1200 - 320)));
+                    
+                    & p {
+                        font-size: calc(8px + (16 - 8) * ((100vw - 320px) / (1200 - 320)));
+       
+                    }
+                }
+            }
+            
+            .collapsedBasket {
+                width: calc(275px + (600 - 275) * ((100vw - 320px) / (1200 - 320)));
+        
+                .collapsedBasketHeader {
+                    padding: calc(8px + (25 - 8) * ((100vw - 320px) / (1200 - 320)));
+        
+                    & h2 {
+                        font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1200 - 320)));
+                    }
+                    
+                    .clearBasket {
+                        padding: 0px 10px;
+                        height:  calc(20px + (40 - 20) * ((100vw - 320px) / (1200 - 320)));
+                        font-size:  calc(10px + (16 - 10) * ((100vw - 320px) / (1200 - 320)));
+                    }
+                }
+        
+                .productsCount {
+                    padding: 3px calc(8px + (25 - 8) * ((100vw - 320px) / (1200 - 320)));
+                    font-size:  calc(10px + (16 - 10) * ((100vw - 320px) / (1200 - 320)));
+                }
+        
+               .emptyBasket {
+                padding: calc(10px + (40 - 10) * ((100vw - 320px) / (1200 - 320))) 0;
+        
+                & span {
+                    padding: calc(5px + (20 - 5) * ((100vw - 320px) / (1200 - 320)));
+                    border: 2px solid #555;
+        
+                    & svg {
+                        font-size: calc(50px + (100 - 50) * ((100vw - 320px) / (1200 - 320)));
+          
+                    }
+                }
+        
+             
+        
+                & p {
+                    font-size:  calc(12px + (20 - 12) * ((100vw - 320px) / (1200 - 320)));
+                }
+               }
+            }
+            
+    }
+
+   
+
+    .showBasket {
+        right: -5px;
+        transition: .3s;
+    }    
+
+}

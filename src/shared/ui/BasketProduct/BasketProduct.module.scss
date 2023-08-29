@@ -102,3 +102,36 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .fixedBasketProductCard {
+        padding: calc(3px + (10 - 3) * ((100vw - 320px) / (1200 - 320))) calc(5px + (16 - 5) * ((100vw - 320px) / (1200 - 320)));
+
+        & .imgWrapper {
+            width: calc(45px + (90 - 45) * ((100vw - 320px) / (1200 - 320)));
+            height: calc(45px + (90 - 45) * ((100vw - 320px) / (1200 - 320)));
+            margin-right: calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
+    
+            & img {
+                padding: 2px;
+            }
+        }
+
+        .basketProdTitle {
+            font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1200 - 320)));
+        }
+    
+        .removeFromBasketBtn {
+            display: flex;
+            width: calc(50px + (100 - 50) * ((100vw - 320px) / (1200 - 320)));
+            font-size: calc(8px + (14 - 8) * ((100vw - 320px) / (1200 - 320)));
+            height: calc(20px + (40 - 20) * ((100vw - 320px) / (1200 - 320)));
+            margin-top: 5px;
+            padding: 8px;
+        }
+    }
+
+
+
+
+}

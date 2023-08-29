@@ -62,3 +62,11 @@
     cursor: pointer;
     font-weight: 700;
 }
+
+@media (max-width: 1200px) {
+    .infoHeader {
+        font-size: calc(5px + (14 - 5) * ((100vw - 320px) / (1200 - 320)));  
+        padding: calc(5px + (12 - 5) * ((100vw - 320px) / (1200 - 320)));  
+    }
+    
+}

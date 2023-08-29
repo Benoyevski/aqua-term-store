@@ -19,3 +19,10 @@
     height: 100%;
 }
 
+@media (max-width: 1600px) {
+    .Navbar {
+        height: calc(25px + (100 - 25) * ((100vw - 320px) / (1600 - 320)));      
+       
+    }
+    
+}

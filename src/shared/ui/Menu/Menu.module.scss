@@ -27,3 +27,21 @@
     border-bottom: 3px solid #d8130d;
     cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+    .menu {
+        padding: 0 calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
+        font-size: calc(4px + (15 - 4) * ((100vw - 320px) / (1200 - 320)));
+    }
+    .menuItem {
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            color: #d8130d;
+            border-bottom: 1px solid #d8130d;
+        }
+    }
+    .menuItemWrapper {
+        padding: 0 calc(3px + (10 - 3) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
