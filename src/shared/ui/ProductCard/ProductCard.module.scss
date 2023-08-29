@@ -63,6 +63,34 @@
 }
 
 @media (max-width: 800px) {
+
+    .ProductCard {
+        width: 50%;
+        height: calc(140px + (220 - 140) * ((100vw - 320px) / (1200 - 320)));
+        padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1200 - 320))) calc(5px + (10 - 5) * ((100vw - 320px) / (1200 - 320)));
+        
+    }
+    
+    .imageWrapper {
+        width: calc(90px + (120 - 90) * ((100vw - 320px) / (1200 - 320)));
+        height: calc(70px + (120 - 70) * ((100vw - 320px) / (1200 - 320)));  
+        margin-bottom: 10px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+   
+    
+    .prodTitle {
+        font-size: 10px;
+    }
+
+
+
+
+
     .ProductCardPopular {
         width: 50%;
         height: calc(120px + (230 - 120) * ((100vw - 320px) / (1200 - 320)));

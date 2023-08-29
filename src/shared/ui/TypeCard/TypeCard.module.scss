@@ -28,3 +28,27 @@
 }
 
 
+@media (max-width: 800px) {
+
+    .TypeCard {
+        width: 33%;
+        height: calc(160px + (220 - 160) * ((100vw - 320px) / (1200 - 320)));
+        padding: calc(10 + (20 - 10) * ((100vw - 320px) / (1200 - 320))) calc(5 + (10 - 5) * ((100vw - 320px) / (1200 - 320)));
+    
+        & div {
+            width: calc(70px + (120 - 70) * ((100vw - 320px) / (1200 - 320)));
+            height: calc(70px + (120 - 70) * ((100vw - 320px) / (1200 - 320)));  
+            margin-bottom: 20px;
+    
+            & img {
+                width: 100%;
+            }
+        }
+
+        & p {
+            font-size: calc(9px + (16 - 9) * ((100vw - 320px) / (1200 - 320)));  
+        }
+    
+    }
+    
+}

@@ -12,8 +12,8 @@ border-bottom: 3px solid transparent;
 
         & .logoIcon {
 
-            max-width: 35px;
-            max-height: 35px;
+            width: 35px;
+            height: 35px;
             margin-right: 5px;
 
             
@@ -48,16 +48,11 @@ border-bottom: 3px solid transparent;
     
     .logo {
         .logoIcon {
-            width: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320)));
-            height: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320)));
+            width: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320))) !important;
+            height: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320))) !important;
             display: flex;
             align-items: center;
             
-                & img {
-                    // width: 15px;
-                    // height: 15px;
-                    object-fit: fill;
-                }
         }
 
 

@@ -6,9 +6,9 @@ export const Logo = () => {
         <Link to={"/"}>
             <div className={cls.logoBlock}>
                 <div className={cls.logo}>
-                    <span className={cls.logoIcon}>
+                    <div className={cls.logoIcon}>
                         <img src="aquaterm-icon.jpg" alt="" />
-                    </span>
+                    </div>
 
                     <h2 className={cls.logoAqua}>АКВА</h2>
                     <h2 className={cls.logoTerm}>ТЕРМ</h2>

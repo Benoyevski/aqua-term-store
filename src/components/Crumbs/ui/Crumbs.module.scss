@@ -40,3 +40,23 @@
     color: #000;
 
 }
+
+@media (max-width: 800px) {
+
+    .Crumbs {
+        padding: calc(8px + (15 - 8) * ((100vw - 320px) / (1200 - 320))) 0 calc(40px + (80 - 40) * ((100vw - 320px) / (1200 - 320))) 0;
+    } 
+
+    .breadcrumbDash {
+        margin: 0 10px;
+    }
+
+    .currentBreadcrumb h1 {
+        font-size: calc(14px + (30 - 14) * ((100vw - 320px) / (1200 - 320)));  
+        top: 20px;
+    }
+
+    .breadcrumbItemLink, .breadcrumbItem, .currentBreadcrumb p {
+        font-size: calc(8px + (14 - 8) * ((100vw - 320px) / (1200 - 320)));  
+    }
+}

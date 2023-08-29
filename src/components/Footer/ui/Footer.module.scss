@@ -51,6 +51,24 @@ hr {
     }
 
     .Footer p {
-        font-size:  calc(12px + (16 - 12) * ((100vw - 320px) / (1200 - 320)));
+        font-size: calc(12px + (16 - 12) * ((100vw - 320px) / (1200 - 320)));
     }
+
+    
+.sections {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    min-height: 300px;
+    justify-content: space-between;
+    
+    & li {
+        width: 45%;
+    }
+
+    & p {
+        font-size:  calc(11px + (14 - 11) * ((100vw - 320px) / (1200 - 320)));
+
+    }
+}
 }

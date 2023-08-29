@@ -41,6 +41,11 @@
 
     .reviewsBlock {
         height: auto;
+
+        & h3 {
+            text-align: center;
+            font-size: calc(14px + (20 - 14) * ((100vw - 320px) / (1200 - 320)));
+        }
      
     
         .reviewList {

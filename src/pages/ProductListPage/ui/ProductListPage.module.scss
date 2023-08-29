@@ -23,3 +23,21 @@
         margin: 20px 0;
     }
 }
+
+@media (max-width: 800px) {
+    .productListWrapper {
+        width: 100%;
+    
+    }
+    
+    .container {
+        width: 96%;
+    }
+     
+    .productsBlock {
+    
+        & h2 {
+            margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1200 - 320))) 0;
+        }
+    }
+}
