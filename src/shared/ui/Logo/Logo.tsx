@@ -7,7 +7,7 @@ export const Logo = () => {
             <div className={cls.logoBlock}>
                 <div className={cls.logo}>
                     <div className={cls.logoIcon}>
-                        <img src="aquaterm-icon.jpg" alt="" />
+                        <img src="/aquaterm-icon.jpg" alt="" />
                     </div>
 
                     <h2 className={cls.logoAqua}>АКВА</h2>

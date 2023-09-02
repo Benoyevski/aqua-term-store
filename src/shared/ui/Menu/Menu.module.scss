@@ -31,7 +31,7 @@
 @media (max-width: 1200px) {
     .menu {
         padding: 0 calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
-        font-size: calc(4px + (15 - 4) * ((100vw - 320px) / (1200 - 320)));
+        font-size: calc(6px + (15 - 6) * ((100vw - 320px) / (1200 - 320)));
     }
     .menuItem {
         border-bottom: 1px solid transparent;
@@ -43,5 +43,10 @@
     }
     .menuItemWrapper {
         padding: 0 calc(3px + (10 - 3) * ((100vw - 320px) / (1200 - 320)));
+
+        &:nth-child(3) {
+            display: none;
+        }
     }
+
 }

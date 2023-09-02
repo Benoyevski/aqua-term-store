@@ -82,9 +82,9 @@ const ProductPage = ({ className }: ProductPageProps) => {
                                         <p>{fabricator?.title}</p>
                                     </div>
                                 </div>
-                                <PriceInfo />
                             </div>
                         </div>
+                        <PriceInfo />
                         <div className={cls.info}>
                             <h2>Описание</h2>
                             <p>{product?.description}</p>

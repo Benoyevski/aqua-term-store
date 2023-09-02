@@ -48,8 +48,8 @@ border-bottom: 3px solid transparent;
     
     .logo {
         .logoIcon {
-            width: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320))) !important;
-            height: calc(15px + (35 - 15) * ((100vw - 320px) / (1200 - 320))) !important;
+            width: calc(20px + (35 - 20) * ((100vw - 320px) / (1200 - 320))) !important;
+            height: calc(20px + (35 - 20) * ((100vw - 320px) / (1200 - 320))) !important;
             display: flex;
             align-items: center;
             
@@ -57,12 +57,12 @@ border-bottom: 3px solid transparent;
 
 
         .logoAqua {
-            font-size: calc(6px + (24 - 6) * ((100vw - 320px) / (1200 - 320)));
+            font-size: calc(8px + (24 - 8) * ((100vw - 320px) / (1200 - 320)));
             
             
         }
         .logoTerm {
-            font-size: calc(6px + (24 - 6) * ((100vw - 320px) / (1200 - 320)));
+            font-size: calc(8px + (24 - 8) * ((100vw - 320px) / (1200 - 320)));
         }
     }
 
