@@ -14,3 +14,10 @@
     display: block;
 }
 
+
+@media (max-width: 1200px) {
+    .container {
+        width: 96%;
+    }
+
+}

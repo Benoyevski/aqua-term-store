@@ -7,6 +7,7 @@ import { fetchFabricators } from "../../../features/fabricatorSlice";
 import { fetchProducts } from "../../../features/productSlice";
 import { ProductCard } from "../../../shared/ui/ProductCard/ProductCard";
 import { serverUrl } from "../../../serverUrl";
+import { Loader } from "../../../shared/ui/Loader/Loader";
 interface FabricatorPageProps {
     className?: string;
 }
@@ -31,7 +32,7 @@ const FabricatorPage = ({ className }: FabricatorPageProps) => {
         <div className={classNames(cls.FabricatorPage, {}, [className])}>
             <div className={cls.container}>
                 {isFabricatorsLoading ? (
-                    <p>Загружаю...</p>
+                    <Loader/>
                 ) : (
                     <main className={cls.fabricatorContent}>
                         <section className={cls.fabricatorInfo}>
@@ -45,7 +46,7 @@ const FabricatorPage = ({ className }: FabricatorPageProps) => {
                             <p className={cls.fabricatorDescription}>{fabricator?.description}</p>
                         </section>
                         <section className={cls.fabricatorProds}>
-                            <h3>{`Товары ${fabricator?.title} в нашем магизине`} </h3>
+                            <h3>{`Товары ${fabricator?.title} в нашем магазине`} </h3>
 
                             {isProductsLoading ? (
                                 <p>идет загрузка...</p>

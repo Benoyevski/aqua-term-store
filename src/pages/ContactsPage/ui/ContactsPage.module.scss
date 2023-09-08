@@ -44,3 +44,40 @@
         z-index: 3;
     }
 }
+
+@media (max-width: 1200px) {
+    .ContactsPage {
+        min-height: 500px;
+    }
+    
+    .container {
+        width: 96%;
+ 
+    }
+    
+    
+    .contactsText {
+        & p {
+            margin-top: calc(20px + (50 - 20) * ((100vw - 320px) / (1200 - 320)));
+        }
+    }
+    
+    .map {
+        margin-top: calc(3px + (30 - 3) * ((100vw - 320px) / (1200 - 320)));
+        width: 100%;
+        height: calc(200px + (500 - 200) * ((100vw - 320px) / (1200 - 320)));
+        background-color: rgb(243, 243, 243);
+    
+        .contactsBlockContainer {
+            width: 96%;
+        }
+        .contactsBlock {
+            width: 85%;
+            height: calc(80px + (110 - 80) * ((100vw - 320px) / (1200 - 320)));
+            position: absolute;
+            top:  calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
+            left: 5%;
+        }
+    }
+    
+}

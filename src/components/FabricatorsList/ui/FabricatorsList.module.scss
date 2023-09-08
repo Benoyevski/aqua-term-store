@@ -63,3 +63,34 @@
     
 }
 
+
+@media (max-width: 800px) {
+
+    .FabricatorsPageWrapper {
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        
+    }
+    
+    .fabricatorsText {
+        width: 100%;
+        margin: 10px 0;
+        font-size: calc(10px + (16 - 10) * ((100vw - 320px) / (1200 - 320)));
+        
+    }
+
+
+
+
+    .skeletonFabrList {
+        width: 50%;
+        height: calc(90px + (170 - 90) * ((100vw - 320px) / (1200 - 320)));
+        padding: 20px;
+    
+    }
+    
+    
+}
+
+
