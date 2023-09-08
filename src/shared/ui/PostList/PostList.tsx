@@ -6,6 +6,7 @@ import { fetchPosts } from "../../../features/postSlice";
 import { PostCard } from "../../../shared/ui/PostCard/PostCard";
 import { BlogPageCard } from "../BlogPageCard/BlogPageCard";
 import { AddPostForm } from "../AddPostForm/AddPostForm";
+import { Loader } from "../Loader/Loader";
 
 interface PostListProps {
     className?: string;
@@ -25,7 +26,7 @@ export const PostList = memo(({ className }: PostListProps) => {
     return (
         <div className={classNames(cls.PostList, {}, [className])}>
             {isLoadingPosts ? (
-                <div>loading posts....</div>
+                <Loader/>
             ) : (
                 <div className={classNames(cls.blogList, { [cls.blogPage]: className })}>
                     {className ? (

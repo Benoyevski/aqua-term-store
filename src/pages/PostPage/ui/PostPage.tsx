@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { fetchPosts } from "../../../features/postSlice";
 import { timeConverter } from "../../../shared/utils/timeConverter/timeConverter";
 import { serverUrl } from "../../../serverUrl";
+import { Loader } from "../../../shared/ui/Loader/Loader";
 
 interface PostPageProps {
     className?: string;
@@ -30,7 +31,7 @@ const PostPage = ({ className }: PostPageProps) => {
             <div className={cls.container}>
                 <div className={cls.postPageWrapper}>
                     {isLoadingPosts ? (
-                        <p>loading...</p>
+                        <Loader/>
                     ) : (
                         <div className={cls.post}>
                             <p className={cls.postDate}>{postTime}</p>
