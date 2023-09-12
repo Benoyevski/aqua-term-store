@@ -140,7 +140,7 @@
     }
     
     .text {
-        top: 40%;
+        top: 45%;
     }
     
     .text h4 {
@@ -150,8 +150,8 @@
     
     
     .text p {
-        font-size: calc(8px + (11 - 8) * ((100vw - 320px) / (1600 - 320)));
-        margin-top: 3px;
+        font-size: calc(6px + (11 - 6) * ((100vw - 320px) / (1600 - 320)));
+        margin-top: 0px;
     }
 
     
