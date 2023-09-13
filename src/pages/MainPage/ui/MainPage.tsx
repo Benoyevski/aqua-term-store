@@ -13,14 +13,14 @@ const MainPage = memo(() => {
 
     
     return (
-        <div>
+        <main>
             <SliderBlock />
             <PopularCategories />
             <AboutStore />
             <Blog />
             <ReviewsBlock />
             <FabricatorsList />
-        </div>
+        </main>
     );
 });
 
