@@ -45,3 +45,12 @@
         transform: scale(0.2);
     }
 }
+
+@media (max-width: 1200px) {
+    .content {
+        width: 55%;
+        min-width: calc(300px + (500 - 300) * ((100vw - 320px) / (1600 - 320)));
+        min-height: calc(280px + (450 - 280) * ((100vw - 320px) / (1600 - 320)));
+    }
+    
+}
