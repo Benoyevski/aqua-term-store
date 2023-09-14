@@ -19,7 +19,6 @@ export const CategoryList = memo(({ className, popularity }: CategoryListProps) 
     const isLoading = useAppSelector((state) => state.category.isLoading);
 
     useEffect(() => {
-        // Проверяем, есть ли данные о категориях и типах в хранилище Redux
         if (categories.length === 0) {
             dispatch(fetchCategories());
         }

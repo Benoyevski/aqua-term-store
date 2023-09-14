@@ -25,7 +25,17 @@
         }
     }
 
+    
 }
+.selected {
+    border-bottom: 10px solid rgb(198, 0, 0);
+    box-shadow: inset 0px 0px 20px 15px rgba(255, 0, 0, 0.121);
+
+
+    
+}
+
+
 
 
 @media (max-width: 800px) {

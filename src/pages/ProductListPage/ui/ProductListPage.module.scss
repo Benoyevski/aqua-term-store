@@ -24,6 +24,28 @@
     }
 }
 
+.clearFilters {
+    padding: 6px 10px;
+    margin: 10px 0;
+    border: 1px solid #bfbfbf;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+
+    &::before {
+        content: 'x';
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    &:hover {
+        border: 1px solid #cd0c0c;
+        color: #555;
+    }
+
+    
+}
+
 @media (max-width: 800px) {
     .productListWrapper {
         width: 100%;

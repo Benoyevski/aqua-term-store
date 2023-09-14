@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { classNames } from "../../../shared/utils/classNames/classNames";
 import cls from "./ProductListPage.module.scss";
 import { useAppDispatch, useAppSelector } from "../../../shared/utils/hooks/hooks";
@@ -19,20 +19,33 @@ export const ProductListPage = ({ className }: ProductListPageProps) => {
     const allProducts = useAppSelector((state) => state.product.items);
     const products = allProducts.filter((prod) => prod.category === id);
 
+    const [selectedType, setSelectedType] = useState<string>('')
+
+    
     useEffect(() => {
         dispatch(fetchTypes());
         dispatch(fetchProducts());
     }, [dispatch]);
 
+    const handleTypeClick = (type: string) => {
+        setSelectedType(type);
+    };
+
     return (
         <div className={classNames(cls.ProductListPage, {}, [className])}>
             <div className={cls.container}>
                 <div className={cls.productListWrapper}>
-                    <CardList items={types} />
-
+                    <CardList className={selectedType} items={types} onItemClick={handleTypeClick} />
+                    <button className={cls.clearFilters} onClick={() => setSelectedType('')}>Сбросить фильтры</button>
                     <div className={cls.productsBlock}>
-                        <h2>Товары</h2>
-                        <CardList items={products} />
+                        <h2>
+                            {!selectedType ?
+                                "Все товары" : <span>{types.find(type => type._id === selectedType)?.title}</span>}
+                        </h2>
+                        <div>
+                            
+                        </div>
+                        <CardList items={products.filter(prod => selectedType === '' || prod.type === selectedType)}/>
                     </div>
                 </div>
             </div>

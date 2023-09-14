@@ -7,11 +7,20 @@ import { serverUrl } from "../../../serverUrl";
 interface TypeCardProps {
     className?: string;
     type: IType;
+    onItemClick: ((item: string) => void) | undefined;
 }
 
-export const TypeCard = memo(({ className, type }: TypeCardProps) => {
+export const TypeCard = memo(({ className, type, onItemClick }: TypeCardProps) => {
+
+    const handleItemClick = (item: string) => {
+        if (onItemClick) {
+            onItemClick(item);
+        }
+    };
+
     return (
-        <div className={classNames(cls.TypeCard, {}, [className])}>
+        <div onClick={() => handleItemClick(type._id)} 
+            className={classNames(cls.TypeCard, {[cls.selected]: className === type._id}, [className])}>
             <div>
                 <img src={`${serverUrl}${type.image}`} alt={type.title} />
             </div>

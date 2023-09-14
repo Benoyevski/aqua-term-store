@@ -8,16 +8,23 @@ import { TypeCard } from "../TypeCard/TypeCard";
 interface CardListProps {
     className?: string;
     items: ItemsToCard[];
+    onItemClick?: (item: string) => void;
 }
 
-export const CardList = memo(({ className, items }: CardListProps) => {
+export const CardList = memo(({ className, items, onItemClick }: CardListProps) => {
+
     return (
         <div className={classNames(cls.CardList, {}, [className])}>
             {items.map((item) => {
                 if ("price" in item) {
                     return <ProductCard key={item._id} prod={item} />;
                 } else if ("title" in item) {
-                    return <TypeCard key={item._id} type={item} />;
+                    return <TypeCard 
+                        onItemClick={onItemClick} 
+                        key={item._id} 
+                        type={item} 
+                        className={className}
+                    />;
                 } else {
                     return (
                         <div>
