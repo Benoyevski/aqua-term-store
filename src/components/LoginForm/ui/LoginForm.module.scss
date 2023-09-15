@@ -21,3 +21,13 @@
     color:#dc0000;
 
 }
+
+
+
+@media (max-width: 1200px) {
+
+    .haveAcc {
+        margin: calc(8px + (20 - 8) * ((100vw - 320px) / (1200 - 320))) auto;
+        font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1200 - 320)));
+    }
+}

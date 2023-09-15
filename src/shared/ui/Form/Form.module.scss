@@ -65,3 +65,38 @@ form h2 {
 .btnLoader {
     color: #fff;
 }
+
+
+@media (max-width: 1200px) {
+
+    form h2 {
+        padding: calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
+    }
+    
+    .errorWrapper {
+        padding: calc(8px + (20 - 8) * ((100vw - 320px) / (1200 - 320))) calc(15px + (30 - 15) * ((100vw - 320px) / (1200 - 320)));
+    }
+    .formContainer {
+        padding: 0 calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)))ж
+    }
+    
+    .inputWrapper {
+        margin-top: 10px;
+    
+    }
+    
+    .inputWrapper label {
+        font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1200 - 320)));
+    }
+
+    .input {
+        padding: calc(4px + (8 - 4) * ((100vw - 320px) / (1200 - 320)));
+        padding-left: 5px;
+    }
+    
+    .loginBtn {
+        padding: calc(2px + (7 - 2) * ((100vw - 320px) / (1200 - 320)))  calc(8px + (25 - 8) * ((100vw - 320px) / (1200 - 320)));
+        font-size:  calc(12px + (18 - 12) * ((100vw - 320px) / (1200 - 320)));
+        margin-top:  calc(10px + (30 - 10) * ((100vw - 320px) / (1200 - 320)));
+    }
+}
