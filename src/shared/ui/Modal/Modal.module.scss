@@ -33,7 +33,7 @@
 .opened {
     pointer-events: auto;
     opacity: 1;
-    z-index: 1;
+    z-index: 5;
 
     .content {
         transform: scale(1);
@@ -49,8 +49,8 @@
 @media (max-width: 1200px) {
     .content {
         width: 55%;
-        min-width: calc(300px + (500 - 300) * ((100vw - 320px) / (1600 - 320)));
-        min-height: calc(280px + (450 - 280) * ((100vw - 320px) / (1600 - 320)));
+        min-width: calc(250px + (500 - 250) * ((100vw - 320px) / (1600 - 320)));
+        min-height: calc(220px + (450 - 220) * ((100vw - 320px) / (1600 - 320)));
     }
     
 }

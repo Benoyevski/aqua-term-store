@@ -4,6 +4,7 @@
     justify-content: center;
     width: 100%;
     position: relative;
+
 }
 
 
@@ -27,7 +28,7 @@
 @media (max-width: 1200px) {
 
     .haveAcc {
-        margin: calc(8px + (20 - 8) * ((100vw - 320px) / (1200 - 320))) auto;
-        font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1200 - 320)));
+        margin: calc(6px + (20 - 6) * ((100vw - 320px) / (1200 - 320))) auto;
+        font-size: calc(10px + (18 - 10) * ((100vw - 320px) / (1200 - 320)));
     }
 }
