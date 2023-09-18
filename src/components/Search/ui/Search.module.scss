@@ -102,5 +102,28 @@
         height: calc(15px + (35 - 15) * ((100vw - 320px) / (1600 - 320)));   
 
     }
+
+    .container {
+    width: 96%;
+}
+
+.inputWrapper {
+    padding:  calc(6px + (13 - 6) * ((100vw - 320px) / (1600 - 320))) 0;
+}
+
+.inputWrapper input {
+    padding: 3px;
+    padding-left: 6px;
+}
+
+.closeInputBtn {
+    font-size: calc(10px + (20 - 10) * ((100vw - 320px) / (1600 - 320)));
+    margin: 0 10px;
+}
+
+.searchItemWrapper {
+    max-height: calc(200px + (400 - 200) * ((100vw - 320px) / (1600 - 320)));
+
+}
     
 }
