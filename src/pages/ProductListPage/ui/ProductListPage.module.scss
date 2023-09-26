@@ -21,6 +21,7 @@
 
     & h2 {
         margin: 20px 0;
+
     }
 }
 
@@ -46,6 +47,14 @@
     
 }
 
+.noProducts {
+    border: 1px solid #efefef;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 800px) {
     .productListWrapper {
         width: 100%;
@@ -60,6 +69,12 @@
     
         & h2 {
             margin: calc(10px + (20 - 10) * ((100vw - 320px) / (1200 - 320))) 0;
+            font-size:  calc(18px + (22 - 18) * ((100vw - 320px) / (1200 - 320)));
         }
     }
+
+    .noProducts {
+        min-height:  calc(80px + (200 - 80) * ((100vw - 320px) / (1200 - 320)));
+    }
 }
+

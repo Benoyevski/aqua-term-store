@@ -21,6 +21,7 @@ export const ProductListPage = ({ className }: ProductListPageProps) => {
 
     const [selectedType, setSelectedType] = useState<string>('')
 
+    const filteredProducts = products.filter(prod => selectedType === '' || prod.type === selectedType)
     
     useEffect(() => {
         dispatch(fetchTypes());
@@ -45,7 +46,11 @@ export const ProductListPage = ({ className }: ProductListPageProps) => {
                         <div>
                             
                         </div>
-                        <CardList items={products.filter(prod => selectedType === '' || prod.type === selectedType)}/>
+                        {filteredProducts.length > 0 ? <CardList items={filteredProducts}/> : (
+                            <div className={cls.noProducts}><p>
+                                Нет подходящих товаров
+                            </p></div>
+                        )}
                     </div>
                 </div>
             </div>
