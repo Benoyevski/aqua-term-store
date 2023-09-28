@@ -1,0 +1,19 @@
+.VideoBlock {
+    height: 350px;
+    width: 100%;
+    background: #efefef;
+}
+
+.container {
+    width: 90%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+}
+ 
+.videoSection {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}

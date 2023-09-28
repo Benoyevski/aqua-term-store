@@ -5,6 +5,7 @@ import { SliderBlock } from "../../../components/Slider";
 import { AboutStore } from "../../../shared/ui/AboutStore/AboutStore";
 import { Blog } from "../../../components/Blog";
 import { ReviewsBlock } from "../../../components/ReviewsBlock";
+import { VideoBlock } from "../../../components/VideoBlock";
 
 const MainPage = memo(() => {
     useEffect(() => {
@@ -15,6 +16,7 @@ const MainPage = memo(() => {
     return (
         <main>
             <SliderBlock />
+            <VideoBlock />
             <PopularCategories />
             <AboutStore />
             <Blog />
