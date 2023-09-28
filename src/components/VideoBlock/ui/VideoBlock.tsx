@@ -6,7 +6,6 @@ className?: string
 }
 
 export const VideoBlock = ({className}: VideoBlockProps) => {
-    const mods = {}
     return (
         <div className={classNames(cls.VideoBlock, {}, [className])}>
             <div className={cls.container}>
